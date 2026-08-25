@@ -1,0 +1,4 @@
+C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/sw_workspace_2026-1/platform/zynq_fsbl/build/CMakeFiles/fsbl.elf.dir
+C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/sw_workspace_2026-1/platform/zynq_fsbl/build/CMakeFiles/print_build_info.dir
+C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/sw_workspace_2026-1/platform/zynq_fsbl/build/CMakeFiles/edit_cache.dir
+C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/sw_workspace_2026-1/platform/zynq_fsbl/build/CMakeFiles/rebuild_cache.dir

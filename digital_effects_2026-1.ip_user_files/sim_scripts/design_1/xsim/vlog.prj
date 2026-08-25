@@ -1,0 +1,18 @@
+verilog xil_defaultlib -i "../../../../../../../../../../AMDDesignTools/2026.1/Vivado/data/rsb/busdef" --include "C:/AMDDesignTools/2026.1/Vivado/data/xilinx_vip/include" --include "../../../../digital_effects_2026-1.gen/sources_1/bd/design_1/ipshared/ec67/hdl" --include "../../../../digital_effects_2026-1.gen/sources_1/bd/design_1/ipshared/df05/hdl" --include "../../../../digital_effects_2026-1.gen/sources_1/bd/design_1/ipshared/ee6d" \
+"../../../bd/design_1/ip/design_1_processing_system7_0_0/sim/design_1_processing_system7_0_0.v" \
+"../../../bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0_clk_wiz.v" \
+"../../../bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0.v" \
+
+sv xil_defaultlib -i "../../../../../../../../../../AMDDesignTools/2026.1/Vivado/data/rsb/busdef" --include "C:/AMDDesignTools/2026.1/Vivado/data/xilinx_vip/include" --include "../../../../digital_effects_2026-1.gen/sources_1/bd/design_1/ipshared/ec67/hdl" --include "../../../../digital_effects_2026-1.gen/sources_1/bd/design_1/ipshared/df05/hdl" --include "../../../../digital_effects_2026-1.gen/sources_1/bd/design_1/ipshared/ee6d" \
+"../../../bd/design_1/ip/design_1_bclk_div_0_0/sim/design_1_bclk_div_0_0.sv" \
+"../../../bd/design_1/ip/design_1_delay_0_0/sim/design_1_delay_0_0.sv" \
+"../../../bd/design_1/ip/design_1_i2s_rx_0_0/sim/design_1_i2s_rx_0_0.sv" \
+"../../../bd/design_1/ip/design_1_i2s_tx_0_0/sim/design_1_i2s_tx_0_0.sv" \
+
+verilog xil_defaultlib -i "../../../../../../../../../../AMDDesignTools/2026.1/Vivado/data/rsb/busdef" --include "C:/AMDDesignTools/2026.1/Vivado/data/xilinx_vip/include" --include "../../../../digital_effects_2026-1.gen/sources_1/bd/design_1/ipshared/ec67/hdl" --include "../../../../digital_effects_2026-1.gen/sources_1/bd/design_1/ipshared/df05/hdl" --include "../../../../digital_effects_2026-1.gen/sources_1/bd/design_1/ipshared/ee6d" \
+"../../../bd/design_1/sim/design_1.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
