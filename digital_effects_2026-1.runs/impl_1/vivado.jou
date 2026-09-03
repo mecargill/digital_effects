@@ -3,8 +3,8 @@
 # SW Build 6511674 on Tue Jun 16 11:02:23 MDT 2026
 # IP Build 6504888 on Tue Jun 09 09:05:25 MDT 2026
 # SharedData Build 6501428 on Mon Jun 08 17:34:18 MDT 2026
-# Start of session at: Wed Sep  2 23:28:33 2026
-# Process ID         : 43248
+# Start of session at: Thu Sep  3 10:23:55 2026
+# Process ID         : 43688
 # Current directory  : C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.runs/impl_1
 # Command line       : vivado.exe -log design_1_wrapper.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source design_1_wrapper.tcl -notrace
 # Log file           : C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.runs/impl_1/design_1_wrapper.vdi
@@ -17,8 +17,8 @@
 # CPU Physical cores : 14
 # CPU Logical cores  : 20
 # Host memory        : 16834 MB
-# Swap memory        : 21946 MB
-# Total Virtual      : 38781 MB
-# Available Virtual  : 6358 MB
+# Swap memory        : 21039 MB
+# Total Virtual      : 37874 MB
+# Available Virtual  : 8622 MB
 #-----------------------------------------------------------
 source design_1_wrapper.tcl -notrace

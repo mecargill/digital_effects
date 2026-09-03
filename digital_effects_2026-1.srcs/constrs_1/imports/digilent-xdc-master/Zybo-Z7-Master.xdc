@@ -8,7 +8,10 @@
 #set_property -dict { PACKAGE_PIN K17   IOSTANDARD LVCMOS33 } [get_ports { sysclk }]; #IO_L12P_T1_MRCC_35 Sch=sysclk
 #create_clock -add -name sys_clk_pin -period 8.00 -waveform {0 4} [get_ports { sysclk }];
 
-
+#We have axi clock writing registers used in i2s clock domain. Potential metastability, but who cares for unimportant control parameters that change slowly
+set_clock_groups -asynchronous \
+    -group [get_clocks clk_fpga_0] \
+    -group [get_clocks clk_out1_design_1_clk_wiz_0_0]
 ##Switches
 #set_property -dict { PACKAGE_PIN G15   IOSTANDARD LVCMOS33 } [get_ports { sw[0] }]; #IO_L19N_T3_VREF_35 Sch=sw[0]
 #set_property -dict { PACKAGE_PIN P15   IOSTANDARD LVCMOS33 } [get_ports { sw[1] }]; #IO_L24P_T3_34 Sch=sw[1]
