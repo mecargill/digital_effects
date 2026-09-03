@@ -1,3 +1,6 @@
+delay_axi_wrapper_0:
+- delay_axi_wrapper
+- None
 ps7_afi_0:
 - ps7_afi
 - None

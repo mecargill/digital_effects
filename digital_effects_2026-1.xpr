@@ -45,9 +45,11 @@
     <Option Name="SimulatorGccVersionActiveHdl" Val="9.3.0"/>
     <Option Name="BoardPart" Val="digilentinc.com:zybo-z7-10:part0:1.2"/>
     <Option Name="BoardPartRepoPaths" Val="$PPRDIR/../../../../AppData/Roaming/Xilinx/Vivado/2026.1/xhub/board_store/xilinx_board_store"/>
-    <Option Name="ActiveSimSet" Val="i2s_simulation"/>
+    <Option Name="ActiveSimSet" Val="delay_sim"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
     <Option Name="ProjectType" Val="Default"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../ip_repo/delay_axi_wrapper_1_0"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../ip_repo/delay_1_0"/>
     <Option Name="IPOutputRepo" Val="$PCACHEDIR/ip"/>
     <Option Name="IPDefaultOutputPath" Val="$PGENDIR/sources_1"/>
     <Option Name="IPCachePermission" Val="read"/>
@@ -84,13 +86,6 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/new/delay.sv">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
       <File Path="$PSRCDIR/sources_1/new/i2s_rx.sv">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -117,8 +112,8 @@
         <CompFileExtendedInfo CompFileName="design_1.bd" FileRelPathName="ip\design_1_clk_wiz_0_0\design_1_clk_wiz_0_0.xci">
           <Proxy FileSetName="design_1_clk_wiz_0_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="design_1.bd" FileRelPathName="ip\design_1_delay_0_0\design_1_delay_0_0.xci">
-          <Proxy FileSetName="design_1_delay_0_0"/>
+        <CompFileExtendedInfo CompFileName="design_1.bd" FileRelPathName="ip\design_1_delay_axi_wrapper_0_0\design_1_delay_axi_wrapper_0_0.xci">
+          <Proxy FileSetName="design_1_delay_axi_wrapper_0_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="design_1.bd" FileRelPathName="ip\design_1_i2s_rx_0_0\design_1_i2s_rx_0_0.xci">
           <Proxy FileSetName="design_1_i2s_rx_0_0"/>
@@ -129,9 +124,20 @@
         <CompFileExtendedInfo CompFileName="design_1.bd" FileRelPathName="ip\design_1_processing_system7_0_0\design_1_processing_system7_0_0.xci">
           <Proxy FileSetName="design_1_processing_system7_0_0"/>
         </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="design_1.bd" FileRelPathName="ip\design_1_rst_ps7_0_50M_0\design_1_rst_ps7_0_50M_0.xci">
+          <Proxy FileSetName="design_1_rst_ps7_0_50M_0"/>
+        </CompFileExtendedInfo>
       </File>
       <File Path="$PGENDIR/sources_1/bd/design_1/hdl/design_1_wrapper.v">
         <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/delay.sv">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -237,9 +243,55 @@
         <Option Name="Dmv" Val=""/>
       </Config>
     </FileSet>
-    <FileSet Name="design_1_delay_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/design_1_delay_0_0" RelGenDir="$PGENDIR/design_1_delay_0_0">
+    <FileSet Name="design_1_rst_ps7_0_50M_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/design_1_rst_ps7_0_50M_0" RelGenDir="$PGENDIR/design_1_rst_ps7_0_50M_0">
       <Config>
-        <Option Name="TopModule" Val="design_1_delay_0_0"/>
+        <Option Name="TopModule" Val="design_1_rst_ps7_0_50M_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="delay_sim" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/delay_sim" RelGenDir="$PGENDIR/delay_sim">
+      <File Path="$PSRCDIR/delay_sim/new/delay_sim_tb.sv">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/delay_sim_tb_behav.wcfg">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <Config>
+        <Option Name="DesignMode" Val="RTL"/>
+        <Option Name="TopModule" Val="delay_sim_tb"/>
+        <Option Name="TopLib" Val="xil_defaultlib"/>
+        <Option Name="TransportPathDelay" Val="0"/>
+        <Option Name="TransportIntDelay" Val="0"/>
+        <Option Name="SelectedSimModel" Val="rtl"/>
+        <Option Name="PamDesignTestbench" Val=""/>
+        <Option Name="PamDutBypassFile" Val="xil_dut_bypass"/>
+        <Option Name="PamSignalDriverFile" Val="xil_bypass_driver"/>
+        <Option Name="PamPseudoTop" Val="pseudo_tb"/>
+        <Option Name="SrcSet" Val="sources_1"/>
+        <Option Name="XSimWcfgFile" Val="$PPRDIR/delay_sim_tb_behav.wcfg"/>
+        <Option Name="CosimPdi" Val=""/>
+        <Option Name="CosimPlatform" Val=""/>
+        <Option Name="CosimElf" Val=""/>
+        <Option Name="CosimRootfs" Val=""/>
+        <Option Name="CosimSDfile" Val=""/>
+        <Option Name="CosimSDDir" Val=""/>
+        <Option Name="CosimOutDir" Val=""/>
+        <Option Name="CosimXsa" Val=""/>
+        <Option Name="CosimAIKernel" Val=""/>
+        <Option Name="LogicalNoCTop" Val=""/>
+        <Option Name="LogicalNoCTopLib" Val=""/>
+        <Option Name="Dmv" Val=""/>
+      </Config>
+    </FileSet>
+    <FileSet Name="design_1_delay_axi_wrapper_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/design_1_delay_axi_wrapper_0_0" RelGenDir="$PGENDIR/design_1_delay_axi_wrapper_0_0">
+      <Config>
+        <Option Name="TopModule" Val="design_1_delay_axi_wrapper_0_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -323,9 +375,23 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="design_1_delay_0_0_synth_1" Type="Ft3:Synth" SrcSet="design_1_delay_0_0" Part="xc7z010clg400-1" ConstrsSet="design_1_delay_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/design_1_delay_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/design_1_delay_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/design_1_delay_0_0_synth_1" ParallelReportGen="true">
+    <Run Id="design_1_rst_ps7_0_50M_0_synth_1" Type="Ft3:Synth" SrcSet="design_1_rst_ps7_0_50M_0" Part="xc7z010clg400-1" ConstrsSet="design_1_rst_ps7_0_50M_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/design_1_rst_ps7_0_50M_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/design_1_rst_ps7_0_50M_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/design_1_rst_ps7_0_50M_0_synth_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2026"/>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2026">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2026"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="design_1_delay_axi_wrapper_0_0_synth_1" Type="Ft3:Synth" SrcSet="design_1_delay_axi_wrapper_0_0" Part="xc7z010clg400-1" ConstrsSet="design_1_delay_axi_wrapper_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/design_1_delay_axi_wrapper_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/design_1_delay_axi_wrapper_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/design_1_delay_axi_wrapper_0_0_synth_1" ParallelReportGen="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2026">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -436,9 +502,30 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="design_1_delay_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="design_1_delay_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="design_1_delay_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/design_1_delay_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/design_1_delay_0_0_impl_1" ParallelReportGen="true">
+    <Run Id="design_1_rst_ps7_0_50M_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="design_1_rst_ps7_0_50M_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="design_1_rst_ps7_0_50M_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/design_1_rst_ps7_0_50M_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/design_1_rst_ps7_0_50M_0_impl_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2026"/>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2026">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2026"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="design_1_delay_axi_wrapper_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="design_1_delay_axi_wrapper_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="design_1_delay_axi_wrapper_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/design_1_delay_axi_wrapper_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/design_1_delay_axi_wrapper_0_0_impl_1" ParallelReportGen="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2026">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>

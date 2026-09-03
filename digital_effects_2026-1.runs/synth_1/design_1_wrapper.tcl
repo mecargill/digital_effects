@@ -68,11 +68,16 @@ set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
 set_property webtalk.parent_dir C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.cache/wt [current_project]
 set_property parent.project_path C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.xpr [current_project]
-set_property XPM_LIBRARIES XPM_CDC [current_project]
+set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property board_part_repo_paths {C:/Users/cargi/AppData/Roaming/Xilinx/Vivado/2026.1/xhub/board_store/xilinx_board_store} [current_project]
 set_property board_part digilentinc.com:zybo-z7-10:part0:1.2 [current_project]
+set_property ip_repo_paths {
+  c:/Users/cargi/Documents/1Fa26/SD/ip_repo/delay_axi_wrapper_1_0
+  c:/Users/cargi/Documents/1Fa26/SD/ip_repo/delay_1_0
+} [current_project]
+update_ip_catalog
 set_property ip_output_repo c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
@@ -83,6 +88,11 @@ set_property used_in_implementation false [get_files -all c:/Users/cargi/Documen
 set_property used_in_implementation false [get_files -all c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0_board.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_0/bd_afc3_sc_ul_0_cdc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/ip/design_1_axi_smc_0/ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/ip/design_1_axi_smc_0/smartconnect.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/ip/design_1_rst_ps7_0_50M_0/design_1_rst_ps7_0_50M_0_board.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/ip/design_1_rst_ps7_0_50M_0/design_1_rst_ps7_0_50M_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/design_1_ooc.xdc]
 
 OPTRACE "Adding files" END { }
@@ -94,8 +104,8 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc C:/Users/cargi/Documents/1Fa26/SD/digilent-xdc-master/Zybo-Z7-Master.xdc
-set_property used_in_implementation false [get_files C:/Users/cargi/Documents/1Fa26/SD/digilent-xdc-master/Zybo-Z7-Master.xdc]
+read_xdc C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.srcs/constrs_1/imports/digilent-xdc-master/Zybo-Z7-Master.xdc
+set_property used_in_implementation false [get_files C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.srcs/constrs_1/imports/digilent-xdc-master/Zybo-Z7-Master.xdc]
 
 read_xdc dont_touch.xdc
 set_property used_in_implementation false [get_files dont_touch.xdc]

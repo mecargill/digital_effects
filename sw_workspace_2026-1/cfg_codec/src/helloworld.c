@@ -20,10 +20,16 @@
 #include <stdio.h>
 #include "platform.h"
 #include "xparameters.h"
+#include "xil_io.h"
 #include "xiicps.h"
 #include "sleep.h"
 
 #define CODEC_ADDR 0x1A // because " If the CSB pin is set to 0, the address selected is 001 1010" and from zybo schematic, csb is GND
+
+#define DELAY_BASE_ADDR XPAR_DELAY_AXI_WRAPPER_0_BASEADDR 
+#define DELAY_SAMPLES_REG_OFFSET  0x00
+#define FBK_REG_OFFSET  0x04
+#define MIX_REG_OFFSET  0x08
 
 XIicPs Iic;
 
@@ -41,6 +47,19 @@ void codec_write_reg(u8 reg_addr, u16 reg_data) {
     XIicPs_MasterSendPolled(&Iic, buffer, 2, CODEC_ADDR);
     while (XIicPs_BusIsBusy(&Iic)); // Wait for completion
 }
+
+void print_delay_params() {
+	//delay/48000 = number of seconds of delay (max is 48000, or 1s)
+	printf("delay = %u\n",
+       Xil_In32(DELAY_BASE_ADDR + DELAY_SAMPLES_REG_OFFSET));
+	//fbk = 0: one repetition at full volume. fbk = 2^16 -1: many repetitions (but 0 volume)
+	printf("fbk = %u\n",
+		Xil_In32(DELAY_BASE_ADDR + FBK_REG_OFFSET));
+	//mix = 0: only hear current. mix = 2^16 - 1: only hear delay
+	printf("mix = %u\n",
+		Xil_In32(DELAY_BASE_ADDR + MIX_REG_OFFSET));
+}
+
 
 
 int main()
@@ -71,11 +90,41 @@ int main()
 	codec_write_reg(0x08, 0x00); // Sampling Rate: 48kHz (Normal mode)
 	codec_write_reg(0x09, 0x01); // Active Control: Activate
 
-	print("Codec Configured.\n\r");
+	print("Codec Configured...\n\r");
+	
+	//Allow the uart terminal to configure the delay parameters
+	u32 sel = 5;
+	u32 input;
+	while (sel != 0) {
+		print_delay_params();
+		print("Select register to write:\n\r[0] to quit\n\r[1] delay time in samples (max 48000)\n\r[2] feedback stregth\n\r[3] mix ratio (0 is dry)\n\r");
+		scanf("%u", &sel);
+		if (sel != 0) {
+			print("What value to write?\n\r");
+			scanf("%u", &input);
+		}
+		
+		switch (sel) {
+		case 0:
+			print("Quitting\n\r");
+		case 1:
+			Xil_Out32(DELAY_BASE_ADDR + DELAY_SAMPLES_REG_OFFSET, input);
+			break;
+		case 2:
+			Xil_Out32(DELAY_BASE_ADDR + FBK_REG_OFFSET, input);
+			break;
+		case 3:
+			Xil_Out32(DELAY_BASE_ADDR + MIX_REG_OFFSET, input);
+			break;
+		default:
+			print("You've selected an invalid register\n\r");
+		}
+		
+	}
 
-
-	__asm__("wfi");
+	codec_write_reg(0x0F, 0x00); // Reset Codec
+	
     cleanup_platform();
-    print("----exiting main-------\n\r");
+    
     return 0;
 }

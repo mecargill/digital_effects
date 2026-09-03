@@ -1,0 +1,182 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2026.1 (win64) Build 6511674 Tue Jun 16 11:02:23 MDT 2026
+| Date         : Wed Sep  2 23:24:50 2026
+| Host         : MostlyEtc running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_delay_axi_wrapper_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_delay_axi_wrapper_0_0 (xilinx.com:user:delay_axi_wrapper:1.0) from (Rev. 8) to (Rev. 9)
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2026.1 (win64) Build 6511674 Tue Jun 16 11:02:23 MDT 2026
+| Date         : Wed Sep  2 23:18:11 2026
+| Host         : MostlyEtc running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_delay_axi_wrapper_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_delay_axi_wrapper_0_0 (xilinx.com:user:delay_axi_wrapper:1.0) from (Rev. 7) to (Rev. 8)
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2026.1 (win64) Build 6511674 Tue Jun 16 11:02:23 MDT 2026
+| Date         : Wed Sep  2 22:55:13 2026
+| Host         : MostlyEtc running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_delay_axi_wrapper_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_delay_axi_wrapper_0_0 (xilinx.com:user:delay_axi_wrapper:1.0) from (Rev. 6) to (Rev. 7)
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2026.1 (win64) Build 6511674 Tue Jun 16 11:02:23 MDT 2026
+| Date         : Wed Sep  2 22:34:00 2026
+| Host         : MostlyEtc running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_delay_axi_wrapper_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_delay_axi_wrapper_0_0 (xilinx.com:user:delay_axi_wrapper:1.0) from (Rev. 5) to (Rev. 6)
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2026.1 (win64) Build 6511674 Tue Jun 16 11:02:23 MDT 2026
+| Date         : Wed Sep  2 22:32:44 2026
+| Host         : MostlyEtc running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_delay_axi_wrapper_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_delay_axi_wrapper_0_0 (xilinx.com:user:delay_axi_wrapper:1.0) from (Rev. 4) to (Rev. 5)
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2026.1 (win64) Build 6511674 Tue Jun 16 11:02:23 MDT 2026
+| Date         : Wed Sep  2 21:44:09 2026
+| Host         : MostlyEtc running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_delay_axi_wrapper_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_delay_axi_wrapper_0_0 (xilinx.com:user:delay_axi_wrapper:1.0) from (Rev. 3) to (Rev. 4)
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2026.1 (win64) Build 6511674 Tue Jun 16 11:02:23 MDT 2026
+| Date         : Wed Sep  2 21:28:27 2026
+| Host         : MostlyEtc running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_delay_axi_wrapper_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_delay_axi_wrapper_0_0 (xilinx.com:user:delay_axi_wrapper:1.0) from (Rev. 2) to (Rev. 3)
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2026.1 (win64) Build 6511674 Tue Jun 16 11:02:23 MDT 2026
+| Date         : Wed Sep  2 20:04:26 2026
+| Host         : MostlyEtc running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_delay_axi_wrapper_0_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of design_1_delay_axi_wrapper_0_0 (xilinx.com:user:delay_axi_wrapper:1.0) from (Rev. 1) to (Rev. 2)
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'design_1_delay_axi_wrapper_0_0'. These changes may impact your design.
+
+
+-Upgrade has added port 'audio_clk'
+
+-Upgrade has added port 'sample_in'
+
+-Upgrade has added port 'sample_in_valid'
+
+-Upgrade has added port 'sample_out'
+
+-Upgrade has added port 'sample_out_valid'
+
+

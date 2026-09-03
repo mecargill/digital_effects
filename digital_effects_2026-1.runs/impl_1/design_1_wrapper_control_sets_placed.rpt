@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2026.1 (win64) Build 6511674 Tue Jun 16 11:02:23 MDT 2026
-| Date         : Tue Aug 25 15:30:50 2026
+| Date         : Wed Sep  2 23:31:30 2026
 | Host         : MostlyEtc running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file design_1_wrapper_control_sets_placed.rpt
 | Design       : design_1_wrapper
@@ -23,11 +23,11 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Total control sets                                       |     8 |
-|    Minimum number of control sets                        |     8 |
+| Total control sets                                       |    46 |
+|    Minimum number of control sets                        |    46 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |     6 |
+| Unused register locations in slices containing registers |    82 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -39,15 +39,15 @@ Table of Contents
 +--------------------+-------+
 |       Fanout       | Count |
 +--------------------+-------+
-| Total control sets |     8 |
+| Total control sets |    46 |
 | >= 0 to < 4        |     0 |
-| >= 4 to < 6        |     0 |
-| >= 6 to < 8        |     0 |
-| >= 8 to < 10       |     1 |
-| >= 10 to < 12      |     0 |
-| >= 12 to < 14      |     1 |
+| >= 4 to < 6        |     2 |
+| >= 6 to < 8        |     3 |
+| >= 8 to < 10       |    18 |
+| >= 10 to < 12      |     5 |
+| >= 12 to < 14      |     5 |
 | >= 14 to < 16      |     0 |
-| >= 16              |     6 |
+| >= 16              |    13 |
 +--------------------+-------+
 * Control sets can be remapped at either synth_design or opt_design
 
@@ -58,29 +58,67 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |               8 |            4 |
+| No           | No                    | No                     |              92 |           38 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |               0 |            0 |
-| Yes          | No                    | No                     |             132 |           35 |
+| No           | Yes                   | No                     |             118 |           43 |
+| Yes          | No                    | No                     |             120 |           38 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |              70 |           17 |
+| Yes          | Yes                   | No                     |             420 |          136 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 4. Detailed Control Set Information
 -----------------------------------
 
-+-------------------------------------+-------------------------------------------------+----------------------------------------------+------------------+----------------+--------------+
-|             Clock Signal            |                  Enable Signal                  |               Set/Reset Signal               | Slice Load Count | Bel Load Count | Bels / Slice |
-+-------------------------------------+-------------------------------------------------+----------------------------------------------+------------------+----------------+--------------+
-|  design_1_i/clk_wiz_0/inst/clk_out1 |                                                 |                                              |                4 |              8 |         2.00 |
-|  design_1_i/clk_wiz_0/inst/clk_out1 | design_1_i/bclk_div_0/inst/bclk_fall_en         |                                              |                2 |             13 |         6.50 |
-|  design_1_i/clk_wiz_0/inst/clk_out1 | design_1_i/i2s_tx_0/inst/tx_buf_l[23]_i_1_n_0   |                                              |                6 |             23 |         3.83 |
-|  design_1_i/clk_wiz_0/inst/clk_out1 | design_1_i/i2s_tx_0/inst/tx_buf_r[23]_i_1_n_0   |                                              |                6 |             24 |         4.00 |
-|  design_1_i/clk_wiz_0/inst/clk_out1 | design_1_i/i2s_rx_0/inst/sample_out[23]_i_1_n_0 |                                              |                9 |             24 |         2.67 |
-|  design_1_i/clk_wiz_0/inst/clk_out1 | design_1_i/i2s_rx_0/inst/sample_out_valid       |                                              |                6 |             24 |         4.00 |
-|  design_1_i/clk_wiz_0/inst/clk_out1 | design_1_i/delay_0/inst/sample_out_valid        |                                              |                6 |             24 |         4.00 |
-|  design_1_i/clk_wiz_0/inst/clk_out1 | design_1_i/i2s_rx_0/inst/sample_out_valid       | design_1_i/delay_0/inst/cur_addr[14]_i_1_n_0 |               17 |             70 |         4.12 |
-+-------------------------------------+-------------------------------------------------+----------------------------------------------+------------------+----------------+--------------+
++-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+------------------+----------------+--------------+
+|                   Clock Signal                  |                                                        Enable Signal                                                       |                                                      Set/Reset Signal                                                      | Slice Load Count | Bel Load Count | Bels / Slice |
++-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+------------------+----------------+--------------+
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 |                                                                                                                            | design_1_i/rst_ps7_0_50M/U0/EXT_LPF/lpf_int                                                                                |                1 |              4 |         4.00 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 | design_1_i/axi_smc/inst/sc_ul/inst/gen_axi_full_nxm.sasd_inst/gen_write.aw_incr[2]_i_1_n_0                                 | design_1_i/axi_smc/inst/sc_ul/inst/gen_axi_full_nxm.sasd_inst/gen_read.s_axi_arready_vec_i[0]_i_1_n_0                      |                2 |              5 |         2.50 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 | design_1_i/axi_smc/inst/sc_ul/inst/gen_axi_full_nxm.sasd_inst/last_r_split                                                 | design_1_i/axi_smc/inst/sc_ul/inst/gen_axi_full_nxm.sasd_inst/gen_read.s_axi_arready_vec_i[0]_i_1_n_0                      |                2 |              6 |         3.00 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 | design_1_i/axi_smc/inst/sc_ul/inst/gen_axi_full_nxm.sasd_inst/gen_write.w_split[4]_i_1_n_0                                 | design_1_i/axi_smc/inst/sc_ul/inst/gen_axi_full_nxm.sasd_inst/gen_read.s_axi_arready_vec_i[0]_i_1_n_0                      |                2 |              6 |         3.00 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 | design_1_i/rst_ps7_0_50M/U0/SEQ/seq_cnt_en                                                                                 | design_1_i/rst_ps7_0_50M/U0/SEQ/SEQ_COUNTER/clear                                                                          |                1 |              6 |         6.00 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 | design_1_i/delay_axi_wrapper_0/inst/delay_axi_wrapper_slave_lite_v1_0_S00_AXI_inst/slv_reg2[31]_i_1_n_0                    | design_1_i/delay_axi_wrapper_0/inst/delay_axi_wrapper_slave_lite_v1_0_S00_AXI_inst/axi_awready_i_1_n_0                     |                3 |              8 |         2.67 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 | design_1_i/delay_axi_wrapper_0/inst/delay_axi_wrapper_slave_lite_v1_0_S00_AXI_inst/slv_reg2[15]_i_1_n_0                    | design_1_i/delay_axi_wrapper_0/inst/delay_axi_wrapper_slave_lite_v1_0_S00_AXI_inst/axi_awready_i_1_n_0                     |                5 |              8 |         1.60 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 | design_1_i/delay_axi_wrapper_0/inst/delay_axi_wrapper_slave_lite_v1_0_S00_AXI_inst/slv_reg3[31]_i_1_n_0                    | design_1_i/delay_axi_wrapper_0/inst/delay_axi_wrapper_slave_lite_v1_0_S00_AXI_inst/axi_awready_i_1_n_0                     |                3 |              8 |         2.67 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 | design_1_i/delay_axi_wrapper_0/inst/delay_axi_wrapper_slave_lite_v1_0_S00_AXI_inst/slv_reg2[7]_i_1_n_0                     | design_1_i/delay_axi_wrapper_0/inst/delay_axi_wrapper_slave_lite_v1_0_S00_AXI_inst/axi_awready_i_1_n_0                     |                2 |              8 |         4.00 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 | design_1_i/axi_smc/inst/sc_ul/inst/gen_axi_full_nxm.sasd_inst/last_r_repeat                                                | design_1_i/axi_smc/inst/sc_ul/inst/gen_axi_full_nxm.sasd_inst/gen_read.s_axi_arready_vec_i[0]_i_1_n_0                      |                4 |              8 |         2.00 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 | design_1_i/delay_axi_wrapper_0/inst/delay_axi_wrapper_slave_lite_v1_0_S00_AXI_inst/slv_reg3[7]_i_1_n_0                     | design_1_i/delay_axi_wrapper_0/inst/delay_axi_wrapper_slave_lite_v1_0_S00_AXI_inst/axi_awready_i_1_n_0                     |                4 |              8 |         2.00 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 | design_1_i/delay_axi_wrapper_0/inst/delay_axi_wrapper_slave_lite_v1_0_S00_AXI_inst/slv_reg1[7]_i_1_n_0                     | design_1_i/delay_axi_wrapper_0/inst/delay_axi_wrapper_slave_lite_v1_0_S00_AXI_inst/axi_awready_i_1_n_0                     |                3 |              8 |         2.67 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 | design_1_i/delay_axi_wrapper_0/inst/delay_axi_wrapper_slave_lite_v1_0_S00_AXI_inst/slv_reg1[31]_i_1_n_0                    | design_1_i/delay_axi_wrapper_0/inst/delay_axi_wrapper_slave_lite_v1_0_S00_AXI_inst/axi_awready_i_1_n_0                     |                3 |              8 |         2.67 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 | design_1_i/delay_axi_wrapper_0/inst/delay_axi_wrapper_slave_lite_v1_0_S00_AXI_inst/slv_reg2[23]_i_1_n_0                    | design_1_i/delay_axi_wrapper_0/inst/delay_axi_wrapper_slave_lite_v1_0_S00_AXI_inst/axi_awready_i_1_n_0                     |                3 |              8 |         2.67 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 | design_1_i/delay_axi_wrapper_0/inst/delay_axi_wrapper_slave_lite_v1_0_S00_AXI_inst/p_1_in[23]                              | design_1_i/delay_axi_wrapper_0/inst/delay_axi_wrapper_slave_lite_v1_0_S00_AXI_inst/axi_awready_i_1_n_0                     |                3 |              8 |         2.67 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 | design_1_i/delay_axi_wrapper_0/inst/delay_axi_wrapper_slave_lite_v1_0_S00_AXI_inst/p_1_in[31]                              | design_1_i/delay_axi_wrapper_0/inst/delay_axi_wrapper_slave_lite_v1_0_S00_AXI_inst/axi_awready_i_1_n_0                     |                3 |              8 |         2.67 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 | design_1_i/delay_axi_wrapper_0/inst/delay_axi_wrapper_slave_lite_v1_0_S00_AXI_inst/p_1_in[15]                              | design_1_i/delay_axi_wrapper_0/inst/delay_axi_wrapper_slave_lite_v1_0_S00_AXI_inst/axi_awready_i_1_n_0                     |                4 |              8 |         2.00 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 | design_1_i/delay_axi_wrapper_0/inst/delay_axi_wrapper_slave_lite_v1_0_S00_AXI_inst/p_1_in[7]                               | design_1_i/delay_axi_wrapper_0/inst/delay_axi_wrapper_slave_lite_v1_0_S00_AXI_inst/axi_awready_i_1_n_0                     |                4 |              8 |         2.00 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 | design_1_i/delay_axi_wrapper_0/inst/delay_axi_wrapper_slave_lite_v1_0_S00_AXI_inst/slv_reg3[15]_i_1_n_0                    | design_1_i/delay_axi_wrapper_0/inst/delay_axi_wrapper_slave_lite_v1_0_S00_AXI_inst/axi_awready_i_1_n_0                     |                3 |              8 |         2.67 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 | design_1_i/delay_axi_wrapper_0/inst/delay_axi_wrapper_slave_lite_v1_0_S00_AXI_inst/slv_reg1[15]_i_1_n_0                    | design_1_i/delay_axi_wrapper_0/inst/delay_axi_wrapper_slave_lite_v1_0_S00_AXI_inst/axi_awready_i_1_n_0                     |                2 |              8 |         4.00 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 | design_1_i/delay_axi_wrapper_0/inst/delay_axi_wrapper_slave_lite_v1_0_S00_AXI_inst/slv_reg1[23]_i_1_n_0                    | design_1_i/delay_axi_wrapper_0/inst/delay_axi_wrapper_slave_lite_v1_0_S00_AXI_inst/axi_awready_i_1_n_0                     |                2 |              8 |         4.00 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 | design_1_i/delay_axi_wrapper_0/inst/delay_axi_wrapper_slave_lite_v1_0_S00_AXI_inst/slv_reg3[23]_i_1_n_0                    | design_1_i/delay_axi_wrapper_0/inst/delay_axi_wrapper_slave_lite_v1_0_S00_AXI_inst/axi_awready_i_1_n_0                     |                2 |              8 |         4.00 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 | design_1_i/axi_smc/inst/sc_ul/inst/gen_axi_full_nxm.sasd_inst/r_beats[0]                                                   | design_1_i/axi_smc/inst/sc_ul/inst/gen_axi_full_nxm.sasd_inst/gen_read.s_axi_arready_vec_i[0]_i_1_n_0                      |                4 |              9 |         2.25 |
+|  design_1_i/clk_wiz_0/inst/clk_out1             |                                                                                                                            |                                                                                                                            |                6 |             10 |         1.67 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 |                                                                                                                            | design_1_i/delay_axi_wrapper_0/inst/delay_axi_wrapper_slave_lite_v1_0_S00_AXI_inst/axi_awready_i_1_n_0                     |                3 |             11 |         3.67 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 | design_1_i/axi_smc/inst/sc_ul/inst/gen_axi_full_nxm.sasd_inst/gen_write.b_cnt[10]_i_2_n_0                                  | design_1_i/axi_smc/inst/sc_ul/inst/gen_axi_full_nxm.sasd_inst/gen_write.b_cnt[10]_i_1_n_0                                  |                3 |             11 |         3.67 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 | design_1_i/axi_smc/inst/sc_ul/inst/gen_axi_full_nxm.sasd_inst/gen_write.wstrb_mux/E[0]                                     | design_1_i/axi_smc/inst/sc_ul/inst/gen_axi_full_nxm.sasd_inst/gen_read.s_axi_arready_vec_i[0]_i_1_n_0                      |                3 |             11 |         3.67 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 | design_1_i/axi_smc/inst/sc_ul/inst/gen_axi_full_nxm.sasd_inst/r_cnt[0]                                                     | design_1_i/axi_smc/inst/sc_ul/inst/gen_axi_full_nxm.sasd_inst/gen_read.s_axi_arready_vec_i[0]_i_1_n_0                      |                7 |             11 |         1.57 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 | design_1_i/axi_smc/inst/sc_ul/inst/gen_axi_full_nxm.sasd_inst/ar_addr[0]                                                   | design_1_i/axi_smc/inst/sc_ul/inst/gen_axi_full_nxm.sasd_inst/gen_read.s_axi_arready_vec_i[0]_i_1_n_0                      |                6 |             12 |         2.00 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 | design_1_i/axi_smc/inst/sc_ul/inst/gen_axi_full_nxm.sasd_inst/gen_read.m_arprot[2]_i_1_n_0                                 |                                                                                                                            |                3 |             12 |         4.00 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 | design_1_i/axi_smc/inst/sc_ul/inst/gen_axi_full_nxm.sasd_inst/gen_write.aw_addr[3]_i_1_n_0                                 | design_1_i/axi_smc/inst/sc_ul/inst/gen_axi_full_nxm.sasd_inst/gen_read.s_axi_arready_vec_i[0]_i_1_n_0                      |                5 |             12 |         2.40 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 | design_1_i/axi_smc/inst/sc_ul/inst/gen_axi_full_nxm.sasd_inst/s_bid[0]                                                     | design_1_i/axi_smc/inst/sc_ul/inst/gen_axi_full_nxm.sasd_inst/gen_read.s_axi_arready_vec_i[0]_i_1_n_0                      |                2 |             12 |         6.00 |
+|  design_1_i/clk_wiz_0/inst/clk_out1             | design_1_i/bclk_div_0/inst/bclk_fall_en                                                                                    |                                                                                                                            |                4 |             13 |         3.25 |
+|  design_1_i/clk_wiz_0/inst/clk_out1             | design_1_i/i2s_tx_0/inst/tx_buf_l[23]_i_1_n_0                                                                              |                                                                                                                            |                8 |             23 |         2.88 |
+|  design_1_i/clk_wiz_0/inst/clk_out1             | design_1_i/delay_axi_wrapper_0/inst/delay_internals/sample_out_valid                                                       |                                                                                                                            |                7 |             24 |         3.43 |
+|  design_1_i/clk_wiz_0/inst/clk_out1             | design_1_i/i2s_rx_0/inst/sample_out[23]_i_1_n_0                                                                            |                                                                                                                            |                8 |             24 |         3.00 |
+|  design_1_i/clk_wiz_0/inst/clk_out1             | design_1_i/i2s_tx_0/inst/tx_buf_r[23]_i_1_n_0                                                                              |                                                                                                                            |                8 |             24 |         3.00 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 |                                                                                                                            | design_1_i/axi_smc/inst/sc_ul/inst/gen_axi_full_nxm.sasd_inst/gen_read.s_axi_arready_vec_i[0]_i_1_n_0                      |               16 |             30 |         1.88 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 | design_1_i/axi_smc/inst/sc_ul/inst/gen_axi_full_nxm.sasd_inst/gen_read.m_r_en_reg_n_0                                      | design_1_i/axi_smc/inst/sc_ul/inst/gen_axi_full_nxm.sasd_inst/gen_read.arctrl_mux/gen_read.m_r_en_reg                      |               15 |             32 |         2.13 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 | design_1_i/axi_smc/inst/sc_ul/inst/gen_axi_full_nxm.sasd_inst/gen_read.arid_mux/s_r_en                                     | design_1_i/axi_smc/inst/sc_ul/inst/gen_axi_full_nxm.sasd_inst/gen_read.araddr_mux/FSM_sequential_gen_read.r_state_reg[2]   |                7 |             32 |         4.57 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 | design_1_i/axi_smc/inst/sc_ul/inst/gen_axi_full_nxm.sasd_inst/gen_read.r_m_dwsize_mux/E[0]                                 | design_1_i/axi_smc/inst/sc_ul/inst/gen_axi_full_nxm.sasd_inst/gen_read.s_axi_arready_vec_i[0]_i_1_n_0                      |                8 |             32 |         4.00 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 | design_1_i/axi_smc/inst/sc_ul/inst/gen_axi_full_nxm.sasd_inst/gen_write.awaddr_mux/FSM_sequential_gen_write.w_state_reg[2] | design_1_i/axi_smc/inst/sc_ul/inst/gen_axi_full_nxm.sasd_inst/gen_write.awaddr_mux/FSM_sequential_gen_write.w_state_reg[0] |                6 |             32 |         5.33 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 |                                                                                                                            | design_1_i/axi_smc/inst/sc_ul/inst/gen_axi_full_nxm.sasd_inst/gen_write.m_wdata[31]_i_1_n_0                                |               12 |             36 |         3.00 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 |                                                                                                                            | design_1_i/axi_smc/inst/sc_ul/inst/gen_axi_full_nxm.sasd_inst/gen_write.wdata_mux/gen_write.w_grant_i_reg                  |               11 |             37 |         3.36 |
+|  design_1_i/clk_wiz_0/inst/clk_out1             | design_1_i/i2s_rx_0/inst/sample_out_valid                                                                                  | design_1_i/delay_axi_wrapper_0/inst/delay_axi_wrapper_slave_lite_v1_0_S00_AXI_inst/cur_addr[0]                             |               10 |             55 |         5.50 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 |                                                                                                                            |                                                                                                                            |               33 |             83 |         2.52 |
++-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+------------------+----------------+--------------+
 
 

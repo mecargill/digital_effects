@@ -30,7 +30,7 @@
         "resetAPU": false,
         "bitstreamFile": "${workspaceFolder}\\cfg_codec\\_ide\\bitstream\\design_1_wrapper.bit",
         "zynqInitialization": {
-          "isFsbl": false,
+          "isFsbl": true,
           "usingFSBL": {
             "initWithFSBL": true,
             "fsblFile": "${workspaceFolder}\\platform\\export\\platform\\sw\\boot\\fsbl.elf",
@@ -39,7 +39,7 @@
           "usingPs7Init": {
             "runPs7Init": true,
             "runPs7PostInit": true,
-            "ps7InitTclFile": "${workspaceFolder}\\cfg_codec\\_ide\\psinit\\ps7_init.tcl"
+            "ps7InitTclFile": "${workspaceFolder}\\cfg_codec\\_ide\\psinit\\delay_axi_wrapper.tcl"
           }
         },
         "downloadElf": [
