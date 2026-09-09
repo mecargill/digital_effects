@@ -1,0 +1,46 @@
+INFO: [Common 17-3922] A valid Vivado Design Suite BASIC license has been detected. Your current license is active and will expire on 20-aug-2027.
+#-----------------------------------------------------------
+# Vivado v2026.1 (64-bit)
+# SW Build 6511674 on Tue Jun 16 11:02:23 MDT 2026
+# IP Build 6504888 on Tue Jun 09 09:05:25 MDT 2026
+# SharedData Build 6501428 on Mon Jun 08 17:34:18 MDT 2026
+# Start of session at: Tue Aug 25 15:51:56 2026
+# Process ID         : 32316
+# Current directory  : C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1
+# Command line       : vivado.exe -gui_launcher_event rodinguilauncherevent20552 C:\Users\cargi\Documents\1Fa26\SD\digital_effects_2026-1\digital_effects_2026-1.xpr
+# Log file           : C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/vivado.log
+# Journal file       : C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1\vivado.jou
+# Running On         : MostlyEtc
+# Platform           : Windows 11
+# Operating System   : 26200
+# Processor Detail   : 12th Gen Intel(R) Core(TM) i7-12700H
+# CPU Frequency      : 2688 MHz
+# CPU Physical cores : 14
+# CPU Logical cores  : 20
+# Host memory        : 16834 MB
+# Swap memory        : 17179 MB
+# Total Virtual      : 34014 MB
+# Available Virtual  : 15291 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/AMDDesignTools/2026.1/Vivado/data/ip'.
+open_project: Time (s): cpu = 00:00:40 ; elapsed = 00:00:16 . Memory (MB): peak = 1779.793 ; gain = 386.609
+import_files
+INFO: [filemgmt 20-334] All file(s) are already imported in fileset: 'design_1_bclk_div_0_0'
+INFO: [filemgmt 20-334] All file(s) are already imported in fileset: 'design_1_clk_wiz_0_0'
+INFO: [filemgmt 20-334] All file(s) are already imported in fileset: 'design_1_delay_0_0'
+INFO: [filemgmt 20-334] All file(s) are already imported in fileset: 'design_1_i2s_rx_0_0'
+INFO: [filemgmt 20-334] All file(s) are already imported in fileset: 'design_1_i2s_tx_0_0'
+INFO: [filemgmt 20-334] All file(s) are already imported in fileset: 'design_1_processing_system7_0_0'
+INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'constrs_1'
+INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'i2s_simulation'
+INFO: [filemgmt 20-334] All file(s) are already imported in fileset: 'sources_1'
+INFO: [filemgmt 20-334] All file(s) are already imported in fileset: 'utils_1'
+update_compile_order -fileset sources_1
+exit
+INFO: [Common 17-206] Exiting Vivado at Tue Aug 25 15:53:14 2026...

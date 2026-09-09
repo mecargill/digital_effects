@@ -48,8 +48,7 @@
     <Option Name="ActiveSimSet" Val="delay_sim"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
     <Option Name="ProjectType" Val="Default"/>
-    <Option Name="IPRepoPath" Val="$PPRDIR/../ip_repo/delay_axi_wrapper_1_0"/>
-    <Option Name="IPRepoPath" Val="$PPRDIR/../ip_repo/delay_1_0"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/ip_repo"/>
     <Option Name="IPOutputRepo" Val="$PCACHEDIR/ip"/>
     <Option Name="IPDefaultOutputPath" Val="$PGENDIR/sources_1"/>
     <Option Name="IPCachePermission" Val="read"/>
