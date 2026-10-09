@@ -504,3 +504,5 @@ INFO: [Project 1-1943] The Hardware Platform can be used for Hardware
 INFO: [Project 1-1941] Successfully created Hardware Platform: C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/design_1_wrapper.xsa
 INFO: [Hsi 55-2053] elapsed time for repository (C:/AMDDesignTools/2026.1/Vivado/data/embeddedsw) loading 9 seconds
 write_hw_platform: Time (s): cpu = 00:00:09 ; elapsed = 00:00:16 . Memory (MB): peak = 3847.406 ; gain = 0.000
+exit
+INFO: [Common 17-206] Exiting Vivado at Thu Oct  8 21:00:31 2026...
