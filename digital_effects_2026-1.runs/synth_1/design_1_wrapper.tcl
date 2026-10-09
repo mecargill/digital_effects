@@ -57,6 +57,7 @@ if {$::dispatch::connected} {
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param general.usePosixSpawnForFork 1
+set_msg_config -id {HDL-1065} -limit 10000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7z010clg400-1
 
@@ -71,10 +72,7 @@ set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property board_part_repo_paths {C:/Users/cargi/AppData/Roaming/Xilinx/Vivado/2026.1/xhub/board_store/xilinx_board_store} [current_project]
 set_property board_part digilentinc.com:zybo-z7-10:part0:1.2 [current_project]
-set_property ip_repo_paths {
-  c:/Users/cargi/Documents/1Fa26/SD/ip_repo/delay_axi_wrapper_1_0
-  c:/Users/cargi/Documents/1Fa26/SD/ip_repo/delay_1_0
-} [current_project]
+set_property ip_repo_paths c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_repo [current_project]
 update_ip_catalog
 set_property ip_output_repo c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]

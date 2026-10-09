@@ -18,6 +18,18 @@
 			clock-frequency = <12288013>;
 			#clock-cells = <0>;
 		};
+		chorus_axi_wrapper_0: chorus_axi_wrapper@43c10000 {
+			xlnx,s00-axi-data-width = <32>;
+			compatible = "xlnx,chorus-axi-wrapper-1.0";
+			status = "okay";
+			clock-names = "audio_clk" , "s00_axi_aclk";
+			xlnx,s00-axi-addr-width = <4>;
+			xlnx,ip-name = "chorus_axi_wrapper";
+			xlnx,edk-iptype = "PERIPHERAL";
+			reg = <0x43c10000 0x10000>;
+			clocks = <&misc_clk_0>, <&clkc 15>;
+			xlnx,name = "chorus_axi_wrapper_0";
+		};
 		delay_axi_wrapper_0: delay_axi_wrapper@43c00000 {
 			xlnx,s00-axi-data-width = <32>;
 			compatible = "xlnx,delay-axi-wrapper-1.0";

@@ -97,6 +97,7 @@ proc step_failed { step } {
 OPTRACE "impl_1" END { }
 }
 
+set_msg_config -id {HDL-1065} -limit 10000
 
 OPTRACE "impl_1" START { ROLLUP_1 }
 OPTRACE "Phase: Init Design" START { ROLLUP_AUTO }
@@ -117,10 +118,7 @@ OPTRACE "create in-memory project" END { }
 OPTRACE "set parameters" START { }
   set_property webtalk.parent_dir C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.cache/wt [current_project]
   set_property parent.project_path C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.xpr [current_project]
-  set_property ip_repo_paths {
-  C:/Users/cargi/Documents/1Fa26/SD/ip_repo/delay_axi_wrapper_1_0
-  C:/Users/cargi/Documents/1Fa26/SD/ip_repo/delay_1_0
-} [current_project]
+  set_property ip_repo_paths C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_repo [current_project]
   update_ip_catalog
   set_property ip_output_repo C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]

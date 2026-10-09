@@ -4,10 +4,10 @@ INFO: [Common 17-3922] A valid Vivado Design Suite BASIC license has been detect
 # SW Build 6511674 on Tue Jun 16 11:02:23 MDT 2026
 # IP Build 6504888 on Tue Jun 09 09:05:25 MDT 2026
 # SharedData Build 6501428 on Mon Jun 08 17:34:18 MDT 2026
-# Start of session at: Wed Sep  9 13:40:02 2026
-# Process ID         : 6540
+# Start of session at: Thu Oct  8 15:58:59 2026
+# Process ID         : 14884
 # Current directory  : C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1
-# Command line       : vivado.exe -gui_launcher_event rodinguilauncherevent24796 C:\Users\cargi\Documents\1Fa26\SD\digital_effects_2026-1\digital_effects_2026-1.xpr
+# Command line       : vivado.exe -gui_launcher_event rodinguilauncherevent30916 C:\Users\cargi\Documents\1Fa26\SD\digital_effects_2026-1\digital_effects_2026-1.xpr
 # Log file           : C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/vivado.log
 # Journal file       : C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1\vivado.jou
 # Running On         : MostlyEtc
@@ -18,30 +18,20 @@ INFO: [Common 17-3922] A valid Vivado Design Suite BASIC license has been detect
 # CPU Physical cores : 14
 # CPU Logical cores  : 20
 # Host memory        : 16834 MB
-# Swap memory        : 16106 MB
-# Total Virtual      : 32941 MB
-# Available Virtual  : 16004 MB
+# Swap memory        : 15032 MB
+# Total Virtual      : 31867 MB
+# Available Virtual  : 13548 MB
 #-----------------------------------------------------------
 start_gui
 open_project C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.xpr
-WARNING: [filemgmt 56-3] IP Repository Path: Could not find the directory 'C:/Users/cargi/Documents/1Fa26/SD/ip_repo/delay_axi_wrapper_1_0'.
-WARNING: [filemgmt 56-3] IP Repository Path: Could not find the directory 'C:/Users/cargi/Documents/1Fa26/SD/ip_repo/delay_1_0'.
 Scanning sources...
 Finished scanning sources
 INFO: [IP_Flow 19-234] Refreshing IP repositories
-WARNING: [IP_Flow 19-2248] Failed to load user IP repository 'c:/Users/cargi/Documents/1Fa26/SD/ip_repo/delay_axi_wrapper_1_0'; Can't find the specified path.
-If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
-WARNING: [IP_Flow 19-2248] Failed to load user IP repository 'c:/Users/cargi/Documents/1Fa26/SD/ip_repo/delay_1_0'; Can't find the specified path.
-If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_repo'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/AMDDesignTools/2026.1/Vivado/data/ip'.
-WARNING: [BD 41-1661] One or more IPs have been locked in the design 'design_1.bd'. Please run report_ip_status for more details and recommendations on how to fix this issue.
-List of locked IPs:
-design_1_delay_axi_wrapper_0_0
-
-open_project: Time (s): cpu = 00:01:38 ; elapsed = 00:01:25 . Memory (MB): peak = 1772.805 ; gain = 383.734
-exit
-INFO: [Common 17-206] Exiting Vivado at Wed Sep  9 13:42:38 2026...
-ocuments/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.srcs/sources_1/bd/design_1/design_1.bd}
+open_project: Time (s): cpu = 00:00:33 ; elapsed = 00:00:15 . Memory (MB): peak = 1802.969 ; gain = 386.387
+update_compile_order -fileset sources_1
+open_bd_design {C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.srcs/sources_1/bd/design_1/design_1.bd}
 Reading block design file <C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.srcs/sources_1/bd/design_1/design_1.bd>...
 Adding component instance block -- xilinx.com:ip:processing_system7:5.5 - processing_system7_0
 Adding component instance block -- xilinx.com:ip:clk_wiz:6.0 - clk_wiz_0
@@ -54,32 +44,463 @@ Adding component instance block -- xilinx.com:user:delay_axi_wrapper:1.0 - delay
 Adding component instance block -- xilinx.com:ip:smartconnect:1.0 - axi_smc
 Adding component instance block -- xilinx.com:ip:proc_sys_reset:5.0 - rst_ps7_0_50M
 Successfully read diagram <design_1> from block design file <C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.srcs/sources_1/bd/design_1/design_1.bd>
-open_bd_design: Time (s): cpu = 00:00:11 ; elapsed = 00:00:08 . Memory (MB): peak = 2076.840 ; gain = 262.379
-set_property  ip_repo_paths  c:/Users/cargi/Documents/1Fa26/SD/ip_repo/delay_1_0 [current_project]
-update_ip_catalog
-INFO: [IP_Flow 19-234] Refreshing IP repositories
-WARNING: [IP_Flow 19-2248] Failed to load user IP repository 'c:/Users/cargi/Documents/1Fa26/SD/ip_repo/delay_1_0'; Can't find the specified path.
-If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
-set_property  ip_repo_paths  {} [current_project]
-update_ip_catalog
-INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1704] No user IP repositories specified
-set_property  ip_repo_paths  C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_repo [current_project]
-update_ip_catalog
-INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_repo'.
-ipx::edit_ip_in_project -upgrade true -name delay_axi_wrapper_v1_0_project -directory C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.tmp/delay_axi_wrapper_v1_0_project c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_repo/delay_axi_wrapper_1_0/component.xml
+open_bd_design: Time (s): cpu = 00:00:10 ; elapsed = 00:00:07 . Memory (MB): peak = 1942.145 ; gain = 133.344
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:user:chorus_axi_wrapper:1.0 chorus_axi_wrapper_0
+endgroup
+ipx::edit_ip_in_project -upgrade true -name chorus_axi_wrapper_v1_0_project -directory C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.tmp/chorus_axi_wrapper_v1_0_project c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_repo/chorus_axi_wrapper_1_0/component.xml
 INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter.
-Current project path is 'c:/users/cargi/documents/1fa26/sd/digital_effects_2026-1/digital_effects_2026-1.tmp/delay_axi_wrapper_v1_0_project'
+Current project path is 'c:/users/cargi/documents/1fa26/sd/digital_effects_2026-1/digital_effects_2026-1.tmp/chorus_axi_wrapper_v1_0_project'
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/AMDDesignTools/2026.1/Vivado/data/ip'.
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_repo'.
 INFO: [IP_Flow 19-795] Syncing license key meta-data
-CRITICAL WARNING: [IP_Flow 19-3667] Component file 'c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1/digital_effects_2026-1.srcs/sources_1/new/delay.sv' does not exist. The file is ignored.
-CRITICAL WARNING: [IP_Flow 19-3667] Component file 'c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1/digital_effects_2026-1.srcs/sources_1/new/delay.sv' does not exist. The file is ignored.
 update_compile_order -fileset sources_1
+set_property top chorus_axi_wrapper_slave_lite_v1_0_S00_AXI [current_fileset]
+update_compile_order -fileset sources_1
+set_property top chorus_axi_wrapper [current_fileset]
+update_compile_order -fileset sources_1
+ipx::merge_project_changes ports [ipx::current_core]
+INFO: [IP_Flow 19-5107] Inferred bus interface 'rst_n' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'audio_clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-3166] Bus Interface 'S00_AXI': References existing memory map 'S00_AXI'.
+INFO: [IP_Flow 19-4728] Bus Interface 'rst_n': Added interface parameter 'POLARITY' with value 'ACTIVE_LOW'.
+add_files -norecurse C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_repo/chorus_axi_wrapper_1_0/src/chorus.sv
+update_compile_order -fileset sources_1
+ipx::merge_project_changes files [ipx::current_core]
+ipx::remove_file src/chorus.sv [ipx::get_file_groups xilinx_verilogsynthesis -of_objects [ipx::current_core]]
+ipx::remove_file src/chorus_sine_table.svh [ipx::get_file_groups xilinx_verilogsynthesis -of_objects [ipx::current_core]]
+add_files -norecurse -scan_for_includes -copy_to c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_repo/chorus_axi_wrapper_1_0/src C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_repo/chorus_axi_wrapper_1_0/src/chorus.sv
+ERROR: [Common 17-69] Command failed: '-scan_for_includes' and '-copy_to' are mutually exclusive and cannot be paired together.
+
+ipx::remove_file src/chorus_sine_table.svh [ipx::get_file_groups xilinx_verilogbehavioralsimulation -of_objects [ipx::current_core]]
+ipx::remove_file src/chorus.sv [ipx::get_file_groups xilinx_verilogbehavioralsimulation -of_objects [ipx::current_core]]
+remove_files  C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_repo/chorus_axi_wrapper_1_0/src/chorus.sv
+add_files -norecurse -scan_for_includes -copy_to c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_repo/chorus_axi_wrapper_1_0/src C:/Users/cargi/Documents/1Fa26/SD/Verilog_GuitarFX_Sim/rtl/effects/chorus/chorus_sine_table.svh
+ERROR: [Common 17-69] Command failed: '-scan_for_includes' and '-copy_to' are mutually exclusive and cannot be paired together.
+
+ipx::merge_project_changes files [ipx::current_core]
+add_files -norecurse -scan_for_includes -copy_to c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_repo/chorus_axi_wrapper_1_0/src C:/Users/cargi/Documents/1Fa26/SD/Verilog_GuitarFX_Sim/rtl/effects/chorus/chorus_sine_table.svh
+ERROR: [Common 17-69] Command failed: '-scan_for_includes' and '-copy_to' are mutually exclusive and cannot be paired together.
+
 close_project
-exit
-INFO: [Common 17-206] Exiting Vivado at Wed Sep  9 13:46:58 2026...
+update_ip_catalog -rebuild -scan_changes
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_repo'.
+report_ip_status -name ip_status
+upgrade_ip [get_ips  design_1_chorus_axi_wrapper_0_0] -log ip_upgrade.log
+Upgrading 'C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.srcs/sources_1/bd/design_1/design_1.bd'INFO: [IP_Flow 19-3420] Updated design_1_chorus_axi_wrapper_0_0 to use current project options
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'audio_clk'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'rst_n'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'sample_in'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'sample_in_valid'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'sample_out'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'sample_out_valid'
+WARNING: [IP_Flow 19-3298] Detected external port differences while upgrading 'design_1_chorus_axi_wrapper_0_0'. These changes may impact your design.
+CRITICAL WARNING: [Ipptcl 7-1675] The upgrade of 'design_1_chorus_axi_wrapper_0_0' has identified issues that may require user intervention. Please review the upgrade log 'c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_upgrade.log', and verify that the upgraded IP is correctly configured.
+Wrote  : <C:\Users\cargi\Documents\1Fa26\SD\digital_effects_2026-1\digital_effects_2026-1.srcs\sources_1\bd\design_1\design_1.bd> 
+Wrote  : <C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+INFO: [Ipptcl 7-1680] Wrote upgrade log to 'C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_upgrade.log'.
+export_ip_user_files -of_objects [get_ips design_1_chorus_axi_wrapper_0_0] -no_script -sync -force -quiet
+ipx::edit_ip_in_project -upgrade true -name chorus_axi_wrapper_v1_0_project -directory C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.tmp/chorus_axi_wrapper_v1_0_project c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_repo/chorus_axi_wrapper_1_0/component.xml
+INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter.
+Current project path is 'c:/users/cargi/documents/1fa26/sd/digital_effects_2026-1/digital_effects_2026-1.tmp/chorus_axi_wrapper_v1_0_project'
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/AMDDesignTools/2026.1/Vivado/data/ip'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_repo'.
+INFO: [IP_Flow 19-795] Syncing license key meta-data
+update_compile_order -fileset sources_1
+add_files -norecurse -scan_for_includes -copy_to c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_repo/chorus_axi_wrapper_1_0/src C:/Users/cargi/Documents/1Fa26/SD/Verilog_GuitarFX_Sim/rtl/effects/chorus/chorus.sv
+ERROR: [Common 17-69] Command failed: '-scan_for_includes' and '-copy_to' are mutually exclusive and cannot be paired together.
+
+set_property top chorus_axi_wrapper_slave_lite_v1_0_S00_AXI [current_fileset]
+update_compile_order -fileset sources_1
+set_property top chorus_axi_wrapper [current_fileset]
+update_compile_order -fileset sources_1
+ipx::merge_project_changes files [ipx::current_core]
+add_files -norecurse -scan_for_includes -copy_to c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_repo/chorus_axi_wrapper_1_0/src C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_repo/chorus_axi_wrapper_1_0/src/chorus_sine_table.svh
+ERROR: [Common 17-69] Command failed: '-scan_for_includes' and '-copy_to' are mutually exclusive and cannot be paired together.
+
+close [ open C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_repo/chorus_axi_wrapper_1_0/src/chorus.sv w ]
+add_files C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_repo/chorus_axi_wrapper_1_0/src/chorus.sv
+update_compile_order -fileset sources_1
+ipx::merge_project_changes files [ipx::current_core]
+add_files -norecurse -scan_for_includes -copy_to c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_repo/chorus_axi_wrapper_1_0/src C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_repo/chorus_axi_wrapper_1_0/src/chorus_sine_table.svh
+ERROR: [Common 17-69] Command failed: '-scan_for_includes' and '-copy_to' are mutually exclusive and cannot be paired together.
+
+set_property core_revision 5 [ipx::current_core]
+ipx::update_source_project_archive -component [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::check_integrity [ipx::current_core]
+WARNING: [IP_Flow 19-11770] Clock interface 'S00_AXI_CLK' has no FREQ_HZ parameter.
+WARNING: [IP_Flow 19-5661] Bus Interface 'audio_clk' does not have any bus interfaces associated with it.
+WARNING: [IP_Flow 19-11770] Clock interface 'audio_clk' has no FREQ_HZ parameter.
+INFO: [IP_Flow 19-2181] Payment is not required for this core.
+WARNING: [IP_Flow 19-2187] The Product Guide file is missing.
+INFO: [Ipptcl 7-1486] check_integrity: Integrity check passed.
+ipx::save_core [ipx::current_core]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\cargi\Documents\1Fa26\SD\digital_effects_2026-1\ip_repo\chorus_axi_wrapper_1_0\src\chorus.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [c:\Users\cargi\Documents\1Fa26\SD\digital_effects_2026-1\ip_repo\chorus_axi_wrapper_1_0\hdl\chorus_axi_wrapper.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\cargi\Documents\1Fa26\SD\digital_effects_2026-1\ip_repo\chorus_axi_wrapper_1_0\src\chorus.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\cargi\Documents\1Fa26\SD\digital_effects_2026-1\ip_repo\chorus_axi_wrapper_1_0\src\chorus.sv:]
+ipx::move_temp_component_back -component [ipx::current_core]
+close_project -delete
+update_ip_catalog -rebuild -repo_path c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_repo
+INFO: [IP_Flow 19-725] Reloaded user IP repository 'c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_repo'
+upgrade_ip -vlnv xilinx.com:user:chorus_axi_wrapper:1.0 [get_ips  design_1_chorus_axi_wrapper_0_0] -log ip_upgrade.log
+Upgrading 'C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.srcs/sources_1/bd/design_1/design_1.bd'INFO: [IP_Flow 19-3422] Upgraded design_1_chorus_axi_wrapper_0_0 (chorus_axi_wrapper_v1.0 1.0) from revision 4 to revision 5
+Wrote  : <C:\Users\cargi\Documents\1Fa26\SD\digital_effects_2026-1\digital_effects_2026-1.srcs\sources_1\bd\design_1\design_1.bd> 
+Wrote  : <C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+INFO: [Ipptcl 7-1680] Wrote upgrade log to 'C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_upgrade.log'.
+export_ip_user_files -of_objects [get_ips design_1_chorus_axi_wrapper_0_0] -no_script -sync -force -quiet
+generate_target all [get_files  C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.srcs/sources_1/bd/design_1/design_1.bd]
+ERROR: [BD 41-758] The following clock pins are not connected to a valid clock source: 
+/chorus_axi_wrapper_0/audio_clk
+/chorus_axi_wrapper_0/s00_axi_aclk
+
+ERROR: [BD 41-1031] Hdl Generation failed for the IP Integrator design C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.srcs/sources_1/bd/design_1/design_1.bd 
+ERROR: [Common 17-39] 'generate_target' failed due to earlier errors.
+delete_bd_objs [get_bd_nets i2s_rx_0_sample_out]
+delete_bd_objs [get_bd_nets i2s_rx_0_sample_out_valid]
+startgroup
+apply_bd_automation -rule xilinx.com:bd_rule:clkrst -config { Clk {/processing_system7_0/FCLK_CLK0 (50 MHz)} Freq {50} Ref_Clk0 {} Ref_Clk1 {} Ref_Clk2 {}}  [get_bd_pins chorus_axi_wrapper_0/audio_clk]
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {/processing_system7_0/FCLK_CLK0 (50 MHz)} Clk_slave {Auto} Clk_xbar {/processing_system7_0/FCLK_CLK0 (50 MHz)} Master {/processing_system7_0/M_AXI_GP0} Slave {/chorus_axi_wrapper_0/S00_AXI} ddr_seg {Auto} intc_ip {/axi_smc} master_apm {0}}  [get_bd_intf_pins chorus_axi_wrapper_0/S00_AXI]
+Slave segment '/chorus_axi_wrapper_0/S00_AXI/S00_AXI_reg' is being assigned into address space '/processing_system7_0/Data' at <0x43C1_0000 [ 64K ]>.
+endgroup
+disconnect_bd_net /processing_system7_0_FCLK_CLK0 [get_bd_pins chorus_axi_wrapper_0/audio_clk]
+connect_bd_net [get_bd_pins ilconstant_1/dout] [get_bd_pins chorus_axi_wrapper_0/rst_n]
+connect_bd_net [get_bd_pins chorus_axi_wrapper_0/audio_clk] [get_bd_pins clk_wiz_0/clk_out1]
+connect_bd_net [get_bd_pins i2s_rx_0/sample_out] [get_bd_pins chorus_axi_wrapper_0/sample_in]
+connect_bd_net [get_bd_pins i2s_rx_0/sample_out_valid] [get_bd_pins chorus_axi_wrapper_0/sample_in_valid]
+delete_bd_objs [get_bd_nets delay_axi_wrapper_0_sample_out]
+delete_bd_objs [get_bd_nets delay_axi_wrapper_0_sample_out_valid]
+connect_bd_net [get_bd_pins chorus_axi_wrapper_0/sample_out] [get_bd_pins i2s_tx_0/sample_in]
+connect_bd_net [get_bd_pins chorus_axi_wrapper_0/sample_out_valid] [get_bd_pins i2s_tx_0/sample_in_valid]
+save_bd_design
+Wrote  : <C:\Users\cargi\Documents\1Fa26\SD\digital_effects_2026-1\digital_effects_2026-1.srcs\sources_1\bd\design_1\design_1.bd> 
+Wrote  : <C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+INFO: [BD 5-943] Reserving offset range <0x43C0_0000 [ 64K ]> from slave interface '/axi_smc/S00_AXI' to master interface '/axi_smc/M00_AXI'. This will be used by smartconnect on path for routing.
+INFO: [BD 5-943] Reserving offset range <0x43C1_0000 [ 64K ]> from slave interface '/axi_smc/S00_AXI' to master interface '/axi_smc/M01_AXI'. This will be used by smartconnect on path for routing.
+INFO: [BD 5-943] Reserving offset range <0x43C0_0000 [ 64K ]> from slave interface '/axi_smc/S00_AXI' to master interface '/axi_smc/M00_AXI'. This will be used by smartconnect on path for routing.
+INFO: [BD 5-943] Reserving offset range <0x43C1_0000 [ 64K ]> from slave interface '/axi_smc/S00_AXI' to master interface '/axi_smc/M01_AXI'. This will be used by smartconnect on path for routing.
+INFO: [xilinx.com:ip:smartconnect:1.0-1] design_1_axi_smc_0: SmartConnect design_1_axi_smc_0 is in Ultralite mode.
+INFO: [xilinx.com:ip:clk_wiz:6.0-1] /clk_wiz_0 clk_wiz propagate
+CRITICAL WARNING: [BD 41-759] The input pins (listed below) are either not connected or do not have a source port, and they don't have a tie-off specified. These pins are tied-off to all 0's to avoid error in Implementation flow.
+Please check your design and connect them as needed: 
+/delay_axi_wrapper_0/sample_in
+/delay_axi_wrapper_0/sample_in_valid
+
+Wrote  : <C:\Users\cargi\Documents\1Fa26\SD\digital_effects_2026-1\digital_effects_2026-1.srcs\sources_1\bd\design_1\design_1.bd> 
+Verilog Output written to : c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/synth/design_1.v
+Verilog Output written to : c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/sim/design_1.v
+Verilog Output written to : c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v
+Exporting to file c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/hw_handoff/design_1_axi_smc_0.hwh
+Generated Hardware Definition File c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/synth/design_1_axi_smc_0.hwdef
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_smc .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block chorus_axi_wrapper_0 .
+Exporting to file c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/hw_handoff/design_1.hwh
+Generated Hardware Definition File c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/synth/design_1.hwdef
+INFO: [BD 41-3262] Generated VHDL Instantiation Template file c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/design_1.vho
+INFO: [BD 41-3262] Generated Verilog Instantiation Template file c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/design_1.veo
+INFO: [BD 41-3262] Generated System Verilog Instantiation Template file c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/design_1_sv.sveo
+[Thu Oct  8 16:22:49 2026] Launched design_1_axi_smc_0_synth_1, design_1_chorus_axi_wrapper_0_0_synth_1...
+Run output will be captured here:
+design_1_axi_smc_0_synth_1: C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.runs/design_1_axi_smc_0_synth_1/runme.log
+design_1_chorus_axi_wrapper_0_0_synth_1: C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.runs/design_1_chorus_axi_wrapper_0_0_synth_1/runme.log
+[Thu Oct  8 16:22:49 2026] Launched synth_1...
+Run output will be captured here: C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.runs/synth_1/runme.log
+launch_runs: Time (s): cpu = 00:00:04 ; elapsed = 00:00:15 . Memory (MB): peak = 2819.152 ; gain = 0.000
+report_ip_status -name ip_status 
+ipx::edit_ip_in_project -upgrade true -name chorus_axi_wrapper_v1_0_project -directory C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.tmp/chorus_axi_wrapper_v1_0_project c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_repo/chorus_axi_wrapper_1_0/component.xml
+INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter.
+Current project path is 'c:/users/cargi/documents/1fa26/sd/digital_effects_2026-1/digital_effects_2026-1.tmp/chorus_axi_wrapper_v1_0_project'
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/AMDDesignTools/2026.1/Vivado/data/ip'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_repo'.
+INFO: [IP_Flow 19-795] Syncing license key meta-data
+update_compile_order -fileset sources_1
+add_files -norecurse -scan_for_includes -copy_to c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_repo/chorus_axi_wrapper_1_0/src C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_repo/chorus_axi_wrapper_1_0/src/chorus_sine_table.svh
+ERROR: [Common 17-69] Command failed: '-scan_for_includes' and '-copy_to' are mutually exclusive and cannot be paired together.
+
+close [ open C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_repo/chorus_axi_wrapper_1_0/src/chorus.svh w ]
+add_files C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_repo/chorus_axi_wrapper_1_0/src/chorus.svh
+update_compile_order -fileset sources_1
+close [ open C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_repo/chorus_axi_wrapper_1_0/src/chorus_sine_table.svh w ]
+add_files C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_repo/chorus_axi_wrapper_1_0/src/chorus_sine_table.svh
+remove_files  C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_repo/chorus_axi_wrapper_1_0/src/chorus.svh
+set_property core_revision 6 [ipx::current_core]
+ipx::update_source_project_archive -component [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::check_integrity [ipx::current_core]
+WARNING: [IP_Flow 19-11770] Clock interface 'S00_AXI_CLK' has no FREQ_HZ parameter.
+WARNING: [IP_Flow 19-5661] Bus Interface 'audio_clk' does not have any bus interfaces associated with it.
+WARNING: [IP_Flow 19-11770] Clock interface 'audio_clk' has no FREQ_HZ parameter.
+INFO: [IP_Flow 19-2181] Payment is not required for this core.
+WARNING: [IP_Flow 19-2187] The Product Guide file is missing.
+INFO: [Ipptcl 7-1486] check_integrity: Integrity check passed.
+ipx::save_core [ipx::current_core]
+ipx::move_temp_component_back -component [ipx::current_core]
+close_project -delete
+update_ip_catalog -rebuild -repo_path c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_repo
+INFO: [IP_Flow 19-725] Reloaded user IP repository 'c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_repo'
+reset_run design_1_chorus_axi_wrapper_0_0_synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+WARNING: [Vivado 12-4802] The synthesis checkpoint for IP 'c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.srcs/sources_1/bd/design_1/ip/design_1_chorus_axi_wrapper_0_0/design_1_chorus_axi_wrapper_0_0.xci' is not generated and IP is locked. An out-of-context (OOC) run will be created and/or launched, but synthesis may not be able to complete or could result in incorrect behavior.
+Please select 'Report IP Status' from the 'Tools/Report' menu or run Tcl command 'report_ip_status' for more information.
+WARNING: [Project 1-576] IP 'c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.srcs/sources_1/bd/design_1/ip/design_1_chorus_axi_wrapper_0_0/design_1_chorus_axi_wrapper_0_0.xci' in run design_1_chorus_axi_wrapper_0_0_synth_1 is locked, no out-of-context (OOC) run will be launched. The run may not be able to complete.
+Please select 'Report IP Status' from 'Tools/Report' or run the Tcl command 'report_ip_status' for more information.
+WARNING: [Project 1-576] IP 'c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.srcs/sources_1/bd/design_1/ip/design_1_chorus_axi_wrapper_0_0/design_1_chorus_axi_wrapper_0_0.xci' in run design_1_chorus_axi_wrapper_0_0_synth_1 is locked, no out-of-context (OOC) run will be launched. The run may not be able to complete.
+Please select 'Report IP Status' from 'Tools/Report' or run the Tcl command 'report_ip_status' for more information.
+[Thu Oct  8 16:29:00 2026] Launched design_1_chorus_axi_wrapper_0_0_synth_1...
+Run output will be captured here: C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.runs/design_1_chorus_axi_wrapper_0_0_synth_1/runme.log
+[Thu Oct  8 16:29:00 2026] Launched synth_1...
+Run output will be captured here: C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.runs/synth_1/runme.log
+report_ip_status -name ip_status 
+upgrade_ip -vlnv xilinx.com:user:chorus_axi_wrapper:1.0 [get_ips  design_1_chorus_axi_wrapper_0_0] -log ip_upgrade.log
+Upgrading 'C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.srcs/sources_1/bd/design_1/design_1.bd'INFO: [IP_Flow 19-3422] Upgraded design_1_chorus_axi_wrapper_0_0 (chorus_axi_wrapper_v1.0 1.0) from revision 5 to revision 6
+Wrote  : <C:\Users\cargi\Documents\1Fa26\SD\digital_effects_2026-1\digital_effects_2026-1.srcs\sources_1\bd\design_1\design_1.bd> 
+Wrote  : <C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+INFO: [Ipptcl 7-1680] Wrote upgrade log to 'C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_upgrade.log'.
+export_ip_user_files -of_objects [get_ips design_1_chorus_axi_wrapper_0_0] -no_script -sync -force -quiet
+generate_target all [get_files  C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.srcs/sources_1/bd/design_1/design_1.bd]
+INFO: [BD 5-943] Reserving offset range <0x43C0_0000 [ 64K ]> from slave interface '/axi_smc/S00_AXI' to master interface '/axi_smc/M00_AXI'. This will be used by smartconnect on path for routing.
+INFO: [BD 5-943] Reserving offset range <0x43C1_0000 [ 64K ]> from slave interface '/axi_smc/S00_AXI' to master interface '/axi_smc/M01_AXI'. This will be used by smartconnect on path for routing.
+INFO: [BD 5-943] Reserving offset range <0x43C0_0000 [ 64K ]> from slave interface '/axi_smc/S00_AXI' to master interface '/axi_smc/M00_AXI'. This will be used by smartconnect on path for routing.
+INFO: [BD 5-943] Reserving offset range <0x43C1_0000 [ 64K ]> from slave interface '/axi_smc/S00_AXI' to master interface '/axi_smc/M01_AXI'. This will be used by smartconnect on path for routing.
+INFO: [xilinx.com:ip:smartconnect:1.0-1] design_1_axi_smc_0: SmartConnect design_1_axi_smc_0 is in Ultralite mode.
+INFO: [xilinx.com:ip:clk_wiz:6.0-1] /clk_wiz_0 clk_wiz propagate
+CRITICAL WARNING: [BD 41-759] The input pins (listed below) are either not connected or do not have a source port, and they don't have a tie-off specified. These pins are tied-off to all 0's to avoid error in Implementation flow.
+Please check your design and connect them as needed: 
+/delay_axi_wrapper_0/sample_in
+/delay_axi_wrapper_0/sample_in_valid
+
+Wrote  : <C:\Users\cargi\Documents\1Fa26\SD\digital_effects_2026-1\digital_effects_2026-1.srcs\sources_1\bd\design_1\design_1.bd> 
+Verilog Output written to : c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/synth/design_1.v
+Verilog Output written to : c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/sim/design_1.v
+Verilog Output written to : c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v
+Exporting to file c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/hw_handoff/design_1_axi_smc_0.hwh
+Generated Hardware Definition File c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/synth/design_1_axi_smc_0.hwdef
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_smc .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block chorus_axi_wrapper_0 .
+Exporting to file c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/hw_handoff/design_1.hwh
+Generated Hardware Definition File c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/synth/design_1.hwdef
+INFO: [BD 41-3262] Generated VHDL Instantiation Template file c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/design_1.vho
+INFO: [BD 41-3262] Generated Verilog Instantiation Template file c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/design_1.veo
+INFO: [BD 41-3262] Generated System Verilog Instantiation Template file c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/design_1_sv.sveo
+catch { config_ip_cache -export [get_ips -all design_1_axi_smc_0] }
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP design_1_axi_smc_0, cache-ID = 918ed0a6c725d00a; cache size = 14.088 MB.
+catch { [ delete_ip_run [get_ips -all design_1_axi_smc_0] ] }
+catch { config_ip_cache -export [get_ips -all design_1_chorus_axi_wrapper_0_0] }
+export_ip_user_files -of_objects [get_files C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.srcs/sources_1/bd/design_1/design_1.bd] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.srcs/sources_1/bd/design_1/design_1.bd]
+launch_runs design_1_chorus_axi_wrapper_0_0_synth_1 -jobs 10
+[Thu Oct  8 16:30:10 2026] Launched design_1_chorus_axi_wrapper_0_0_synth_1...
+Run output will be captured here: C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.runs/design_1_chorus_axi_wrapper_0_0_synth_1/runme.log
+export_simulation -lib_map_path [list {modelsim=C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.cache/compile_simlib/modelsim} {questa=C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.cache/compile_simlib/questa} {riviera=C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.cache/compile_simlib/riviera} {activehdl=C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.cache/compile_simlib/activehdl}] -of_objects [get_files C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.srcs/sources_1/bd/design_1/design_1.bd] -directory C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.ip_user_files -ipstatic_source_dir C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.ip_user_files/ipstatic -use_ip_compiled_libs -force -quiet
+report_ip_status -name ip_status 
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+[Thu Oct  8 16:30:29 2026] Launched design_1_chorus_axi_wrapper_0_0_synth_1...
+Run output will be captured here: C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.runs/design_1_chorus_axi_wrapper_0_0_synth_1/runme.log
+[Thu Oct  8 16:30:29 2026] Launched synth_1...
+Run output will be captured here: C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.runs/synth_1/runme.log
+ipx::edit_ip_in_project -upgrade true -name chorus_axi_wrapper_v1_0_project -directory C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.tmp/chorus_axi_wrapper_v1_0_project c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_repo/chorus_axi_wrapper_1_0/component.xml
+INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter.
+Current project path is 'c:/users/cargi/documents/1fa26/sd/digital_effects_2026-1/digital_effects_2026-1.tmp/chorus_axi_wrapper_v1_0_project'
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/AMDDesignTools/2026.1/Vivado/data/ip'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_repo'.
+INFO: [IP_Flow 19-795] Syncing license key meta-data
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 10
+[Thu Oct  8 16:31:43 2026] Launched synth_1...
+Run output will be captured here: c:/users/cargi/documents/1fa26/sd/digital_effects_2026-1/digital_effects_2026-1.tmp/chorus_axi_wrapper_v1_0_project/chorus_axi_wrapper_v1_0_project.runs/synth_1/runme.log
+set_property core_revision 7 [ipx::current_core]
+ipx::update_source_project_archive -component [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::check_integrity [ipx::current_core]
+WARNING: [IP_Flow 19-11770] Clock interface 'S00_AXI_CLK' has no FREQ_HZ parameter.
+WARNING: [IP_Flow 19-5661] Bus Interface 'audio_clk' does not have any bus interfaces associated with it.
+WARNING: [IP_Flow 19-11770] Clock interface 'audio_clk' has no FREQ_HZ parameter.
+INFO: [IP_Flow 19-2181] Payment is not required for this core.
+WARNING: [IP_Flow 19-2187] The Product Guide file is missing.
+INFO: [Ipptcl 7-1486] check_integrity: Integrity check passed.
+ipx::save_core [ipx::current_core]
+ipx::move_temp_component_back -component [ipx::current_core]
+close_project -delete
+update_ip_catalog -rebuild -repo_path c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_repo
+INFO: [IP_Flow 19-725] Reloaded user IP repository 'c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_repo'
+report_ip_status -name ip_status 
+upgrade_ip -vlnv xilinx.com:user:chorus_axi_wrapper:1.0 [get_ips  design_1_chorus_axi_wrapper_0_0] -log ip_upgrade.log
+Upgrading 'C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.srcs/sources_1/bd/design_1/design_1.bd'INFO: [IP_Flow 19-3422] Upgraded design_1_chorus_axi_wrapper_0_0 (chorus_axi_wrapper_v1.0 1.0) from revision 6 to revision 7
+Wrote  : <C:\Users\cargi\Documents\1Fa26\SD\digital_effects_2026-1\digital_effects_2026-1.srcs\sources_1\bd\design_1\design_1.bd> 
+INFO: [Ipptcl 7-1680] Wrote upgrade log to 'C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_upgrade.log'.
+export_ip_user_files -of_objects [get_ips design_1_chorus_axi_wrapper_0_0] -no_script -sync -force -quiet
+report_ip_status -name ip_status 
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+INFO: [BD 5-943] Reserving offset range <0x43C0_0000 [ 64K ]> from slave interface '/axi_smc/S00_AXI' to master interface '/axi_smc/M00_AXI'. This will be used by smartconnect on path for routing.
+INFO: [BD 5-943] Reserving offset range <0x43C1_0000 [ 64K ]> from slave interface '/axi_smc/S00_AXI' to master interface '/axi_smc/M01_AXI'. This will be used by smartconnect on path for routing.
+INFO: [BD 5-943] Reserving offset range <0x43C0_0000 [ 64K ]> from slave interface '/axi_smc/S00_AXI' to master interface '/axi_smc/M00_AXI'. This will be used by smartconnect on path for routing.
+INFO: [BD 5-943] Reserving offset range <0x43C1_0000 [ 64K ]> from slave interface '/axi_smc/S00_AXI' to master interface '/axi_smc/M01_AXI'. This will be used by smartconnect on path for routing.
+INFO: [xilinx.com:ip:smartconnect:1.0-1] design_1_axi_smc_0: SmartConnect design_1_axi_smc_0 is in Ultralite mode.
+INFO: [xilinx.com:ip:clk_wiz:6.0-1] /clk_wiz_0 clk_wiz propagate
+CRITICAL WARNING: [BD 41-759] The input pins (listed below) are either not connected or do not have a source port, and they don't have a tie-off specified. These pins are tied-off to all 0's to avoid error in Implementation flow.
+Please check your design and connect them as needed: 
+/delay_axi_wrapper_0/sample_in
+/delay_axi_wrapper_0/sample_in_valid
+
+Wrote  : <C:\Users\cargi\Documents\1Fa26\SD\digital_effects_2026-1\digital_effects_2026-1.srcs\sources_1\bd\design_1\design_1.bd> 
+Verilog Output written to : c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/synth/design_1.v
+Verilog Output written to : c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/sim/design_1.v
+Verilog Output written to : c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v
+Exporting to file c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/hw_handoff/design_1_axi_smc_0.hwh
+Generated Hardware Definition File c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/synth/design_1_axi_smc_0.hwdef
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_smc .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block chorus_axi_wrapper_0 .
+Exporting to file c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/hw_handoff/design_1.hwh
+Generated Hardware Definition File c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/synth/design_1.hwdef
+INFO: [BD 41-3262] Generated VHDL Instantiation Template file c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/design_1.vho
+INFO: [BD 41-3262] Generated Verilog Instantiation Template file c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/design_1.veo
+INFO: [BD 41-3262] Generated System Verilog Instantiation Template file c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/design_1_sv.sveo
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP design_1_axi_smc_0, cache-ID = 918ed0a6c725d00a; cache size = 14.088 MB.
+[Thu Oct  8 16:53:28 2026] Launched design_1_chorus_axi_wrapper_0_0_synth_1...
+Run output will be captured here: C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.runs/design_1_chorus_axi_wrapper_0_0_synth_1/runme.log
+[Thu Oct  8 16:53:28 2026] Launched synth_1...
+Run output will be captured here: C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.runs/synth_1/runme.log
+report_ip_status -name ip_status 
+ipx::edit_ip_in_project -upgrade true -name chorus_axi_wrapper_v1_0_project -directory C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.tmp/chorus_axi_wrapper_v1_0_project c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_repo/chorus_axi_wrapper_1_0/component.xml
+INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter.
+Current project path is 'c:/users/cargi/documents/1fa26/sd/digital_effects_2026-1/digital_effects_2026-1.tmp/chorus_axi_wrapper_v1_0_project'
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/AMDDesignTools/2026.1/Vivado/data/ip'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_repo'.
+INFO: [IP_Flow 19-795] Syncing license key meta-data
+ipx::edit_ip_in_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2905.223 ; gain = 0.000
+update_compile_order -fileset sources_1
+ipx::merge_project_changes files [ipx::current_core]
+set_property core_revision 8 [ipx::current_core]
+ipx::update_source_project_archive -component [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::check_integrity [ipx::current_core]
+WARNING: [IP_Flow 19-11770] Clock interface 'S00_AXI_CLK' has no FREQ_HZ parameter.
+WARNING: [IP_Flow 19-5661] Bus Interface 'audio_clk' does not have any bus interfaces associated with it.
+WARNING: [IP_Flow 19-11770] Clock interface 'audio_clk' has no FREQ_HZ parameter.
+INFO: [IP_Flow 19-2181] Payment is not required for this core.
+WARNING: [IP_Flow 19-2187] The Product Guide file is missing.
+INFO: [Ipptcl 7-1486] check_integrity: Integrity check passed.
+ipx::save_core [ipx::current_core]
+ipx::move_temp_component_back -component [ipx::current_core]
+close_project -delete
+update_ip_catalog -rebuild -repo_path c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_repo
+INFO: [IP_Flow 19-725] Reloaded user IP repository 'c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_repo'
+reset_run design_1_chorus_axi_wrapper_0_0_synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+WARNING: [Vivado 12-4802] The synthesis checkpoint for IP 'c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.srcs/sources_1/bd/design_1/ip/design_1_chorus_axi_wrapper_0_0/design_1_chorus_axi_wrapper_0_0.xci' is not generated and IP is locked. An out-of-context (OOC) run will be created and/or launched, but synthesis may not be able to complete or could result in incorrect behavior.
+Please select 'Report IP Status' from the 'Tools/Report' menu or run Tcl command 'report_ip_status' for more information.
+WARNING: [Project 1-576] IP 'c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.srcs/sources_1/bd/design_1/ip/design_1_chorus_axi_wrapper_0_0/design_1_chorus_axi_wrapper_0_0.xci' in run design_1_chorus_axi_wrapper_0_0_synth_1 is locked, no out-of-context (OOC) run will be launched. The run may not be able to complete.
+Please select 'Report IP Status' from 'Tools/Report' or run the Tcl command 'report_ip_status' for more information.
+WARNING: [Project 1-576] IP 'c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.srcs/sources_1/bd/design_1/ip/design_1_chorus_axi_wrapper_0_0/design_1_chorus_axi_wrapper_0_0.xci' in run design_1_chorus_axi_wrapper_0_0_synth_1 is locked, no out-of-context (OOC) run will be launched. The run may not be able to complete.
+Please select 'Report IP Status' from 'Tools/Report' or run the Tcl command 'report_ip_status' for more information.
+[Thu Oct  8 19:18:29 2026] Launched design_1_chorus_axi_wrapper_0_0_synth_1...
+Run output will be captured here: C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.runs/design_1_chorus_axi_wrapper_0_0_synth_1/runme.log
+[Thu Oct  8 19:18:29 2026] Launched synth_1...
+Run output will be captured here: C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.runs/synth_1/runme.log
+report_ip_status -name ip_status 
+upgrade_ip -vlnv xilinx.com:user:chorus_axi_wrapper:1.0 [get_ips  design_1_chorus_axi_wrapper_0_0] -log ip_upgrade.log
+Upgrading 'C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.srcs/sources_1/bd/design_1/design_1.bd'INFO: [IP_Flow 19-3422] Upgraded design_1_chorus_axi_wrapper_0_0 (chorus_axi_wrapper_v1.0 1.0) from revision 7 to revision 8
+Wrote  : <C:\Users\cargi\Documents\1Fa26\SD\digital_effects_2026-1\digital_effects_2026-1.srcs\sources_1\bd\design_1\design_1.bd> 
+INFO: [Ipptcl 7-1680] Wrote upgrade log to 'C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_upgrade.log'.
+export_ip_user_files -of_objects [get_ips design_1_chorus_axi_wrapper_0_0] -no_script -sync -force -quiet
+report_ip_status -name ip_status 
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+INFO: [BD 5-943] Reserving offset range <0x43C0_0000 [ 64K ]> from slave interface '/axi_smc/S00_AXI' to master interface '/axi_smc/M00_AXI'. This will be used by smartconnect on path for routing.
+INFO: [BD 5-943] Reserving offset range <0x43C1_0000 [ 64K ]> from slave interface '/axi_smc/S00_AXI' to master interface '/axi_smc/M01_AXI'. This will be used by smartconnect on path for routing.
+INFO: [BD 5-943] Reserving offset range <0x43C0_0000 [ 64K ]> from slave interface '/axi_smc/S00_AXI' to master interface '/axi_smc/M00_AXI'. This will be used by smartconnect on path for routing.
+INFO: [BD 5-943] Reserving offset range <0x43C1_0000 [ 64K ]> from slave interface '/axi_smc/S00_AXI' to master interface '/axi_smc/M01_AXI'. This will be used by smartconnect on path for routing.
+INFO: [xilinx.com:ip:smartconnect:1.0-1] design_1_axi_smc_0: SmartConnect design_1_axi_smc_0 is in Ultralite mode.
+INFO: [xilinx.com:ip:clk_wiz:6.0-1] /clk_wiz_0 clk_wiz propagate
+CRITICAL WARNING: [BD 41-759] The input pins (listed below) are either not connected or do not have a source port, and they don't have a tie-off specified. These pins are tied-off to all 0's to avoid error in Implementation flow.
+Please check your design and connect them as needed: 
+/delay_axi_wrapper_0/sample_in
+/delay_axi_wrapper_0/sample_in_valid
+
+Wrote  : <C:\Users\cargi\Documents\1Fa26\SD\digital_effects_2026-1\digital_effects_2026-1.srcs\sources_1\bd\design_1\design_1.bd> 
+Verilog Output written to : c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/synth/design_1.v
+Verilog Output written to : c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/sim/design_1.v
+Verilog Output written to : c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v
+Exporting to file c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/hw_handoff/design_1_axi_smc_0.hwh
+Generated Hardware Definition File c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/synth/design_1_axi_smc_0.hwdef
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_smc .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block chorus_axi_wrapper_0 .
+Exporting to file c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/hw_handoff/design_1.hwh
+Generated Hardware Definition File c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/synth/design_1.hwdef
+INFO: [BD 41-3262] Generated VHDL Instantiation Template file c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/design_1.vho
+INFO: [BD 41-3262] Generated Verilog Instantiation Template file c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/design_1.veo
+INFO: [BD 41-3262] Generated System Verilog Instantiation Template file c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/design_1_sv.sveo
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP design_1_axi_smc_0, cache-ID = 918ed0a6c725d00a; cache size = 14.088 MB.
+[Thu Oct  8 19:19:02 2026] Launched design_1_chorus_axi_wrapper_0_0_synth_1...
+Run output will be captured here: C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.runs/design_1_chorus_axi_wrapper_0_0_synth_1/runme.log
+[Thu Oct  8 19:19:02 2026] Launched synth_1...
+Run output will be captured here: C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.runs/synth_1/runme.log
+launch_runs: Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 2951.207 ; gain = 0.000
+launch_runs impl_1 -to_step write_bitstream -jobs 10
+[Thu Oct  8 19:22:49 2026] Launched impl_1...
+Run output will be captured here: C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.runs/impl_1/runme.log
+open_run impl_1
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.033 . Memory (MB): peak = 2951.207 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 91 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2026.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Read ShapeDB Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.016 . Memory (MB): peak = 2951.207 ; gain = 0.000
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+INFO: [Designutils 20-5722] Start Reading Physical Databases.
+Reading placement.
+Read Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 3011.023 ; gain = 0.000
+Reading placer database...
+Read Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.021 . Memory (MB): peak = 3011.023 ; gain = 0.000
+Read PlaceDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3011.023 ; gain = 0.000
+Read placeStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.212 . Memory (MB): peak = 3025.566 ; gain = 14.543
+Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3025.566 ; gain = 0.000
+Reading routing.
+Read RouteStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.058 . Memory (MB): peak = 3025.566 ; gain = 0.000
+Read Physdb Files: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.320 . Memory (MB): peak = 3025.566 ; gain = 14.543
+Restored from archive | CPU: 0.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.323 . Memory (MB): peak = 3025.566 ; gain = 14.543
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 3025.566 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 2 instances were transformed.
+  IOBUF => IOBUF (IBUF, OBUFT): 2 instances
+
+open_run: Time (s): cpu = 00:00:33 ; elapsed = 00:00:24 . Memory (MB): peak = 3400.988 ; gain = 449.781
+write_hw_platform -fixed -include_bit -force -file C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/design_1_wrapper.xsa
+INFO: [Project 1-1918] Creating Hardware Platform: C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/design_1_wrapper.xsa ...
+WARNING: [Project 1-645] Board images not set in Hardware Platform.
+INFO: [Project 1-1943] The Hardware Platform can be used for Hardware
+INFO: [Project 1-1941] Successfully created Hardware Platform: C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/design_1_wrapper.xsa
+INFO: [Hsi 55-2053] elapsed time for repository (C:/AMDDesignTools/2026.1/Vivado/data/embeddedsw) loading 9 seconds
+write_hw_platform: Time (s): cpu = 00:00:09 ; elapsed = 00:00:16 . Memory (MB): peak = 3847.406 ; gain = 0.000

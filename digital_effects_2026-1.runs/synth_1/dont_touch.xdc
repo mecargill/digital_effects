@@ -30,4 +30,7 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_ax
 # IP: bd/design_1/ip/design_1_rst_ps7_0_50M_0/design_1_rst_ps7_0_50M_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_rst_ps7_0_50M_0 || ORIG_REF_NAME==design_1_rst_ps7_0_50M_0} -quiet] -quiet
 
+# IP: bd/design_1/ip/design_1_chorus_axi_wrapper_0_0/design_1_chorus_axi_wrapper_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_chorus_axi_wrapper_0_0 || ORIG_REF_NAME==design_1_chorus_axi_wrapper_0_0} -quiet] -quiet
+
 # XDC: c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/design_1_ooc.xdc

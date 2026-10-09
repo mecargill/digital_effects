@@ -39,7 +39,7 @@
           "usingPs7Init": {
             "runPs7Init": true,
             "runPs7PostInit": true,
-            "ps7InitTclFile": "${workspaceFolder}\\cfg_codec\\_ide\\psinit\\delay_axi_wrapper.tcl"
+            "ps7InitTclFile": "${workspaceFolder}\\cfg_codec\\_ide\\psinit\\chorus_axi_wrapper.tcl"
           }
         },
         "downloadElf": [

@@ -152,6 +152,7 @@ include_folder: include
 lib_folder: lib
 libsrc_folder: libsrc
 drv_info:
+  chorus_axi_wrapper_0: None
   delay_axi_wrapper_0: None
   ps7_afi_0: None
   ps7_afi_1: None

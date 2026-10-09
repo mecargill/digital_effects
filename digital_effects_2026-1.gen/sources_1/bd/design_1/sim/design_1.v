@@ -2,7 +2,7 @@
 //Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2026.1 (win64) Build 6511674 Tue Jun 16 11:02:23 MDT 2026
-//Date        : Wed Sep  2 23:25:03 2026
+//Date        : Thu Oct  8 19:18:58 2026
 //Host        : MostlyEtc running 64-bit major release  (build 9200)
 //Command     : generate_target design_1.bd
 //Design      : design_1
@@ -136,10 +136,29 @@ module design_1
   wire axi_smc_M00_AXI_WREADY;
   wire [3:0]axi_smc_M00_AXI_WSTRB;
   wire axi_smc_M00_AXI_WVALID;
+  wire [3:0]axi_smc_M01_AXI_ARADDR;
+  wire [2:0]axi_smc_M01_AXI_ARPROT;
+  wire axi_smc_M01_AXI_ARREADY;
+  wire axi_smc_M01_AXI_ARVALID;
+  wire [3:0]axi_smc_M01_AXI_AWADDR;
+  wire [2:0]axi_smc_M01_AXI_AWPROT;
+  wire axi_smc_M01_AXI_AWREADY;
+  wire axi_smc_M01_AXI_AWVALID;
+  wire axi_smc_M01_AXI_BREADY;
+  wire [1:0]axi_smc_M01_AXI_BRESP;
+  wire axi_smc_M01_AXI_BVALID;
+  wire [31:0]axi_smc_M01_AXI_RDATA;
+  wire axi_smc_M01_AXI_RREADY;
+  wire [1:0]axi_smc_M01_AXI_RRESP;
+  wire axi_smc_M01_AXI_RVALID;
+  wire [31:0]axi_smc_M01_AXI_WDATA;
+  wire axi_smc_M01_AXI_WREADY;
+  wire [3:0]axi_smc_M01_AXI_WSTRB;
+  wire axi_smc_M01_AXI_WVALID;
   wire bclk_div_0_bclk_fall_en;
   wire bclk_div_0_bclk_rise_en;
-  wire [23:0]delay_axi_wrapper_0_sample_out;
-  wire delay_axi_wrapper_0_sample_out_valid;
+  wire [23:0]chorus_axi_wrapper_0_sample_out;
+  wire chorus_axi_wrapper_0_sample_out_valid;
   wire [23:0]i2s_rx_0_sample_out;
   wire i2s_rx_0_sample_out_valid;
   wire [0:0]ilconstant_0_dout;
@@ -206,6 +225,25 @@ module design_1
         .M00_AXI_wready(axi_smc_M00_AXI_WREADY),
         .M00_AXI_wstrb(axi_smc_M00_AXI_WSTRB),
         .M00_AXI_wvalid(axi_smc_M00_AXI_WVALID),
+        .M01_AXI_araddr(axi_smc_M01_AXI_ARADDR),
+        .M01_AXI_arprot(axi_smc_M01_AXI_ARPROT),
+        .M01_AXI_arready(axi_smc_M01_AXI_ARREADY),
+        .M01_AXI_arvalid(axi_smc_M01_AXI_ARVALID),
+        .M01_AXI_awaddr(axi_smc_M01_AXI_AWADDR),
+        .M01_AXI_awprot(axi_smc_M01_AXI_AWPROT),
+        .M01_AXI_awready(axi_smc_M01_AXI_AWREADY),
+        .M01_AXI_awvalid(axi_smc_M01_AXI_AWVALID),
+        .M01_AXI_bready(axi_smc_M01_AXI_BREADY),
+        .M01_AXI_bresp(axi_smc_M01_AXI_BRESP),
+        .M01_AXI_bvalid(axi_smc_M01_AXI_BVALID),
+        .M01_AXI_rdata(axi_smc_M01_AXI_RDATA),
+        .M01_AXI_rready(axi_smc_M01_AXI_RREADY),
+        .M01_AXI_rresp(axi_smc_M01_AXI_RRESP),
+        .M01_AXI_rvalid(axi_smc_M01_AXI_RVALID),
+        .M01_AXI_wdata(axi_smc_M01_AXI_WDATA),
+        .M01_AXI_wready(axi_smc_M01_AXI_WREADY),
+        .M01_AXI_wstrb(axi_smc_M01_AXI_WSTRB),
+        .M01_AXI_wvalid(axi_smc_M01_AXI_WVALID),
         .S00_AXI_araddr(processing_system7_0_M_AXI_GP0_ARADDR),
         .S00_AXI_arburst(processing_system7_0_M_AXI_GP0_ARBURST),
         .S00_AXI_arcache(processing_system7_0_M_AXI_GP0_ARCACHE),
@@ -251,6 +289,34 @@ module design_1
         .bclk_fall_en(bclk_div_0_bclk_fall_en),
         .bclk_rise_en(bclk_div_0_bclk_rise_en),
         .mclk(ac_mclk));
+  design_1_chorus_axi_wrapper_0_0 chorus_axi_wrapper_0
+       (.audio_clk(ac_mclk),
+        .rst_n(ac_muten),
+        .s00_axi_aclk(processing_system7_0_FCLK_CLK0),
+        .s00_axi_araddr(axi_smc_M01_AXI_ARADDR),
+        .s00_axi_aresetn(rst_ps7_0_50M_peripheral_aresetn),
+        .s00_axi_arprot(axi_smc_M01_AXI_ARPROT),
+        .s00_axi_arready(axi_smc_M01_AXI_ARREADY),
+        .s00_axi_arvalid(axi_smc_M01_AXI_ARVALID),
+        .s00_axi_awaddr(axi_smc_M01_AXI_AWADDR),
+        .s00_axi_awprot(axi_smc_M01_AXI_AWPROT),
+        .s00_axi_awready(axi_smc_M01_AXI_AWREADY),
+        .s00_axi_awvalid(axi_smc_M01_AXI_AWVALID),
+        .s00_axi_bready(axi_smc_M01_AXI_BREADY),
+        .s00_axi_bresp(axi_smc_M01_AXI_BRESP),
+        .s00_axi_bvalid(axi_smc_M01_AXI_BVALID),
+        .s00_axi_rdata(axi_smc_M01_AXI_RDATA),
+        .s00_axi_rready(axi_smc_M01_AXI_RREADY),
+        .s00_axi_rresp(axi_smc_M01_AXI_RRESP),
+        .s00_axi_rvalid(axi_smc_M01_AXI_RVALID),
+        .s00_axi_wdata(axi_smc_M01_AXI_WDATA),
+        .s00_axi_wready(axi_smc_M01_AXI_WREADY),
+        .s00_axi_wstrb(axi_smc_M01_AXI_WSTRB),
+        .s00_axi_wvalid(axi_smc_M01_AXI_WVALID),
+        .sample_in(i2s_rx_0_sample_out),
+        .sample_in_valid(i2s_rx_0_sample_out_valid),
+        .sample_out(chorus_axi_wrapper_0_sample_out),
+        .sample_out_valid(chorus_axi_wrapper_0_sample_out_valid));
   design_1_clk_wiz_0_0 clk_wiz_0
        (.clk_in1(sys_clock),
         .clk_out1(ac_mclk),
@@ -278,10 +344,8 @@ module design_1
         .s00_axi_wready(axi_smc_M00_AXI_WREADY),
         .s00_axi_wstrb(axi_smc_M00_AXI_WSTRB),
         .s00_axi_wvalid(axi_smc_M00_AXI_WVALID),
-        .sample_in(i2s_rx_0_sample_out),
-        .sample_in_valid(i2s_rx_0_sample_out_valid),
-        .sample_out(delay_axi_wrapper_0_sample_out),
-        .sample_out_valid(delay_axi_wrapper_0_sample_out_valid));
+        .sample_in({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .sample_in_valid(1'b0));
   design_1_i2s_rx_0_0 i2s_rx_0
        (.bclk_fall_en(bclk_div_0_bclk_fall_en),
         .bclk_rise_en(bclk_div_0_bclk_rise_en),
@@ -295,8 +359,8 @@ module design_1
         .bclk_rise_en(bclk_div_0_bclk_rise_en),
         .lrc(ac_pblrc),
         .mclk(ac_mclk),
-        .sample_in(delay_axi_wrapper_0_sample_out),
-        .sample_in_valid(delay_axi_wrapper_0_sample_out_valid),
+        .sample_in(chorus_axi_wrapper_0_sample_out),
+        .sample_in_valid(chorus_axi_wrapper_0_sample_out_valid),
         .sda(ac_pbdat));
   assign ilconstant_0_dout = 1'h0;
   assign ac_muten = 1'h1;

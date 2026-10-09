@@ -1,3 +1,6 @@
+chorus_axi_wrapper_0:
+- chorus_axi_wrapper
+- None
 delay_axi_wrapper_0:
 - delay_axi_wrapper
 - None

@@ -3,10 +3,10 @@
 # SW Build 6511674 on Tue Jun 16 11:02:23 MDT 2026
 # IP Build 6504888 on Tue Jun 09 09:05:25 MDT 2026
 # SharedData Build 6501428 on Mon Jun 08 17:34:18 MDT 2026
-# Start of session at: Wed Sep  9 13:40:02 2026
-# Process ID         : 6540
+# Start of session at: Thu Oct  8 15:58:59 2026
+# Process ID         : 14884
 # Current directory  : C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1
-# Command line       : vivado.exe -gui_launcher_event rodinguilauncherevent24796 C:\Users\cargi\Documents\1Fa26\SD\digital_effects_2026-1\digital_effects_2026-1.xpr
+# Command line       : vivado.exe -gui_launcher_event rodinguilauncherevent30916 C:\Users\cargi\Documents\1Fa26\SD\digital_effects_2026-1\digital_effects_2026-1.xpr
 # Log file           : C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/vivado.log
 # Journal file       : C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1\vivado.jou
 # Running On         : MostlyEtc
@@ -17,21 +17,186 @@
 # CPU Physical cores : 14
 # CPU Logical cores  : 20
 # Host memory        : 16834 MB
-# Swap memory        : 16106 MB
-# Total Virtual      : 32941 MB
-# Available Virtual  : 16004 MB
+# Swap memory        : 15032 MB
+# Total Virtual      : 31867 MB
+# Available Virtual  : 13548 MB
 #-----------------------------------------------------------
 start_gui
 open_project C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.xpr
-
 update_compile_order -fileset sources_1
 open_bd_design {C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.srcs/sources_1/bd/design_1/design_1.bd}
-set_property  ip_repo_paths  c:/Users/cargi/Documents/1Fa26/SD/ip_repo/delay_1_0 [current_project]
-update_ip_catalog
-set_property  ip_repo_paths  {} [current_project]
-update_ip_catalog
-set_property  ip_repo_paths  C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_repo [current_project]
-update_ip_catalog
-ipx::edit_ip_in_project -upgrade true -name delay_axi_wrapper_v1_0_project -directory C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.tmp/delay_axi_wrapper_v1_0_project c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_repo/delay_axi_wrapper_1_0/component.xml
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:user:chorus_axi_wrapper:1.0 chorus_axi_wrapper_0
+endgroup
+ipx::edit_ip_in_project -upgrade true -name chorus_axi_wrapper_v1_0_project -directory C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.tmp/chorus_axi_wrapper_v1_0_project c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_repo/chorus_axi_wrapper_1_0/component.xml
 update_compile_order -fileset sources_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top chorus_axi_wrapper_slave_lite_v1_0_S00_AXI [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sources_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top chorus_axi_wrapper [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sources_1
+ipx::merge_project_changes ports [ipx::current_core]
+add_files -norecurse C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_repo/chorus_axi_wrapper_1_0/src/chorus.sv
+update_compile_order -fileset sources_1
+ipx::merge_project_changes files [ipx::current_core]
+ipx::remove_file src/chorus.sv [ipx::get_file_groups xilinx_verilogsynthesis -of_objects [ipx::current_core]]
+ipx::remove_file src/chorus_sine_table.svh [ipx::get_file_groups xilinx_verilogsynthesis -of_objects [ipx::current_core]]
+add_files -norecurse -scan_for_includes -copy_to c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_repo/chorus_axi_wrapper_1_0/src C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_repo/chorus_axi_wrapper_1_0/src/chorus.sv
+ipx::remove_file src/chorus_sine_table.svh [ipx::get_file_groups xilinx_verilogbehavioralsimulation -of_objects [ipx::current_core]]
+ipx::remove_file src/chorus.sv [ipx::get_file_groups xilinx_verilogbehavioralsimulation -of_objects [ipx::current_core]]
+remove_files  C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_repo/chorus_axi_wrapper_1_0/src/chorus.sv
+add_files -norecurse -scan_for_includes -copy_to c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_repo/chorus_axi_wrapper_1_0/src C:/Users/cargi/Documents/1Fa26/SD/Verilog_GuitarFX_Sim/rtl/effects/chorus/chorus_sine_table.svh
+ipx::merge_project_changes files [ipx::current_core]
+add_files -norecurse -scan_for_includes -copy_to c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_repo/chorus_axi_wrapper_1_0/src C:/Users/cargi/Documents/1Fa26/SD/Verilog_GuitarFX_Sim/rtl/effects/chorus/chorus_sine_table.svh
 close_project
+update_ip_catalog -rebuild -scan_changes
+report_ip_status -name ip_status
+upgrade_ip [get_ips  design_1_chorus_axi_wrapper_0_0] -log ip_upgrade.log
+export_ip_user_files -of_objects [get_ips design_1_chorus_axi_wrapper_0_0] -no_script -sync -force -quiet
+ipx::edit_ip_in_project -upgrade true -name chorus_axi_wrapper_v1_0_project -directory C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.tmp/chorus_axi_wrapper_v1_0_project c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_repo/chorus_axi_wrapper_1_0/component.xml
+update_compile_order -fileset sources_1
+add_files -norecurse -scan_for_includes -copy_to c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_repo/chorus_axi_wrapper_1_0/src C:/Users/cargi/Documents/1Fa26/SD/Verilog_GuitarFX_Sim/rtl/effects/chorus/chorus.sv
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top chorus_axi_wrapper_slave_lite_v1_0_S00_AXI [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sources_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top chorus_axi_wrapper [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sources_1
+ipx::merge_project_changes files [ipx::current_core]
+add_files -norecurse -scan_for_includes -copy_to c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_repo/chorus_axi_wrapper_1_0/src C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_repo/chorus_axi_wrapper_1_0/src/chorus_sine_table.svh
+close [ open C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_repo/chorus_axi_wrapper_1_0/src/chorus.sv w ]
+add_files C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_repo/chorus_axi_wrapper_1_0/src/chorus.sv
+update_compile_order -fileset sources_1
+ipx::merge_project_changes files [ipx::current_core]
+add_files -norecurse -scan_for_includes -copy_to c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_repo/chorus_axi_wrapper_1_0/src C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_repo/chorus_axi_wrapper_1_0/src/chorus_sine_table.svh
+set_property core_revision 5 [ipx::current_core]
+ipx::update_source_project_archive -component [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::check_integrity [ipx::current_core]
+ipx::save_core [ipx::current_core]
+ipx::move_temp_component_back -component [ipx::current_core]
+close_project -delete
+update_ip_catalog -rebuild -repo_path c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_repo
+upgrade_ip -vlnv xilinx.com:user:chorus_axi_wrapper:1.0 [get_ips  design_1_chorus_axi_wrapper_0_0] -log ip_upgrade.log
+export_ip_user_files -of_objects [get_ips design_1_chorus_axi_wrapper_0_0] -no_script -sync -force -quiet
+generate_target all [get_files  C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.srcs/sources_1/bd/design_1/design_1.bd]
+delete_bd_objs [get_bd_nets i2s_rx_0_sample_out]
+delete_bd_objs [get_bd_nets i2s_rx_0_sample_out_valid]
+startgroup
+apply_bd_automation -rule xilinx.com:bd_rule:clkrst -config { Clk {/processing_system7_0/FCLK_CLK0 (50 MHz)} Freq {50} Ref_Clk0 {} Ref_Clk1 {} Ref_Clk2 {}}  [get_bd_pins chorus_axi_wrapper_0/audio_clk]
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {/processing_system7_0/FCLK_CLK0 (50 MHz)} Clk_slave {Auto} Clk_xbar {/processing_system7_0/FCLK_CLK0 (50 MHz)} Master {/processing_system7_0/M_AXI_GP0} Slave {/chorus_axi_wrapper_0/S00_AXI} ddr_seg {Auto} intc_ip {/axi_smc} master_apm {0}}  [get_bd_intf_pins chorus_axi_wrapper_0/S00_AXI]
+endgroup
+disconnect_bd_net /processing_system7_0_FCLK_CLK0 [get_bd_pins chorus_axi_wrapper_0/audio_clk]
+connect_bd_net [get_bd_pins ilconstant_1/dout] [get_bd_pins chorus_axi_wrapper_0/rst_n]
+connect_bd_net [get_bd_pins chorus_axi_wrapper_0/audio_clk] [get_bd_pins clk_wiz_0/clk_out1]
+connect_bd_net [get_bd_pins i2s_rx_0/sample_out] [get_bd_pins chorus_axi_wrapper_0/sample_in]
+connect_bd_net [get_bd_pins i2s_rx_0/sample_out_valid] [get_bd_pins chorus_axi_wrapper_0/sample_in_valid]
+delete_bd_objs [get_bd_nets delay_axi_wrapper_0_sample_out]
+delete_bd_objs [get_bd_nets delay_axi_wrapper_0_sample_out_valid]
+connect_bd_net [get_bd_pins chorus_axi_wrapper_0/sample_out] [get_bd_pins i2s_tx_0/sample_in]
+connect_bd_net [get_bd_pins chorus_axi_wrapper_0/sample_out_valid] [get_bd_pins i2s_tx_0/sample_in_valid]
+save_bd_design
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+wait_on_run synth_1
+report_ip_status -name ip_status 
+ipx::edit_ip_in_project -upgrade true -name chorus_axi_wrapper_v1_0_project -directory C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.tmp/chorus_axi_wrapper_v1_0_project c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_repo/chorus_axi_wrapper_1_0/component.xml
+update_compile_order -fileset sources_1
+add_files -norecurse -scan_for_includes -copy_to c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_repo/chorus_axi_wrapper_1_0/src C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_repo/chorus_axi_wrapper_1_0/src/chorus_sine_table.svh
+close [ open C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_repo/chorus_axi_wrapper_1_0/src/chorus.svh w ]
+add_files C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_repo/chorus_axi_wrapper_1_0/src/chorus.svh
+update_compile_order -fileset sources_1
+close [ open C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_repo/chorus_axi_wrapper_1_0/src/chorus_sine_table.svh w ]
+add_files C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_repo/chorus_axi_wrapper_1_0/src/chorus_sine_table.svh
+remove_files  C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_repo/chorus_axi_wrapper_1_0/src/chorus.svh
+set_property core_revision 6 [ipx::current_core]
+ipx::update_source_project_archive -component [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::check_integrity [ipx::current_core]
+ipx::save_core [ipx::current_core]
+ipx::move_temp_component_back -component [ipx::current_core]
+close_project -delete
+update_ip_catalog -rebuild -repo_path c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_repo
+reset_run design_1_chorus_axi_wrapper_0_0_synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+wait_on_run synth_1
+report_ip_status -name ip_status 
+upgrade_ip -vlnv xilinx.com:user:chorus_axi_wrapper:1.0 [get_ips  design_1_chorus_axi_wrapper_0_0] -log ip_upgrade.log
+export_ip_user_files -of_objects [get_ips design_1_chorus_axi_wrapper_0_0] -no_script -sync -force -quiet
+generate_target all [get_files  C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.srcs/sources_1/bd/design_1/design_1.bd]
+catch { config_ip_cache -export [get_ips -all design_1_axi_smc_0] }
+catch { [ delete_ip_run [get_ips -all design_1_axi_smc_0] ] }
+catch { config_ip_cache -export [get_ips -all design_1_chorus_axi_wrapper_0_0] }
+export_ip_user_files -of_objects [get_files C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.srcs/sources_1/bd/design_1/design_1.bd] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.srcs/sources_1/bd/design_1/design_1.bd]
+launch_runs design_1_chorus_axi_wrapper_0_0_synth_1 -jobs 10
+wait_on_run design_1_chorus_axi_wrapper_0_0_synth_1
+export_simulation -lib_map_path [list {modelsim=C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.cache/compile_simlib/modelsim} {questa=C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.cache/compile_simlib/questa} {riviera=C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.cache/compile_simlib/riviera} {activehdl=C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.cache/compile_simlib/activehdl}] -of_objects [get_files C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.srcs/sources_1/bd/design_1/design_1.bd] -directory C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.ip_user_files -ipstatic_source_dir C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.ip_user_files/ipstatic -use_ip_compiled_libs -force -quiet
+report_ip_status -name ip_status 
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+wait_on_run synth_1
+ipx::edit_ip_in_project -upgrade true -name chorus_axi_wrapper_v1_0_project -directory C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.tmp/chorus_axi_wrapper_v1_0_project c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_repo/chorus_axi_wrapper_1_0/component.xml
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 10
+wait_on_run synth_1
+set_property core_revision 7 [ipx::current_core]
+ipx::update_source_project_archive -component [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::check_integrity [ipx::current_core]
+ipx::save_core [ipx::current_core]
+ipx::move_temp_component_back -component [ipx::current_core]
+close_project -delete
+update_ip_catalog -rebuild -repo_path c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_repo
+report_ip_status -name ip_status 
+upgrade_ip -vlnv xilinx.com:user:chorus_axi_wrapper:1.0 [get_ips  design_1_chorus_axi_wrapper_0_0] -log ip_upgrade.log
+export_ip_user_files -of_objects [get_ips design_1_chorus_axi_wrapper_0_0] -no_script -sync -force -quiet
+report_ip_status -name ip_status 
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+wait_on_run synth_1
+report_ip_status -name ip_status 
+ipx::edit_ip_in_project -upgrade true -name chorus_axi_wrapper_v1_0_project -directory C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.tmp/chorus_axi_wrapper_v1_0_project c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_repo/chorus_axi_wrapper_1_0/component.xml
+update_compile_order -fileset sources_1
+ipx::merge_project_changes files [ipx::current_core]
+set_property core_revision 8 [ipx::current_core]
+ipx::update_source_project_archive -component [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::check_integrity [ipx::current_core]
+ipx::save_core [ipx::current_core]
+ipx::move_temp_component_back -component [ipx::current_core]
+close_project -delete
+update_ip_catalog -rebuild -repo_path c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_repo
+reset_run design_1_chorus_axi_wrapper_0_0_synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+wait_on_run synth_1
+report_ip_status -name ip_status 
+upgrade_ip -vlnv xilinx.com:user:chorus_axi_wrapper:1.0 [get_ips  design_1_chorus_axi_wrapper_0_0] -log ip_upgrade.log
+export_ip_user_files -of_objects [get_ips design_1_chorus_axi_wrapper_0_0] -no_script -sync -force -quiet
+report_ip_status -name ip_status 
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+wait_on_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 10
+wait_on_run impl_1
+open_run impl_1
+write_hw_platform -fixed -include_bit -force -file C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/design_1_wrapper.xsa

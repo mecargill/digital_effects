@@ -63,13 +63,13 @@ vlog -work xil_defaultlib  -sv2k12 "+incdir+../../../../digital_effects_2026-1.g
 "../../../bd/design_1/ip/design_1_i2s_tx_0_0/sim/design_1_i2s_tx_0_0.sv" \
 
 vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../digital_effects_2026-1.gen/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../digital_effects_2026-1.gen/sources_1/bd/design_1/ipshared/df05/hdl" "+incdir+../../../../digital_effects_2026-1.gen/sources_1/bd/design_1/ipshared/ee6d" "+incdir+../../../../digital_effects_2026-1.gen/sources_1/bd/design_1/ipshared/f0b6/hdl/verilog" "+incdir+../../../../digital_effects_2026-1.gen/sources_1/bd/design_1/ipshared/00fe/hdl/verilog" "+incdir+../../../../../../../../../../AMDDesignTools/2026.1/Vivado/data/rsb/busdef" "+incdir+C:/AMDDesignTools/2026.1/Vivado/data/xilinx_vip/include" -l xilinx_vip -l xpm -l axi_infrastructure_v1_1_0 -l axi_vip_v1_1_23 -l processing_system7_vip_v1_0_25 -l xil_defaultlib -l smartconnect_v1_0 -l proc_sys_reset_v5_0_17 -l axi_register_slice_v2_1_37 \
-"../../../bd/design_1/ipshared/2ed0/hdl/delay_axi_wrapper_slave_lite_v1_0_S00_AXI.v" \
+"../../../bd/design_1/ipshared/95da/hdl/delay_axi_wrapper_slave_lite_v1_0_S00_AXI.v" \
 
 vlog -work xil_defaultlib  -sv2k12 "+incdir+../../../../digital_effects_2026-1.gen/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../digital_effects_2026-1.gen/sources_1/bd/design_1/ipshared/df05/hdl" "+incdir+../../../../digital_effects_2026-1.gen/sources_1/bd/design_1/ipshared/ee6d" "+incdir+../../../../digital_effects_2026-1.gen/sources_1/bd/design_1/ipshared/f0b6/hdl/verilog" "+incdir+../../../../digital_effects_2026-1.gen/sources_1/bd/design_1/ipshared/00fe/hdl/verilog" "+incdir+../../../../../../../../../../AMDDesignTools/2026.1/Vivado/data/rsb/busdef" "+incdir+C:/AMDDesignTools/2026.1/Vivado/data/xilinx_vip/include" -l xilinx_vip -l xpm -l axi_infrastructure_v1_1_0 -l axi_vip_v1_1_23 -l processing_system7_vip_v1_0_25 -l xil_defaultlib -l smartconnect_v1_0 -l proc_sys_reset_v5_0_17 -l axi_register_slice_v2_1_37 \
-"../../../bd/design_1/ipshared/2ed0/1f32/delay.sv" \
+"../../../bd/design_1/ipshared/95da/1f32/delay.sv" \
 
 vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../digital_effects_2026-1.gen/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../digital_effects_2026-1.gen/sources_1/bd/design_1/ipshared/df05/hdl" "+incdir+../../../../digital_effects_2026-1.gen/sources_1/bd/design_1/ipshared/ee6d" "+incdir+../../../../digital_effects_2026-1.gen/sources_1/bd/design_1/ipshared/f0b6/hdl/verilog" "+incdir+../../../../digital_effects_2026-1.gen/sources_1/bd/design_1/ipshared/00fe/hdl/verilog" "+incdir+../../../../../../../../../../AMDDesignTools/2026.1/Vivado/data/rsb/busdef" "+incdir+C:/AMDDesignTools/2026.1/Vivado/data/xilinx_vip/include" -l xilinx_vip -l xpm -l axi_infrastructure_v1_1_0 -l axi_vip_v1_1_23 -l processing_system7_vip_v1_0_25 -l xil_defaultlib -l smartconnect_v1_0 -l proc_sys_reset_v5_0_17 -l axi_register_slice_v2_1_37 \
-"../../../bd/design_1/ipshared/2ed0/hdl/delay_axi_wrapper.v" \
+"../../../bd/design_1/ipshared/95da/hdl/delay_axi_wrapper.v" \
 "../../../bd/design_1/ip/design_1_delay_axi_wrapper_0_0/sim/design_1_delay_axi_wrapper_0_0.v" \
 "../../../bd/design_1/ip/design_1_axi_smc_0/bd_0/sim/bd_afc3.v" \
 
@@ -106,6 +106,14 @@ vlog -work xil_defaultlib  -sv2k12 "+incdir+../../../../digital_effects_2026-1.g
 
 vcom -work xil_defaultlib -93  \
 "../../../bd/design_1/ip/design_1_rst_ps7_0_50M_0/sim/design_1_rst_ps7_0_50M_0.vhd" \
+
+vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../digital_effects_2026-1.gen/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../digital_effects_2026-1.gen/sources_1/bd/design_1/ipshared/df05/hdl" "+incdir+../../../../digital_effects_2026-1.gen/sources_1/bd/design_1/ipshared/ee6d" "+incdir+../../../../digital_effects_2026-1.gen/sources_1/bd/design_1/ipshared/f0b6/hdl/verilog" "+incdir+../../../../digital_effects_2026-1.gen/sources_1/bd/design_1/ipshared/00fe/hdl/verilog" "+incdir+../../../../../../../../../../AMDDesignTools/2026.1/Vivado/data/rsb/busdef" "+incdir+C:/AMDDesignTools/2026.1/Vivado/data/xilinx_vip/include" -l xilinx_vip -l xpm -l axi_infrastructure_v1_1_0 -l axi_vip_v1_1_23 -l processing_system7_vip_v1_0_25 -l xil_defaultlib -l smartconnect_v1_0 -l proc_sys_reset_v5_0_17 -l axi_register_slice_v2_1_37 \
+"../../../bd/design_1/ipshared/69ec/hdl/chorus_axi_wrapper_slave_lite_v1_0_S00_AXI.v" \
+"../../../bd/design_1/ipshared/69ec/hdl/chorus_axi_wrapper.v" \
+
+vlog -work xil_defaultlib  -sv2k12 "+incdir+../../../../digital_effects_2026-1.gen/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../digital_effects_2026-1.gen/sources_1/bd/design_1/ipshared/df05/hdl" "+incdir+../../../../digital_effects_2026-1.gen/sources_1/bd/design_1/ipshared/ee6d" "+incdir+../../../../digital_effects_2026-1.gen/sources_1/bd/design_1/ipshared/f0b6/hdl/verilog" "+incdir+../../../../digital_effects_2026-1.gen/sources_1/bd/design_1/ipshared/00fe/hdl/verilog" "+incdir+../../../../../../../../../../AMDDesignTools/2026.1/Vivado/data/rsb/busdef" "+incdir+C:/AMDDesignTools/2026.1/Vivado/data/xilinx_vip/include" -l xilinx_vip -l xpm -l axi_infrastructure_v1_1_0 -l axi_vip_v1_1_23 -l processing_system7_vip_v1_0_25 -l xil_defaultlib -l smartconnect_v1_0 -l proc_sys_reset_v5_0_17 -l axi_register_slice_v2_1_37 \
+"../../../bd/design_1/ipshared/69ec/src/chorus.sv" \
+"../../../bd/design_1/ip/design_1_chorus_axi_wrapper_0_0/sim/design_1_chorus_axi_wrapper_0_0.sv" \
 
 vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../digital_effects_2026-1.gen/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../digital_effects_2026-1.gen/sources_1/bd/design_1/ipshared/df05/hdl" "+incdir+../../../../digital_effects_2026-1.gen/sources_1/bd/design_1/ipshared/ee6d" "+incdir+../../../../digital_effects_2026-1.gen/sources_1/bd/design_1/ipshared/f0b6/hdl/verilog" "+incdir+../../../../digital_effects_2026-1.gen/sources_1/bd/design_1/ipshared/00fe/hdl/verilog" "+incdir+../../../../../../../../../../AMDDesignTools/2026.1/Vivado/data/rsb/busdef" "+incdir+C:/AMDDesignTools/2026.1/Vivado/data/xilinx_vip/include" -l xilinx_vip -l xpm -l axi_infrastructure_v1_1_0 -l axi_vip_v1_1_23 -l processing_system7_vip_v1_0_25 -l xil_defaultlib -l smartconnect_v1_0 -l proc_sys_reset_v5_0_17 -l axi_register_slice_v2_1_37 \
 "../../../bd/design_1/sim/design_1.v" \

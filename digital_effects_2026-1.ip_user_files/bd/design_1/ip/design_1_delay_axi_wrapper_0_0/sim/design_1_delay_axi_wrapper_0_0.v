@@ -48,7 +48,7 @@
 
 
 // IP VLNV: xilinx.com:user:delay_axi_wrapper:1.0
-// IP Revision: 4
+// IP Revision: 9
 
 `timescale 1ns/1ps
 
