@@ -1,4 +1,4 @@
-# 2026-10-08T19:30:01.348704300
+# 2026-10-09T09:44:58.377598400
 import vitis
 
 client = vitis.create_client()
@@ -14,12 +14,22 @@ status = platform.build()
 comp = client.get_component(name="cfg_codec")
 comp.build()
 
-comp = client.get_component(name="cfg_codec")
-comp.set_app_config(key = "USER_COMPILE_SOURCES", values = ["app_main.c", "platform.c"])
+status = platform.update_hw(hw_design = "$COMPONENT_LOCATION/../../design_1_wrapper.xsa")
 
 status = platform.build()
 
-comp = client.get_component(name="cfg_codec")
+status = platform.build()
+
+comp.build()
+
+status = platform.update_hw(hw_design = "$COMPONENT_LOCATION/../../design_1_wrapper.xsa")
+
+status = platform.build()
+
+comp.build()
+
+status = platform.build()
+
 comp.build()
 
 status = platform.build()

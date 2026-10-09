@@ -2,7 +2,7 @@
 -- Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2026.1 (win64) Build 6511674 Tue Jun 16 11:02:23 MDT 2026
--- Date        : Wed Sep  2 23:26:33 2026
+-- Date        : Fri Oct  9 08:25:23 2026
 -- Host        : MostlyEtc running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
 --               c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/ip/design_1_delay_axi_wrapper_0_0/design_1_delay_axi_wrapper_0_0_sim_netlist.vhdl

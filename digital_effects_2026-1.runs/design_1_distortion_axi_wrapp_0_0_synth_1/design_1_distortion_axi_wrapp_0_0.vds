@@ -1,0 +1,328 @@
+INFO: [Common 17-3922] A valid Vivado Design Suite BASIC license has been detected. Your current license is active and will expire on 20-aug-2027.
+#-----------------------------------------------------------
+# Vivado v2026.1 (64-bit)
+# SW Build 6511674 on Tue Jun 16 11:02:23 MDT 2026
+# IP Build 6504888 on Tue Jun 09 09:05:25 MDT 2026
+# SharedData Build 6501428 on Mon Jun 08 17:34:18 MDT 2026
+# Start of session at: Fri Oct  9 09:32:29 2026
+# Process ID         : 34740
+# Current directory  : C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.runs/design_1_distortion_axi_wrapp_0_0_synth_1
+# Command line       : vivado.exe -log design_1_distortion_axi_wrapp_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_distortion_axi_wrapp_0_0.tcl
+# Log file           : C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.runs/design_1_distortion_axi_wrapp_0_0_synth_1/design_1_distortion_axi_wrapp_0_0.vds
+# Journal file       : C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.runs/design_1_distortion_axi_wrapp_0_0_synth_1\vivado.jou
+# Running On         : MostlyEtc
+# Platform           : Windows 11
+# Operating System   : 26200
+# Processor Detail   : 12th Gen Intel(R) Core(TM) i7-12700H
+# CPU Frequency      : 2688 MHz
+# CPU Physical cores : 14
+# CPU Logical cores  : 20
+# Host memory        : 16834 MB
+# Swap memory        : 15032 MB
+# Total Virtual      : 31867 MB
+# Available Virtual  : 9125 MB
+#-----------------------------------------------------------
+source design_1_distortion_axi_wrapp_0_0.tcl -notrace
+create_project: Time (s): cpu = 00:00:16 ; elapsed = 00:00:10 . Memory (MB): peak = 582.664 ; gain = 267.828
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_repo'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/AMDDesignTools/2026.1/Vivado/data/ip'.
+WARNING: [IP_Flow 19-4995] The host OS only allows 260 characters in a normal path. The IP cache path is more than 80 characters. If you experience issues with IP caching, please consider changing the IP cache to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. 
+Current IP cache path is c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.cache/ip 
+Command: synth_design -top design_1_distortion_axi_wrapp_0_0 -part xc7z010clg400-1 -incremental_mode off -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Vivado_Synthesis' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Vivado_Synthesis' and/or device 'xc7z010'
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+INFO: [Designutils 20-5008] Incremental synthesis strategy off
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 27932
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1379.113 ; gain = 576.195
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'design_1_distortion_axi_wrapp_0_0' [c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/ip/design_1_distortion_axi_wrapp_0_0/synth/design_1_distortion_axi_wrapp_0_0.sv:53]
+INFO: [Synth 8-6157] synthesizing module 'distortion_axi_wrapper' [c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/ipshared/0eb6/hdl/distortion_axi_wrapper.v:5]
+INFO: [Synth 8-6157] synthesizing module 'distortion_axi_wrapper_slave_lite_v1_0_S00_AXI' [c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/ipshared/0eb6/hdl/distortion_axi_wrapper_slave_lite_v1_0_S00_AXI.v:4]
+INFO: [Synth 8-155] case statement is not full and has no default [c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/ipshared/0eb6/hdl/distortion_axi_wrapper_slave_lite_v1_0_S00_AXI.v:143]
+INFO: [Synth 8-226] default block is never used [c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/ipshared/0eb6/hdl/distortion_axi_wrapper_slave_lite_v1_0_S00_AXI.v:217]
+INFO: [Synth 8-155] case statement is not full and has no default [c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/ipshared/0eb6/hdl/distortion_axi_wrapper_slave_lite_v1_0_S00_AXI.v:270]
+INFO: [Synth 8-6155] done synthesizing module 'distortion_axi_wrapper_slave_lite_v1_0_S00_AXI' (0#1) [c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/ipshared/0eb6/hdl/distortion_axi_wrapper_slave_lite_v1_0_S00_AXI.v:4]
+INFO: [Synth 8-6157] synthesizing module 'distortion' [c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/ipshared/0eb6/src/distortion.sv:16]
+INFO: [Synth 8-6155] done synthesizing module 'distortion' (0#1) [c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/ipshared/0eb6/src/distortion.sv:16]
+INFO: [Synth 8-6155] done synthesizing module 'distortion_axi_wrapper' (0#1) [c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/ipshared/0eb6/hdl/distortion_axi_wrapper.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_distortion_axi_wrapp_0_0' (0#1) [c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/ip/design_1_distortion_axi_wrapp_0_0/synth/design_1_distortion_axi_wrapp_0_0.sv:53]
+INFO: [Synth 8-7129] Port S_AXI_AWPROT[2] in module distortion_axi_wrapper_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+INFO: [Synth 8-7129] Port S_AXI_AWPROT[1] in module distortion_axi_wrapper_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+INFO: [Synth 8-7129] Port S_AXI_AWPROT[0] in module distortion_axi_wrapper_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+INFO: [Synth 8-7129] Port S_AXI_ARPROT[2] in module distortion_axi_wrapper_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+INFO: [Synth 8-7129] Port S_AXI_ARPROT[1] in module distortion_axi_wrapper_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+INFO: [Synth 8-7129] Port S_AXI_ARPROT[0] in module distortion_axi_wrapper_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1508.086 ; gain = 705.168
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1508.086 ; gain = 705.168
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1508.086 ; gain = 705.168
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1508.086 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1572.781 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.052 . Memory (MB): peak = 1572.832 ; gain = 0.000
+INFO: [Designutils 20-5008] Incremental synthesis strategy off
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1572.832 ; gain = 769.914
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z010clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1572.832 ; gain = 769.914
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1572.832 ; gain = 769.914
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_write_reg' in module 'distortion_axi_wrapper_slave_lite_v1_0_S00_AXI'
+INFO: [Synth 8-802] inferred FSM for state register 'state_read_reg' in module 'distortion_axi_wrapper_slave_lite_v1_0_S00_AXI'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    Idle |                               00 |                               00
+                   Waddr |                               01 |                               10
+                   Wdata |                               10 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_write_reg' using encoding 'sequential' in module 'distortion_axi_wrapper_slave_lite_v1_0_S00_AXI'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    Idle |                               00 |                               00
+                   Raddr |                               01 |                               10
+                   Rdata |                               10 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_read_reg' using encoding 'sequential' in module 'distortion_axi_wrapper_slave_lite_v1_0_S00_AXI'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1572.832 ; gain = 769.914
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   24 Bit       Adders := 1     
+	   3 Input   16 Bit       Adders := 1     
+	   2 Input   16 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 4     
+	               24 Bit    Registers := 2     
+	                4 Bit    Registers := 2     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 6     
++---Muxes : 
+	   2 Input   32 Bit        Muxes := 4     
+	   4 Input   32 Bit        Muxes := 5     
+	   2 Input   24 Bit        Muxes := 2     
+	   3 Input    2 Bit        Muxes := 2     
+	   2 Input    2 Bit        Muxes := 6     
+	   2 Input    1 Bit        Muxes := 2     
+	   3 Input    1 Bit        Muxes := 13    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 80 (col length:40)
+BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+DSP Report: Generating DSP inst/u_distortion/tone_state4, operation Mode is: A*B.
+DSP Report: operator inst/u_distortion/tone_state4 is absorbed into DSP inst/u_distortion/tone_state4.
+DSP Report: Generating DSP inst/u_distortion/clipped2, operation Mode is: A*B.
+DSP Report: operator inst/u_distortion/clipped2 is absorbed into DSP inst/u_distortion/clipped2.
+DSP Report: Generating DSP inst/u_distortion/tone_state2, operation Mode is: (D-A2)*B.
+DSP Report: register inst/u_distortion/tone_state_reg is absorbed into DSP inst/u_distortion/tone_state2.
+DSP Report: operator inst/u_distortion/tone_state2 is absorbed into DSP inst/u_distortion/tone_state2.
+DSP Report: operator inst/u_distortion/tone_state3 is absorbed into DSP inst/u_distortion/tone_state2.
+DSP Report: Generating DSP inst/u_distortion/sample_out_reg, operation Mode is: (A*B)'.
+DSP Report: register inst/u_distortion/sample_out_reg is absorbed into DSP inst/u_distortion/sample_out_reg.
+DSP Report: operator inst/u_distortion/sample_out1 is absorbed into DSP inst/u_distortion/sample_out_reg.
+INFO: [Synth 8-7129] Port s00_axi_awprot[2] in module design_1_distortion_axi_wrapp_0_0 is either unconnected or has no load
+INFO: [Synth 8-7129] Port s00_axi_awprot[1] in module design_1_distortion_axi_wrapp_0_0 is either unconnected or has no load
+INFO: [Synth 8-7129] Port s00_axi_awprot[0] in module design_1_distortion_axi_wrapp_0_0 is either unconnected or has no load
+INFO: [Synth 8-7129] Port s00_axi_arprot[2] in module design_1_distortion_axi_wrapp_0_0 is either unconnected or has no load
+INFO: [Synth 8-7129] Port s00_axi_arprot[1] in module design_1_distortion_axi_wrapp_0_0 is either unconnected or has no load
+INFO: [Synth 8-7129] Port s00_axi_arprot[0] in module design_1_distortion_axi_wrapp_0_0 is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 1575.215 ; gain = 772.297
+---------------------------------------------------------------------------------
+ Sort Area is  inst/u_distortion/tone_state2_4 : 0 0 : 3265 3265 : Used 1 time 0
+ Sort Area is  inst/u_distortion/sample_out_reg_6 : 0 0 : 3007 3007 : Used 1 time 0
+ Sort Area is  inst/u_distortion/clipped2_0 : 0 0 : 2967 2967 : Used 1 time 0
+ Sort Area is  inst/u_distortion/tone_state4_2 : 0 0 : 1325 1325 : Used 1 time 0
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
++----------------------------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name                       | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++----------------------------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|distortion                        | A*B         | 16     | 12     | -      | -      | 28     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|distortion                        | A*B         | 24     | 17     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|distortion                        | (D-A2)*B    | 24     | 17     | -      | 24     | 42     | 1    | 0    | -    | 0    | 0     | 0    | 0    | 
+|design_1_distortion_axi_wrapp_0_0 | (A*B)'      | 24     | 17     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 1    | 0    | 
++----------------------------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 1575.215 ; gain = 772.297
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 1575.215 ; gain = 772.297
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1838.523 ; gain = 1035.605
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1838.523 ; gain = 1035.605
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1838.523 ; gain = 1035.605
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1838.523 ; gain = 1035.605
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1838.523 ; gain = 1035.605
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1838.523 ; gain = 1035.605
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+DSP Final Report (the ' indicates corresponding REG is set)
++----------------------------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name                       | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++----------------------------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|distortion                        | A*B         | 16     | 12     | -      | -      | 28     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|distortion                        | A*B         | 30     | 16     | -      | -      | 41     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|distortion                        | D-A'*B      | 30     | 16     | -      | 25     | 42     | 1    | 0    | -    | 0    | 0     | 0    | 0    | 
+|design_1_distortion_axi_wrapp_0_0 | (A*B)'      | 30     | 16     | -      | -      | 40     | 0    | 0    | -    | -    | -     | 0    | 1    | 
++----------------------------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+--------+------+
+|      |Cell    |Count |
++------+--------+------+
+|1     |CARRY4  |    26|
+|2     |DSP48E1 |     4|
+|3     |LUT1    |     2|
+|4     |LUT2    |    84|
+|5     |LUT3    |    27|
+|6     |LUT4    |    33|
+|7     |LUT5    |    16|
+|8     |LUT6    |    57|
+|9     |FDRE    |   166|
++------+--------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1838.523 ; gain = 1035.605
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:17 ; elapsed = 00:00:28 . Memory (MB): peak = 1838.523 ; gain = 970.859
+Synthesis Optimization Complete : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1838.547 ; gain = 1035.605
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1850.570 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 30 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1949.160 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: c726afbe
+INFO: [Common 17-83] Releasing license: Vivado_Synthesis
+46 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:33 ; elapsed = 00:00:37 . Memory (MB): peak = 1949.180 ; gain = 1340.863
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1949.180 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.runs/design_1_distortion_axi_wrapp_0_0_synth_1/design_1_distortion_axi_wrapp_0_0.dcp' has been generated.
+INFO: [Ipptcl 7-1612] Added synthesis output to IP cache for IP design_1_distortion_axi_wrapp_0_0, cache-ID = 1c7bf2dfc24e8012
+INFO: [Coretcl 2-1174] Renamed 3 cell refs.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1949.180 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.runs/design_1_distortion_axi_wrapp_0_0_synth_1/design_1_distortion_axi_wrapp_0_0.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file design_1_distortion_axi_wrapp_0_0_utilization_synth.rpt -pb design_1_distortion_axi_wrapp_0_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Fri Oct  9 09:33:23 2026...

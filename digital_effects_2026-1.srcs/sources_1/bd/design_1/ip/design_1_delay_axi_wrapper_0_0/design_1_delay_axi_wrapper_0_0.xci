@@ -4,7 +4,7 @@
     "xci_name": "design_1_delay_axi_wrapper_0_0",
     "cell_name": "delay_axi_wrapper_0",
     "component_reference": "xilinx.com:user:delay_axi_wrapper:1.0",
-    "ip_revision": "9",
+    "ip_revision": "10",
     "gen_directory": "../../../../../../digital_effects_2026-1.gen/sources_1/bd/design_1/ip/design_1_delay_axi_wrapper_0_0",
     "parameters": {
       "component_parameters": {
@@ -33,7 +33,7 @@
       },
       "runtime_parameters": {
         "IPCONTEXT": [ { "value": "IP_Integrator" } ],
-        "IPREVISION": [ { "value": "9" } ],
+        "IPREVISION": [ { "value": "10" } ],
         "MANAGED": [ { "value": "TRUE" } ],
         "OUTPUTDIR": [ { "value": "../../../../../../digital_effects_2026-1.gen/sources_1/bd/design_1/ip/design_1_delay_axi_wrapper_0_0" } ],
         "SELECTEDSIMMODEL": [ { "value": "" } ],
@@ -200,5 +200,5 @@
       }
     }
   },
-  "checksum": "48986565"
+  "checksum": "bc134314"
 }

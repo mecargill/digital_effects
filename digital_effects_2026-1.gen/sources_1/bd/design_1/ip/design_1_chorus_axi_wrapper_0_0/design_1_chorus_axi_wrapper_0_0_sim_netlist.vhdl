@@ -2,7 +2,7 @@
 -- Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2026.1 (win64) Build 6511674 Tue Jun 16 11:02:23 MDT 2026
--- Date        : Thu Oct  8 19:20:41 2026
+-- Date        : Fri Oct  9 08:25:24 2026
 -- Host        : MostlyEtc running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
 --               c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/ip/design_1_chorus_axi_wrapper_0_0/design_1_chorus_axi_wrapper_0_0_sim_netlist.vhdl
@@ -31,7 +31,6 @@ entity design_1_chorus_axi_wrapper_0_0_chorus is
     \i__carry__1_i_4_0\ : in STD_LOGIC_VECTOR ( 3 downto 0 );
     \i__carry__2_i_4_0\ : in STD_LOGIC_VECTOR ( 3 downto 0 );
     \i__carry__3_i_2_0\ : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    rst_n : in STD_LOGIC;
     sample_in_valid : in STD_LOGIC
   );
   attribute ORIG_REF_NAME : string;
@@ -41,19 +40,18 @@ end design_1_chorus_axi_wrapper_0_0_chorus;
 architecture STRUCTURE of design_1_chorus_axi_wrapper_0_0_chorus is
   signal A : STD_LOGIC_VECTOR ( 23 downto 0 );
   signal C : STD_LOGIC_VECTOR ( 39 downto 10 );
-  signal \_inferred__3/i__carry__0_n_0\ : STD_LOGIC;
-  signal \_inferred__3/i__carry__0_n_1\ : STD_LOGIC;
-  signal \_inferred__3/i__carry__0_n_2\ : STD_LOGIC;
-  signal \_inferred__3/i__carry__0_n_3\ : STD_LOGIC;
-  signal \_inferred__3/i__carry__1_n_2\ : STD_LOGIC;
-  signal \_inferred__3/i__carry__1_n_3\ : STD_LOGIC;
-  signal \_inferred__3/i__carry_n_0\ : STD_LOGIC;
-  signal \_inferred__3/i__carry_n_1\ : STD_LOGIC;
-  signal \_inferred__3/i__carry_n_2\ : STD_LOGIC;
-  signal \_inferred__3/i__carry_n_3\ : STD_LOGIC;
+  signal \_inferred__2/i__carry__0_n_0\ : STD_LOGIC;
+  signal \_inferred__2/i__carry__0_n_1\ : STD_LOGIC;
+  signal \_inferred__2/i__carry__0_n_2\ : STD_LOGIC;
+  signal \_inferred__2/i__carry__0_n_3\ : STD_LOGIC;
+  signal \_inferred__2/i__carry__1_n_2\ : STD_LOGIC;
+  signal \_inferred__2/i__carry__1_n_3\ : STD_LOGIC;
+  signal \_inferred__2/i__carry_n_0\ : STD_LOGIC;
+  signal \_inferred__2/i__carry_n_1\ : STD_LOGIC;
+  signal \_inferred__2/i__carry_n_2\ : STD_LOGIC;
+  signal \_inferred__2/i__carry_n_3\ : STD_LOGIC;
   signal buf_we : STD_LOGIC;
-  signal buf_we_i_1_n_0 : STD_LOGIC;
-  signal clear : STD_LOGIC;
+  signal delay_frac : STD_LOGIC_VECTOR ( 0 to 0 );
   signal \delay_frac_reg_n_0_[0]\ : STD_LOGIC;
   signal \delay_frac_reg_n_0_[10]\ : STD_LOGIC;
   signal \delay_frac_reg_n_0_[11]\ : STD_LOGIC;
@@ -67,8 +65,6 @@ architecture STRUCTURE of design_1_chorus_axi_wrapper_0_0_chorus is
   signal \delay_frac_reg_n_0_[8]\ : STD_LOGIC;
   signal \delay_frac_reg_n_0_[9]\ : STD_LOGIC;
   signal delay_int : STD_LOGIC_VECTOR ( 10 downto 0 );
-  signal delay_int_0 : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal delay_q : STD_LOGIC_VECTOR ( 0 to 0 );
   signal delay_q1 : STD_LOGIC;
   signal delay_q10_in : STD_LOGIC;
   signal \delay_q1_carry__0_i_1_n_0\ : STD_LOGIC;
@@ -155,6 +151,7 @@ architecture STRUCTURE of design_1_chorus_axi_wrapper_0_0_chorus is
   signal \delay_q[28]_i_1_n_0\ : STD_LOGIC;
   signal \delay_q[29]_i_1_n_0\ : STD_LOGIC;
   signal \delay_q[30]_i_1_n_0\ : STD_LOGIC;
+  signal \delay_q[30]_i_2_n_0\ : STD_LOGIC;
   signal \delay_q[30]_i_3_n_0\ : STD_LOGIC;
   signal \delay_q[8]_i_1_n_0\ : STD_LOGIC;
   signal \delay_q[9]_i_1_n_0\ : STD_LOGIC;
@@ -373,6 +370,7 @@ architecture STRUCTURE of design_1_chorus_axi_wrapper_0_0_chorus is
   signal \depth_term__1_n_97\ : STD_LOGIC;
   signal \depth_term__1_n_98\ : STD_LOGIC;
   signal \depth_term__1_n_99\ : STD_LOGIC;
+  signal depth_term_i_1_n_0 : STD_LOGIC;
   signal depth_term_n_100 : STD_LOGIC;
   signal depth_term_n_101 : STD_LOGIC;
   signal depth_term_n_102 : STD_LOGIC;
@@ -468,6 +466,7 @@ architecture STRUCTURE of design_1_chorus_axi_wrapper_0_0_chorus is
   signal interp0_i_14_n_0 : STD_LOGIC;
   signal interp0_i_15_n_0 : STD_LOGIC;
   signal interp0_i_16_n_0 : STD_LOGIC;
+  signal interp0_i_1_n_0 : STD_LOGIC;
   signal interp0_i_2_n_0 : STD_LOGIC;
   signal interp0_i_2_n_2 : STD_LOGIC;
   signal interp0_i_2_n_3 : STD_LOGIC;
@@ -537,6 +536,7 @@ architecture STRUCTURE of design_1_chorus_axi_wrapper_0_0_chorus is
   signal interp_i_11_n_0 : STD_LOGIC;
   signal interp_i_12_n_0 : STD_LOGIC;
   signal interp_i_13_n_0 : STD_LOGIC;
+  signal interp_i_1_n_0 : STD_LOGIC;
   signal interp_i_2_n_0 : STD_LOGIC;
   signal interp_i_3_n_0 : STD_LOGIC;
   signal interp_i_4_n_0 : STD_LOGIC;
@@ -557,7 +557,6 @@ architecture STRUCTURE of design_1_chorus_axi_wrapper_0_0_chorus is
   signal interp_n_97 : STD_LOGIC;
   signal interp_n_98 : STD_LOGIC;
   signal interp_n_99 : STD_LOGIC;
-  signal lfo : STD_LOGIC_VECTOR ( 0 to 0 );
   signal lfo_next0 : STD_LOGIC_VECTOR ( 24 downto 0 );
   signal mixed0_n_100 : STD_LOGIC;
   signal mixed0_n_101 : STD_LOGIC;
@@ -600,6 +599,7 @@ architecture STRUCTURE of design_1_chorus_axi_wrapper_0_0_chorus is
   signal mixed0_n_97 : STD_LOGIC;
   signal mixed0_n_98 : STD_LOGIC;
   signal mixed0_n_99 : STD_LOGIC;
+  signal mixed_i_1_n_0 : STD_LOGIC;
   signal mixed_i_2_n_0 : STD_LOGIC;
   signal mixed_n_100 : STD_LOGIC;
   signal mixed_n_101 : STD_LOGIC;
@@ -927,12 +927,8 @@ architecture STRUCTURE of design_1_chorus_axi_wrapper_0_0_chorus is
   signal \rd_addr[10]_i_1_n_0\ : STD_LOGIC;
   signal \rd_addr__0\ : STD_LOGIC_VECTOR ( 10 downto 0 );
   signal rd_data : STD_LOGIC_VECTOR ( 23 downto 0 );
-  signal s_far : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal s_near : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal sample_out_valid_i_1_n_0 : STD_LOGIC;
   signal sample_x : STD_LOGIC_VECTOR ( 23 downto 0 );
-  signal \sample_x__0\ : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal sine_addr : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal \sample_x[23]_i_1_n_0\ : STD_LOGIC;
   signal \sine_addr[0]_i_1_n_0\ : STD_LOGIC;
   signal \sine_addr[1]_i_1_n_0\ : STD_LOGIC;
   signal \sine_addr[2]_i_1_n_0\ : STD_LOGIC;
@@ -945,6 +941,7 @@ architecture STRUCTURE of design_1_chorus_axi_wrapper_0_0_chorus is
   signal \sine_addr[7]_i_1_n_0\ : STD_LOGIC;
   signal \sine_addr[8]_i_1_n_0\ : STD_LOGIC;
   signal \sine_addr[8]_i_2_n_0\ : STD_LOGIC;
+  signal \sine_addr[9]_i_1_n_0\ : STD_LOGIC;
   signal \sine_addr[9]_i_2_n_0\ : STD_LOGIC;
   signal \sine_addr[9]_i_3_n_0\ : STD_LOGIC;
   signal \sine_addr_reg_n_0_[0]\ : STD_LOGIC;
@@ -958,10 +955,8 @@ architecture STRUCTURE of design_1_chorus_axi_wrapper_0_0_chorus is
   signal \sine_addr_reg_n_0_[8]\ : STD_LOGIC;
   signal \sine_addr_reg_n_0_[9]\ : STD_LOGIC;
   signal \sine_q_reg__0\ : STD_LOGIC_VECTOR ( 23 downto 0 );
-  signal sine_s0 : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal sine_s1 : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal \sine_step__0_i_1_n_0\ : STD_LOGIC;
-  signal \sine_step__12\ : STD_LOGIC_VECTOR ( 11 downto 0 );
+  signal sine_step_i_1_n_0 : STD_LOGIC;
+  signal sine_step_i_2_n_0 : STD_LOGIC;
   signal sine_step_n_100 : STD_LOGIC;
   signal sine_step_n_101 : STD_LOGIC;
   signal sine_step_n_102 : STD_LOGIC;
@@ -981,11 +976,10 @@ architecture STRUCTURE of design_1_chorus_axi_wrapper_0_0_chorus is
   signal \state_reg_n_0_[1]\ : STD_LOGIC;
   signal \state_reg_n_0_[2]\ : STD_LOGIC;
   signal \state_reg_n_0_[3]\ : STD_LOGIC;
-  signal wet : STD_LOGIC_VECTOR ( 0 to 0 );
   signal \wr_addr[10]_i_2_n_0\ : STD_LOGIC;
   signal wr_addr_reg : STD_LOGIC_VECTOR ( 10 downto 0 );
-  signal \NLW__inferred__3/i__carry__1_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 2 );
-  signal \NLW__inferred__3/i__carry__1_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 to 3 );
+  signal \NLW__inferred__2/i__carry__1_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 2 );
+  signal \NLW__inferred__2/i__carry__1_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 to 3 );
   signal NLW_delay_q1_carry_O_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal \NLW_delay_q1_carry__0_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal \NLW_delay_q1_carry__1_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
@@ -1158,13 +1152,13 @@ architecture STRUCTURE of design_1_chorus_axi_wrapper_0_0_chorus is
   signal NLW_sine_step_P_UNCONNECTED : STD_LOGIC_VECTOR ( 47 downto 38 );
   signal NLW_sine_step_PCOUT_UNCONNECTED : STD_LOGIC_VECTOR ( 47 downto 0 );
   attribute ADDER_THRESHOLD : integer;
-  attribute ADDER_THRESHOLD of \_inferred__3/i__carry\ : label is 35;
+  attribute ADDER_THRESHOLD of \_inferred__2/i__carry\ : label is 35;
   attribute METHODOLOGY_DRC_VIOS : string;
-  attribute METHODOLOGY_DRC_VIOS of \_inferred__3/i__carry\ : label is "{SYNTH-8 {cell *THIS*}}";
-  attribute ADDER_THRESHOLD of \_inferred__3/i__carry__0\ : label is 35;
-  attribute METHODOLOGY_DRC_VIOS of \_inferred__3/i__carry__0\ : label is "{SYNTH-8 {cell *THIS*}}";
-  attribute ADDER_THRESHOLD of \_inferred__3/i__carry__1\ : label is 35;
-  attribute METHODOLOGY_DRC_VIOS of \_inferred__3/i__carry__1\ : label is "{SYNTH-8 {cell *THIS*}}";
+  attribute METHODOLOGY_DRC_VIOS of \_inferred__2/i__carry\ : label is "{SYNTH-8 {cell *THIS*}}";
+  attribute ADDER_THRESHOLD of \_inferred__2/i__carry__0\ : label is 35;
+  attribute METHODOLOGY_DRC_VIOS of \_inferred__2/i__carry__0\ : label is "{SYNTH-8 {cell *THIS*}}";
+  attribute ADDER_THRESHOLD of \_inferred__2/i__carry__1\ : label is 35;
+  attribute METHODOLOGY_DRC_VIOS of \_inferred__2/i__carry__1\ : label is "{SYNTH-8 {cell *THIS*}}";
   attribute COMPARATOR_THRESHOLD : integer;
   attribute COMPARATOR_THRESHOLD of delay_q1_carry : label is 11;
   attribute COMPARATOR_THRESHOLD of \delay_q1_carry__0\ : label is 11;
@@ -1297,13 +1291,13 @@ architecture STRUCTURE of design_1_chorus_axi_wrapper_0_0_chorus is
   attribute SOFT_HLUTNM of \wr_addr[8]_i_1\ : label is "soft_lutpair2";
   attribute SOFT_HLUTNM of \wr_addr[9]_i_1\ : label is "soft_lutpair2";
 begin
-\_inferred__3/i__carry\: unisim.vcomponents.CARRY4
+\_inferred__2/i__carry\: unisim.vcomponents.CARRY4
      port map (
       CI => '0',
-      CO(3) => \_inferred__3/i__carry_n_0\,
-      CO(2) => \_inferred__3/i__carry_n_1\,
-      CO(1) => \_inferred__3/i__carry_n_2\,
-      CO(0) => \_inferred__3/i__carry_n_3\,
+      CO(3) => \_inferred__2/i__carry_n_0\,
+      CO(2) => \_inferred__2/i__carry_n_1\,
+      CO(1) => \_inferred__2/i__carry_n_2\,
+      CO(0) => \_inferred__2/i__carry_n_3\,
       CYINIT => wr_addr_reg(0),
       DI(3 downto 1) => wr_addr_reg(3 downto 1),
       DI(0) => p_1_in(0),
@@ -1313,13 +1307,13 @@ begin
       S(1) => \i__carry_i_4__0_n_0\,
       S(0) => \i__carry_i_5_n_0\
     );
-\_inferred__3/i__carry__0\: unisim.vcomponents.CARRY4
+\_inferred__2/i__carry__0\: unisim.vcomponents.CARRY4
      port map (
-      CI => \_inferred__3/i__carry_n_0\,
-      CO(3) => \_inferred__3/i__carry__0_n_0\,
-      CO(2) => \_inferred__3/i__carry__0_n_1\,
-      CO(1) => \_inferred__3/i__carry__0_n_2\,
-      CO(0) => \_inferred__3/i__carry__0_n_3\,
+      CI => \_inferred__2/i__carry_n_0\,
+      CO(3) => \_inferred__2/i__carry__0_n_0\,
+      CO(2) => \_inferred__2/i__carry__0_n_1\,
+      CO(1) => \_inferred__2/i__carry__0_n_2\,
+      CO(0) => \_inferred__2/i__carry__0_n_3\,
       CYINIT => '0',
       DI(3 downto 0) => wr_addr_reg(7 downto 4),
       O(3 downto 0) => \rd_addr__0\(7 downto 4),
@@ -1328,34 +1322,21 @@ begin
       S(1) => \i__carry__0_i_3__0_n_0\,
       S(0) => \i__carry__0_i_4__0_n_0\
     );
-\_inferred__3/i__carry__1\: unisim.vcomponents.CARRY4
+\_inferred__2/i__carry__1\: unisim.vcomponents.CARRY4
      port map (
-      CI => \_inferred__3/i__carry__0_n_0\,
-      CO(3 downto 2) => \NLW__inferred__3/i__carry__1_CO_UNCONNECTED\(3 downto 2),
-      CO(1) => \_inferred__3/i__carry__1_n_2\,
-      CO(0) => \_inferred__3/i__carry__1_n_3\,
+      CI => \_inferred__2/i__carry__0_n_0\,
+      CO(3 downto 2) => \NLW__inferred__2/i__carry__1_CO_UNCONNECTED\(3 downto 2),
+      CO(1) => \_inferred__2/i__carry__1_n_2\,
+      CO(0) => \_inferred__2/i__carry__1_n_3\,
       CYINIT => '0',
       DI(3 downto 2) => B"00",
       DI(1 downto 0) => wr_addr_reg(9 downto 8),
-      O(3) => \NLW__inferred__3/i__carry__1_O_UNCONNECTED\(3),
+      O(3) => \NLW__inferred__2/i__carry__1_O_UNCONNECTED\(3),
       O(2 downto 0) => \rd_addr__0\(10 downto 8),
       S(3) => '0',
       S(2) => \i__carry__1_i_1__0_n_0\,
       S(1) => \i__carry__1_i_2__0_n_0\,
       S(0) => \i__carry__1_i_3__0_n_0\
-    );
-buf_we_i_1: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"0001000000000000"
-    )
-        port map (
-      I0 => \state_reg_n_0_[0]\,
-      I1 => \state_reg_n_0_[3]\,
-      I2 => \state_reg_n_0_[1]\,
-      I3 => \state_reg_n_0_[2]\,
-      I4 => sample_in_valid,
-      I5 => rst_n,
-      O => buf_we_i_1_n_0
     );
 buf_we_reg: unisim.vcomponents.FDRE
     generic map(
@@ -1364,21 +1345,20 @@ buf_we_reg: unisim.vcomponents.FDRE
         port map (
       C => audio_clk,
       CE => '1',
-      D => buf_we_i_1_n_0,
+      D => \sample_x[23]_i_1_n_0\,
       Q => buf_we,
       R => '0'
     );
-\delay_frac[11]_i_1\: unisim.vcomponents.LUT5
+\delay_frac[11]_i_1\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"00000080"
+      INIT => X"1000"
     )
         port map (
-      I0 => rst_n,
-      I1 => \state_reg_n_0_[2]\,
+      I0 => \state_reg_n_0_[3]\,
+      I1 => \state_reg_n_0_[0]\,
       I2 => \state_reg_n_0_[1]\,
-      I3 => \state_reg_n_0_[0]\,
-      I4 => \state_reg_n_0_[3]\,
-      O => delay_int_0(0)
+      I3 => \state_reg_n_0_[2]\,
+      O => delay_frac(0)
     );
 \delay_frac_reg[0]\: unisim.vcomponents.FDRE
     generic map(
@@ -1386,7 +1366,7 @@ buf_we_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => audio_clk,
-      CE => delay_int_0(0),
+      CE => delay_frac(0),
       D => p_0_in(0),
       Q => \delay_frac_reg_n_0_[0]\,
       R => '0'
@@ -1397,7 +1377,7 @@ buf_we_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => audio_clk,
-      CE => delay_int_0(0),
+      CE => delay_frac(0),
       D => p_0_in(10),
       Q => \delay_frac_reg_n_0_[10]\,
       R => '0'
@@ -1408,7 +1388,7 @@ buf_we_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => audio_clk,
-      CE => delay_int_0(0),
+      CE => delay_frac(0),
       D => p_0_in(11),
       Q => \delay_frac_reg_n_0_[11]\,
       R => '0'
@@ -1419,7 +1399,7 @@ buf_we_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => audio_clk,
-      CE => delay_int_0(0),
+      CE => delay_frac(0),
       D => p_0_in(1),
       Q => \delay_frac_reg_n_0_[1]\,
       R => '0'
@@ -1430,7 +1410,7 @@ buf_we_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => audio_clk,
-      CE => delay_int_0(0),
+      CE => delay_frac(0),
       D => p_0_in(2),
       Q => \delay_frac_reg_n_0_[2]\,
       R => '0'
@@ -1441,7 +1421,7 @@ buf_we_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => audio_clk,
-      CE => delay_int_0(0),
+      CE => delay_frac(0),
       D => p_0_in(3),
       Q => \delay_frac_reg_n_0_[3]\,
       R => '0'
@@ -1452,7 +1432,7 @@ buf_we_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => audio_clk,
-      CE => delay_int_0(0),
+      CE => delay_frac(0),
       D => p_0_in(4),
       Q => \delay_frac_reg_n_0_[4]\,
       R => '0'
@@ -1463,7 +1443,7 @@ buf_we_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => audio_clk,
-      CE => delay_int_0(0),
+      CE => delay_frac(0),
       D => p_0_in(5),
       Q => \delay_frac_reg_n_0_[5]\,
       R => '0'
@@ -1474,7 +1454,7 @@ buf_we_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => audio_clk,
-      CE => delay_int_0(0),
+      CE => delay_frac(0),
       D => p_0_in(6),
       Q => \delay_frac_reg_n_0_[6]\,
       R => '0'
@@ -1485,7 +1465,7 @@ buf_we_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => audio_clk,
-      CE => delay_int_0(0),
+      CE => delay_frac(0),
       D => p_0_in(7),
       Q => \delay_frac_reg_n_0_[7]\,
       R => '0'
@@ -1496,7 +1476,7 @@ buf_we_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => audio_clk,
-      CE => delay_int_0(0),
+      CE => delay_frac(0),
       D => p_0_in(8),
       Q => \delay_frac_reg_n_0_[8]\,
       R => '0'
@@ -1507,7 +1487,7 @@ buf_we_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => audio_clk,
-      CE => delay_int_0(0),
+      CE => delay_frac(0),
       D => p_0_in(9),
       Q => \delay_frac_reg_n_0_[9]\,
       R => '0'
@@ -1518,7 +1498,7 @@ buf_we_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => audio_clk,
-      CE => delay_int_0(0),
+      CE => delay_frac(0),
       D => \delay_q_reg_n_0_[20]\,
       Q => delay_int(0),
       R => '0'
@@ -1529,7 +1509,7 @@ buf_we_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => audio_clk,
-      CE => delay_int_0(0),
+      CE => delay_frac(0),
       D => \delay_q_reg_n_0_[30]\,
       Q => delay_int(10),
       R => '0'
@@ -1540,7 +1520,7 @@ buf_we_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => audio_clk,
-      CE => delay_int_0(0),
+      CE => delay_frac(0),
       D => \delay_q_reg_n_0_[21]\,
       Q => delay_int(1),
       R => '0'
@@ -1551,7 +1531,7 @@ buf_we_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => audio_clk,
-      CE => delay_int_0(0),
+      CE => delay_frac(0),
       D => \delay_q_reg_n_0_[22]\,
       Q => delay_int(2),
       R => '0'
@@ -1562,7 +1542,7 @@ buf_we_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => audio_clk,
-      CE => delay_int_0(0),
+      CE => delay_frac(0),
       D => \delay_q_reg_n_0_[23]\,
       Q => delay_int(3),
       R => '0'
@@ -1573,7 +1553,7 @@ buf_we_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => audio_clk,
-      CE => delay_int_0(0),
+      CE => delay_frac(0),
       D => \delay_q_reg_n_0_[24]\,
       Q => delay_int(4),
       R => '0'
@@ -1584,7 +1564,7 @@ buf_we_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => audio_clk,
-      CE => delay_int_0(0),
+      CE => delay_frac(0),
       D => \delay_q_reg_n_0_[25]\,
       Q => delay_int(5),
       R => '0'
@@ -1595,7 +1575,7 @@ buf_we_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => audio_clk,
-      CE => delay_int_0(0),
+      CE => delay_frac(0),
       D => \delay_q_reg_n_0_[26]\,
       Q => delay_int(6),
       R => '0'
@@ -1606,7 +1586,7 @@ buf_we_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => audio_clk,
-      CE => delay_int_0(0),
+      CE => delay_frac(0),
       D => \delay_q_reg_n_0_[27]\,
       Q => delay_int(7),
       R => '0'
@@ -1617,7 +1597,7 @@ buf_we_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => audio_clk,
-      CE => delay_int_0(0),
+      CE => delay_frac(0),
       D => \delay_q_reg_n_0_[28]\,
       Q => delay_int(8),
       R => '0'
@@ -1628,7 +1608,7 @@ buf_we_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => audio_clk,
-      CE => delay_int_0(0),
+      CE => delay_frac(0),
       D => \delay_q_reg_n_0_[29]\,
       Q => delay_int(9),
       R => '0'
@@ -2180,7 +2160,7 @@ delay_q1_carry_i_8: unisim.vcomponents.LUT2
       I0 => delay_q10_in,
       I1 => delay_q1,
       I2 => \delay_unclamped__0\(20),
-      I3 => delay_q(0),
+      I3 => \delay_q[30]_i_2_n_0\,
       I4 => \delay_q_reg_n_0_[20]\,
       O => \delay_q[20]_i_1_n_0\
     );
@@ -2265,30 +2245,28 @@ delay_q1_carry_i_8: unisim.vcomponents.LUT2
       I1 => \delay_unclamped__0\(29),
       O => \delay_q[29]_i_1_n_0\
     );
-\delay_q[30]_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"0200000000000000"
-    )
-        port map (
-      I0 => delay_q10_in,
-      I1 => \state_reg_n_0_[3]\,
-      I2 => \state_reg_n_0_[1]\,
-      I3 => \state_reg_n_0_[0]\,
-      I4 => \state_reg_n_0_[2]\,
-      I5 => rst_n,
-      O => \delay_q[30]_i_1_n_0\
-    );
-\delay_q[30]_i_2\: unisim.vcomponents.LUT5
+\delay_q[30]_i_1\: unisim.vcomponents.LUT5
     generic map(
       INIT => X"00000080"
     )
         port map (
-      I0 => rst_n,
+      I0 => delay_q10_in,
       I1 => \state_reg_n_0_[2]\,
       I2 => \state_reg_n_0_[0]\,
       I3 => \state_reg_n_0_[1]\,
       I4 => \state_reg_n_0_[3]\,
-      O => delay_q(0)
+      O => \delay_q[30]_i_1_n_0\
+    );
+\delay_q[30]_i_2\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"1000"
+    )
+        port map (
+      I0 => \state_reg_n_0_[3]\,
+      I1 => \state_reg_n_0_[1]\,
+      I2 => \state_reg_n_0_[0]\,
+      I3 => \state_reg_n_0_[2]\,
+      O => \delay_q[30]_i_2_n_0\
     );
 \delay_q[30]_i_3\: unisim.vcomponents.LUT2
     generic map(
@@ -2323,7 +2301,7 @@ delay_q1_carry_i_8: unisim.vcomponents.LUT2
     )
         port map (
       C => audio_clk,
-      CE => delay_q(0),
+      CE => \delay_q[30]_i_2_n_0\,
       D => \delay_q[10]_i_1_n_0\,
       Q => p_0_in(2),
       R => \delay_q[30]_i_1_n_0\
@@ -2334,7 +2312,7 @@ delay_q1_carry_i_8: unisim.vcomponents.LUT2
     )
         port map (
       C => audio_clk,
-      CE => delay_q(0),
+      CE => \delay_q[30]_i_2_n_0\,
       D => \delay_q[11]_i_1_n_0\,
       Q => p_0_in(3),
       R => \delay_q[30]_i_1_n_0\
@@ -2345,7 +2323,7 @@ delay_q1_carry_i_8: unisim.vcomponents.LUT2
     )
         port map (
       C => audio_clk,
-      CE => delay_q(0),
+      CE => \delay_q[30]_i_2_n_0\,
       D => \delay_q[12]_i_1_n_0\,
       Q => p_0_in(4),
       R => \delay_q[30]_i_1_n_0\
@@ -2356,7 +2334,7 @@ delay_q1_carry_i_8: unisim.vcomponents.LUT2
     )
         port map (
       C => audio_clk,
-      CE => delay_q(0),
+      CE => \delay_q[30]_i_2_n_0\,
       D => \delay_q[13]_i_1_n_0\,
       Q => p_0_in(5),
       R => \delay_q[30]_i_1_n_0\
@@ -2367,7 +2345,7 @@ delay_q1_carry_i_8: unisim.vcomponents.LUT2
     )
         port map (
       C => audio_clk,
-      CE => delay_q(0),
+      CE => \delay_q[30]_i_2_n_0\,
       D => \delay_q[14]_i_1_n_0\,
       Q => p_0_in(6),
       R => \delay_q[30]_i_1_n_0\
@@ -2378,7 +2356,7 @@ delay_q1_carry_i_8: unisim.vcomponents.LUT2
     )
         port map (
       C => audio_clk,
-      CE => delay_q(0),
+      CE => \delay_q[30]_i_2_n_0\,
       D => \delay_q[15]_i_1_n_0\,
       Q => p_0_in(7),
       R => \delay_q[30]_i_1_n_0\
@@ -2389,7 +2367,7 @@ delay_q1_carry_i_8: unisim.vcomponents.LUT2
     )
         port map (
       C => audio_clk,
-      CE => delay_q(0),
+      CE => \delay_q[30]_i_2_n_0\,
       D => \delay_q[16]_i_1_n_0\,
       Q => p_0_in(8),
       R => \delay_q[30]_i_1_n_0\
@@ -2400,7 +2378,7 @@ delay_q1_carry_i_8: unisim.vcomponents.LUT2
     )
         port map (
       C => audio_clk,
-      CE => delay_q(0),
+      CE => \delay_q[30]_i_2_n_0\,
       D => \delay_q[17]_i_1_n_0\,
       Q => p_0_in(9),
       R => \delay_q[30]_i_1_n_0\
@@ -2411,7 +2389,7 @@ delay_q1_carry_i_8: unisim.vcomponents.LUT2
     )
         port map (
       C => audio_clk,
-      CE => delay_q(0),
+      CE => \delay_q[30]_i_2_n_0\,
       D => \delay_q[18]_i_1_n_0\,
       Q => p_0_in(10),
       R => \delay_q[30]_i_1_n_0\
@@ -2422,7 +2400,7 @@ delay_q1_carry_i_8: unisim.vcomponents.LUT2
     )
         port map (
       C => audio_clk,
-      CE => delay_q(0),
+      CE => \delay_q[30]_i_2_n_0\,
       D => \delay_q[19]_i_1_n_0\,
       Q => p_0_in(11),
       R => \delay_q[30]_i_1_n_0\
@@ -2444,7 +2422,7 @@ delay_q1_carry_i_8: unisim.vcomponents.LUT2
     )
         port map (
       C => audio_clk,
-      CE => delay_q(0),
+      CE => \delay_q[30]_i_2_n_0\,
       D => \delay_q[21]_i_1_n_0\,
       Q => \delay_q_reg_n_0_[21]\,
       R => \delay_q[30]_i_1_n_0\
@@ -2455,7 +2433,7 @@ delay_q1_carry_i_8: unisim.vcomponents.LUT2
     )
         port map (
       C => audio_clk,
-      CE => delay_q(0),
+      CE => \delay_q[30]_i_2_n_0\,
       D => \delay_q[22]_i_1_n_0\,
       Q => \delay_q_reg_n_0_[22]\,
       R => \delay_q[30]_i_1_n_0\
@@ -2466,7 +2444,7 @@ delay_q1_carry_i_8: unisim.vcomponents.LUT2
     )
         port map (
       C => audio_clk,
-      CE => delay_q(0),
+      CE => \delay_q[30]_i_2_n_0\,
       D => \delay_q[23]_i_1_n_0\,
       Q => \delay_q_reg_n_0_[23]\,
       R => \delay_q[30]_i_1_n_0\
@@ -2477,7 +2455,7 @@ delay_q1_carry_i_8: unisim.vcomponents.LUT2
     )
         port map (
       C => audio_clk,
-      CE => delay_q(0),
+      CE => \delay_q[30]_i_2_n_0\,
       D => \delay_q[24]_i_1_n_0\,
       Q => \delay_q_reg_n_0_[24]\,
       R => \delay_q[30]_i_1_n_0\
@@ -2488,7 +2466,7 @@ delay_q1_carry_i_8: unisim.vcomponents.LUT2
     )
         port map (
       C => audio_clk,
-      CE => delay_q(0),
+      CE => \delay_q[30]_i_2_n_0\,
       D => \delay_q[25]_i_1_n_0\,
       Q => \delay_q_reg_n_0_[25]\,
       R => \delay_q[30]_i_1_n_0\
@@ -2499,7 +2477,7 @@ delay_q1_carry_i_8: unisim.vcomponents.LUT2
     )
         port map (
       C => audio_clk,
-      CE => delay_q(0),
+      CE => \delay_q[30]_i_2_n_0\,
       D => \delay_q[26]_i_1_n_0\,
       Q => \delay_q_reg_n_0_[26]\,
       R => \delay_q[30]_i_1_n_0\
@@ -2510,7 +2488,7 @@ delay_q1_carry_i_8: unisim.vcomponents.LUT2
     )
         port map (
       C => audio_clk,
-      CE => delay_q(0),
+      CE => \delay_q[30]_i_2_n_0\,
       D => \delay_q[27]_i_1_n_0\,
       Q => \delay_q_reg_n_0_[27]\,
       R => \delay_q[30]_i_1_n_0\
@@ -2521,7 +2499,7 @@ delay_q1_carry_i_8: unisim.vcomponents.LUT2
     )
         port map (
       C => audio_clk,
-      CE => delay_q(0),
+      CE => \delay_q[30]_i_2_n_0\,
       D => \delay_q[28]_i_1_n_0\,
       Q => \delay_q_reg_n_0_[28]\,
       R => \delay_q[30]_i_1_n_0\
@@ -2532,7 +2510,7 @@ delay_q1_carry_i_8: unisim.vcomponents.LUT2
     )
         port map (
       C => audio_clk,
-      CE => delay_q(0),
+      CE => \delay_q[30]_i_2_n_0\,
       D => \delay_q[29]_i_1_n_0\,
       Q => \delay_q_reg_n_0_[29]\,
       R => \delay_q[30]_i_1_n_0\
@@ -2543,7 +2521,7 @@ delay_q1_carry_i_8: unisim.vcomponents.LUT2
     )
         port map (
       C => audio_clk,
-      CE => delay_q(0),
+      CE => \delay_q[30]_i_2_n_0\,
       D => \delay_q[30]_i_3_n_0\,
       Q => \delay_q_reg_n_0_[30]\,
       R => \delay_q[30]_i_1_n_0\
@@ -2554,7 +2532,7 @@ delay_q1_carry_i_8: unisim.vcomponents.LUT2
     )
         port map (
       C => audio_clk,
-      CE => delay_q(0),
+      CE => \delay_q[30]_i_2_n_0\,
       D => \delay_q[8]_i_1_n_0\,
       Q => p_0_in(0),
       R => \delay_q[30]_i_1_n_0\
@@ -2565,7 +2543,7 @@ delay_q1_carry_i_8: unisim.vcomponents.LUT2
     )
         port map (
       C => audio_clk,
-      CE => delay_q(0),
+      CE => \delay_q[30]_i_2_n_0\,
       D => \delay_q[9]_i_1_n_0\,
       Q => p_0_in(1),
       R => \delay_q[30]_i_1_n_0\
@@ -3214,14 +3192,14 @@ depth_term: unisim.vcomponents.DSP48E1
       CARRYOUT(3 downto 0) => NLW_depth_term_CARRYOUT_UNCONNECTED(3 downto 0),
       CEA1 => '0',
       CEA2 => '0',
-      CEAD => lfo(0),
+      CEAD => depth_term_i_1_n_0,
       CEALUMODE => '0',
       CEB1 => '0',
       CEB2 => '0',
       CEC => '0',
       CECARRYIN => '0',
       CECTRL => '0',
-      CED => sine_s0(0),
+      CED => sine_step_i_1_n_0,
       CEINMODE => '0',
       CEM => '0',
       CEP => '0',
@@ -3347,14 +3325,14 @@ depth_term: unisim.vcomponents.DSP48E1
       CARRYOUT(3 downto 0) => \NLW_depth_term__0_CARRYOUT_UNCONNECTED\(3 downto 0),
       CEA1 => '0',
       CEA2 => '0',
-      CEAD => lfo(0),
+      CEAD => depth_term_i_1_n_0,
       CEALUMODE => '0',
       CEB1 => '0',
       CEB2 => '0',
       CEC => '0',
       CECARRYIN => '0',
       CECTRL => '0',
-      CED => sine_s0(0),
+      CED => sine_step_i_1_n_0,
       CEINMODE => '0',
       CEM => '0',
       CEP => '0',
@@ -3527,14 +3505,14 @@ depth_term: unisim.vcomponents.DSP48E1
       CARRYOUT(3 downto 0) => \NLW_depth_term__1_CARRYOUT_UNCONNECTED\(3 downto 0),
       CEA1 => '0',
       CEA2 => '0',
-      CEAD => lfo(0),
+      CEAD => depth_term_i_1_n_0,
       CEALUMODE => '0',
       CEB1 => '0',
       CEB2 => '0',
       CEC => '0',
       CECARRYIN => '0',
       CECTRL => '0',
-      CED => sine_s0(0),
+      CED => sine_step_i_1_n_0,
       CEINMODE => '0',
       CEM => '0',
       CEP => '0',
@@ -3657,17 +3635,16 @@ depth_term: unisim.vcomponents.DSP48E1
       RSTP => '0',
       UNDERFLOW => \NLW_depth_term__1_UNDERFLOW_UNCONNECTED\
     );
-depth_term_i_1: unisim.vcomponents.LUT5
+depth_term_i_1: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"00000020"
+      INIT => X"0010"
     )
         port map (
-      I0 => rst_n,
-      I1 => \state_reg_n_0_[1]\,
+      I0 => \state_reg_n_0_[3]\,
+      I1 => \state_reg_n_0_[0]\,
       I2 => \state_reg_n_0_[2]\,
-      I3 => \state_reg_n_0_[0]\,
-      I4 => \state_reg_n_0_[3]\,
-      O => lfo(0)
+      I3 => \state_reg_n_0_[1]\,
+      O => depth_term_i_1_n_0
     );
 \i__carry__0_i_1\: unisim.vcomponents.LUT2
     generic map(
@@ -4145,11 +4122,11 @@ interp: unisim.vcomponents.DSP48E1
       CARRYINSEL(2 downto 0) => B"000",
       CARRYOUT(3 downto 0) => NLW_interp_CARRYOUT_UNCONNECTED(3 downto 0),
       CEA1 => '0',
-      CEA2 => s_far(0),
+      CEA2 => interp_i_1_n_0,
       CEAD => '0',
       CEALUMODE => '0',
-      CEB1 => delay_q(0),
-      CEB2 => delay_int_0(0),
+      CEB1 => \delay_q[30]_i_2_n_0\,
+      CEB2 => delay_frac(0),
       CEC => '0',
       CECARRYIN => '0',
       CECTRL => '0',
@@ -4256,7 +4233,7 @@ interp0: unisim.vcomponents.DSP48E1
       CARRYINSEL(2 downto 0) => B"000",
       CARRYOUT(3 downto 0) => NLW_interp0_CARRYOUT_UNCONNECTED(3 downto 0),
       CEA1 => '0',
-      CEA2 => s_near(0),
+      CEA2 => interp0_i_1_n_0,
       CEAD => '0',
       CEALUMODE => '0',
       CEB1 => '0',
@@ -4330,17 +4307,16 @@ interp0: unisim.vcomponents.DSP48E1
       RSTP => '0',
       UNDERFLOW => NLW_interp0_UNDERFLOW_UNCONNECTED
     );
-interp0_i_1: unisim.vcomponents.LUT5
+interp0_i_1: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"00000080"
+      INIT => X"1000"
     )
         port map (
-      I0 => rst_n,
-      I1 => \state_reg_n_0_[3]\,
+      I0 => \state_reg_n_0_[1]\,
+      I1 => \state_reg_n_0_[2]\,
       I2 => \state_reg_n_0_[0]\,
-      I3 => \state_reg_n_0_[2]\,
-      I4 => \state_reg_n_0_[1]\,
-      O => s_near(0)
+      I3 => \state_reg_n_0_[3]\,
+      O => interp0_i_1_n_0
     );
 interp0_i_10: unisim.vcomponents.LUT1
     generic map(
@@ -4492,17 +4468,16 @@ interp0_i_9: unisim.vcomponents.LUT1
       I0 => \delay_frac_reg_n_0_[7]\,
       O => interp0_i_9_n_0
     );
-interp_i_1: unisim.vcomponents.LUT5
+interp_i_1: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"00000080"
+      INIT => X"1000"
     )
         port map (
-      I0 => rst_n,
-      I1 => \state_reg_n_0_[3]\,
+      I0 => \state_reg_n_0_[0]\,
+      I1 => \state_reg_n_0_[2]\,
       I2 => \state_reg_n_0_[1]\,
-      I3 => \state_reg_n_0_[2]\,
-      I4 => \state_reg_n_0_[0]\,
-      O => s_far(0)
+      I3 => \state_reg_n_0_[3]\,
+      O => interp_i_1_n_0
     );
 interp_i_10: unisim.vcomponents.LUT3
     generic map(
@@ -4721,7 +4696,7 @@ mixed: unisim.vcomponents.DSP48E1
       CARRYINSEL(2 downto 0) => B"000",
       CARRYOUT(3 downto 0) => NLW_mixed_CARRYOUT_UNCONNECTED(3 downto 0),
       CEA1 => '0',
-      CEA2 => wet(0),
+      CEA2 => mixed_i_1_n_0,
       CEAD => '0',
       CEALUMODE => '0',
       CEB1 => '0',
@@ -4771,7 +4746,7 @@ mixed: unisim.vcomponents.DSP48E1
       RSTD => '0',
       RSTINMODE => '0',
       RSTM => '0',
-      RSTP => clear,
+      RSTP => '0',
       UNDERFLOW => NLW_mixed_UNDERFLOW_UNCONNECTED
     );
 mixed0: unisim.vcomponents.DSP48E1
@@ -4824,7 +4799,7 @@ mixed0: unisim.vcomponents.DSP48E1
       CARRYINSEL(2 downto 0) => B"000",
       CARRYOUT(3 downto 0) => NLW_mixed0_CARRYOUT_UNCONNECTED(3 downto 0),
       CEA1 => '0',
-      CEA2 => \sample_x__0\(0),
+      CEA2 => \sample_x[23]_i_1_n_0\,
       CEAD => '0',
       CEALUMODE => '0',
       CEB1 => '0',
@@ -4901,17 +4876,16 @@ mixed0: unisim.vcomponents.DSP48E1
       RSTP => '0',
       UNDERFLOW => NLW_mixed0_UNDERFLOW_UNCONNECTED
     );
-mixed_i_1: unisim.vcomponents.LUT5
+mixed_i_1: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"20000000"
+      INIT => X"0080"
     )
         port map (
-      I0 => rst_n,
-      I1 => \state_reg_n_0_[2]\,
+      I0 => \state_reg_n_0_[0]\,
+      I1 => \state_reg_n_0_[1]\,
       I2 => \state_reg_n_0_[3]\,
-      I3 => \state_reg_n_0_[1]\,
-      I4 => \state_reg_n_0_[0]\,
-      O => wet(0)
+      I3 => \state_reg_n_0_[2]\,
+      O => mixed_i_1_n_0
     );
 mixed_i_2: unisim.vcomponents.LUT4
     generic map(
@@ -4923,14 +4897,6 @@ mixed_i_2: unisim.vcomponents.LUT4
       I2 => \state_reg_n_0_[3]\,
       I3 => \state_reg_n_0_[2]\,
       O => mixed_i_2_n_0
-    );
-mixed_i_3: unisim.vcomponents.LUT1
-    generic map(
-      INIT => X"1"
-    )
-        port map (
-      I0 => rst_n,
-      O => clear
     );
 phase0_carry: unisim.vcomponents.CARRY4
      port map (
@@ -6082,10 +6048,10 @@ phase_inc_carry: unisim.vcomponents.CARRY4
     )
         port map (
       C => audio_clk,
-      CE => \sine_step__0_i_1_n_0\,
+      CE => \sample_x[23]_i_1_n_0\,
       D => \phase_reg[0]_i_1_n_7\,
       Q => phase_reg(0),
-      R => clear
+      R => '0'
     );
 \phase_reg[0]_i_1\: unisim.vcomponents.CARRY4
      port map (
@@ -6111,10 +6077,10 @@ phase_inc_carry: unisim.vcomponents.CARRY4
     )
         port map (
       C => audio_clk,
-      CE => \sine_step__0_i_1_n_0\,
+      CE => \sample_x[23]_i_1_n_0\,
       D => \phase_reg[8]_i_1_n_5\,
       Q => phase_reg(10),
-      R => clear
+      R => '0'
     );
 \phase_reg[11]\: unisim.vcomponents.FDRE
     generic map(
@@ -6122,10 +6088,10 @@ phase_inc_carry: unisim.vcomponents.CARRY4
     )
         port map (
       C => audio_clk,
-      CE => \sine_step__0_i_1_n_0\,
+      CE => \sample_x[23]_i_1_n_0\,
       D => \phase_reg[8]_i_1_n_4\,
       Q => phase_reg(11),
-      R => clear
+      R => '0'
     );
 \phase_reg[12]\: unisim.vcomponents.FDRE
     generic map(
@@ -6133,10 +6099,10 @@ phase_inc_carry: unisim.vcomponents.CARRY4
     )
         port map (
       C => audio_clk,
-      CE => \sine_step__0_i_1_n_0\,
+      CE => \sample_x[23]_i_1_n_0\,
       D => \phase_reg[12]_i_1_n_7\,
       Q => phase_reg(12),
-      R => clear
+      R => '0'
     );
 \phase_reg[12]_i_1\: unisim.vcomponents.CARRY4
      port map (
@@ -6162,10 +6128,10 @@ phase_inc_carry: unisim.vcomponents.CARRY4
     )
         port map (
       C => audio_clk,
-      CE => \sine_step__0_i_1_n_0\,
+      CE => \sample_x[23]_i_1_n_0\,
       D => \phase_reg[12]_i_1_n_6\,
       Q => phase_reg(13),
-      R => clear
+      R => '0'
     );
 \phase_reg[14]\: unisim.vcomponents.FDRE
     generic map(
@@ -6173,10 +6139,10 @@ phase_inc_carry: unisim.vcomponents.CARRY4
     )
         port map (
       C => audio_clk,
-      CE => \sine_step__0_i_1_n_0\,
+      CE => \sample_x[23]_i_1_n_0\,
       D => \phase_reg[12]_i_1_n_5\,
       Q => phase_reg(14),
-      R => clear
+      R => '0'
     );
 \phase_reg[15]\: unisim.vcomponents.FDRE
     generic map(
@@ -6184,10 +6150,10 @@ phase_inc_carry: unisim.vcomponents.CARRY4
     )
         port map (
       C => audio_clk,
-      CE => \sine_step__0_i_1_n_0\,
+      CE => \sample_x[23]_i_1_n_0\,
       D => \phase_reg[12]_i_1_n_4\,
       Q => phase_reg(15),
-      R => clear
+      R => '0'
     );
 \phase_reg[16]\: unisim.vcomponents.FDRE
     generic map(
@@ -6195,10 +6161,10 @@ phase_inc_carry: unisim.vcomponents.CARRY4
     )
         port map (
       C => audio_clk,
-      CE => \sine_step__0_i_1_n_0\,
+      CE => \sample_x[23]_i_1_n_0\,
       D => \phase_reg[16]_i_1_n_7\,
       Q => phase_reg(16),
-      R => clear
+      R => '0'
     );
 \phase_reg[16]_i_1\: unisim.vcomponents.CARRY4
      port map (
@@ -6224,10 +6190,10 @@ phase_inc_carry: unisim.vcomponents.CARRY4
     )
         port map (
       C => audio_clk,
-      CE => \sine_step__0_i_1_n_0\,
+      CE => \sample_x[23]_i_1_n_0\,
       D => \phase_reg[16]_i_1_n_6\,
       Q => phase_reg(17),
-      R => clear
+      R => '0'
     );
 \phase_reg[18]\: unisim.vcomponents.FDRE
     generic map(
@@ -6235,10 +6201,10 @@ phase_inc_carry: unisim.vcomponents.CARRY4
     )
         port map (
       C => audio_clk,
-      CE => \sine_step__0_i_1_n_0\,
+      CE => \sample_x[23]_i_1_n_0\,
       D => \phase_reg[16]_i_1_n_5\,
       Q => phase_reg(18),
-      R => clear
+      R => '0'
     );
 \phase_reg[19]\: unisim.vcomponents.FDRE
     generic map(
@@ -6246,10 +6212,10 @@ phase_inc_carry: unisim.vcomponents.CARRY4
     )
         port map (
       C => audio_clk,
-      CE => \sine_step__0_i_1_n_0\,
+      CE => \sample_x[23]_i_1_n_0\,
       D => \phase_reg[16]_i_1_n_4\,
       Q => phase_reg(19),
-      R => clear
+      R => '0'
     );
 \phase_reg[1]\: unisim.vcomponents.FDRE
     generic map(
@@ -6257,10 +6223,10 @@ phase_inc_carry: unisim.vcomponents.CARRY4
     )
         port map (
       C => audio_clk,
-      CE => \sine_step__0_i_1_n_0\,
+      CE => \sample_x[23]_i_1_n_0\,
       D => \phase_reg[0]_i_1_n_6\,
       Q => phase_reg(1),
-      R => clear
+      R => '0'
     );
 \phase_reg[20]\: unisim.vcomponents.FDRE
     generic map(
@@ -6268,10 +6234,10 @@ phase_inc_carry: unisim.vcomponents.CARRY4
     )
         port map (
       C => audio_clk,
-      CE => \sine_step__0_i_1_n_0\,
+      CE => \sample_x[23]_i_1_n_0\,
       D => \phase_reg[20]_i_1_n_7\,
       Q => phase_reg(20),
-      R => clear
+      R => '0'
     );
 \phase_reg[20]_i_1\: unisim.vcomponents.CARRY4
      port map (
@@ -6297,10 +6263,10 @@ phase_inc_carry: unisim.vcomponents.CARRY4
     )
         port map (
       C => audio_clk,
-      CE => \sine_step__0_i_1_n_0\,
+      CE => \sample_x[23]_i_1_n_0\,
       D => \phase_reg[20]_i_1_n_6\,
       Q => phase_reg(21),
-      R => clear
+      R => '0'
     );
 \phase_reg[22]\: unisim.vcomponents.FDRE
     generic map(
@@ -6308,10 +6274,10 @@ phase_inc_carry: unisim.vcomponents.CARRY4
     )
         port map (
       C => audio_clk,
-      CE => \sine_step__0_i_1_n_0\,
+      CE => \sample_x[23]_i_1_n_0\,
       D => \phase_reg[20]_i_1_n_5\,
       Q => phase_reg(22),
-      R => clear
+      R => '0'
     );
 \phase_reg[23]\: unisim.vcomponents.FDRE
     generic map(
@@ -6319,10 +6285,10 @@ phase_inc_carry: unisim.vcomponents.CARRY4
     )
         port map (
       C => audio_clk,
-      CE => \sine_step__0_i_1_n_0\,
+      CE => \sample_x[23]_i_1_n_0\,
       D => \phase_reg[20]_i_1_n_4\,
       Q => phase_reg(23),
-      R => clear
+      R => '0'
     );
 \phase_reg[24]\: unisim.vcomponents.FDRE
     generic map(
@@ -6330,10 +6296,10 @@ phase_inc_carry: unisim.vcomponents.CARRY4
     )
         port map (
       C => audio_clk,
-      CE => \sine_step__0_i_1_n_0\,
+      CE => \sample_x[23]_i_1_n_0\,
       D => \phase_reg[24]_i_1_n_7\,
       Q => phase_reg(24),
-      R => clear
+      R => '0'
     );
 \phase_reg[24]_i_1\: unisim.vcomponents.CARRY4
      port map (
@@ -6359,10 +6325,10 @@ phase_inc_carry: unisim.vcomponents.CARRY4
     )
         port map (
       C => audio_clk,
-      CE => \sine_step__0_i_1_n_0\,
+      CE => \sample_x[23]_i_1_n_0\,
       D => \phase_reg[24]_i_1_n_6\,
       Q => phase_reg(25),
-      R => clear
+      R => '0'
     );
 \phase_reg[26]\: unisim.vcomponents.FDRE
     generic map(
@@ -6370,10 +6336,10 @@ phase_inc_carry: unisim.vcomponents.CARRY4
     )
         port map (
       C => audio_clk,
-      CE => \sine_step__0_i_1_n_0\,
+      CE => \sample_x[23]_i_1_n_0\,
       D => \phase_reg[24]_i_1_n_5\,
       Q => phase_reg(26),
-      R => clear
+      R => '0'
     );
 \phase_reg[27]\: unisim.vcomponents.FDRE
     generic map(
@@ -6381,10 +6347,10 @@ phase_inc_carry: unisim.vcomponents.CARRY4
     )
         port map (
       C => audio_clk,
-      CE => \sine_step__0_i_1_n_0\,
+      CE => \sample_x[23]_i_1_n_0\,
       D => \phase_reg[24]_i_1_n_4\,
       Q => phase_reg(27),
-      R => clear
+      R => '0'
     );
 \phase_reg[28]\: unisim.vcomponents.FDRE
     generic map(
@@ -6392,10 +6358,10 @@ phase_inc_carry: unisim.vcomponents.CARRY4
     )
         port map (
       C => audio_clk,
-      CE => \sine_step__0_i_1_n_0\,
+      CE => \sample_x[23]_i_1_n_0\,
       D => \phase_reg[28]_i_1_n_7\,
       Q => phase_reg(28),
-      R => clear
+      R => '0'
     );
 \phase_reg[28]_i_1\: unisim.vcomponents.CARRY4
      port map (
@@ -6421,10 +6387,10 @@ phase_inc_carry: unisim.vcomponents.CARRY4
     )
         port map (
       C => audio_clk,
-      CE => \sine_step__0_i_1_n_0\,
+      CE => \sample_x[23]_i_1_n_0\,
       D => \phase_reg[28]_i_1_n_6\,
       Q => phase_reg(29),
-      R => clear
+      R => '0'
     );
 \phase_reg[2]\: unisim.vcomponents.FDRE
     generic map(
@@ -6432,10 +6398,10 @@ phase_inc_carry: unisim.vcomponents.CARRY4
     )
         port map (
       C => audio_clk,
-      CE => \sine_step__0_i_1_n_0\,
+      CE => \sample_x[23]_i_1_n_0\,
       D => \phase_reg[0]_i_1_n_5\,
       Q => phase_reg(2),
-      R => clear
+      R => '0'
     );
 \phase_reg[30]\: unisim.vcomponents.FDRE
     generic map(
@@ -6443,10 +6409,10 @@ phase_inc_carry: unisim.vcomponents.CARRY4
     )
         port map (
       C => audio_clk,
-      CE => \sine_step__0_i_1_n_0\,
+      CE => \sample_x[23]_i_1_n_0\,
       D => \phase_reg[28]_i_1_n_5\,
       Q => phase_reg(30),
-      R => clear
+      R => '0'
     );
 \phase_reg[31]\: unisim.vcomponents.FDRE
     generic map(
@@ -6454,10 +6420,10 @@ phase_inc_carry: unisim.vcomponents.CARRY4
     )
         port map (
       C => audio_clk,
-      CE => \sine_step__0_i_1_n_0\,
+      CE => \sample_x[23]_i_1_n_0\,
       D => \phase_reg[28]_i_1_n_4\,
       Q => phase_reg(31),
-      R => clear
+      R => '0'
     );
 \phase_reg[32]\: unisim.vcomponents.FDRE
     generic map(
@@ -6465,10 +6431,10 @@ phase_inc_carry: unisim.vcomponents.CARRY4
     )
         port map (
       C => audio_clk,
-      CE => \sine_step__0_i_1_n_0\,
+      CE => \sample_x[23]_i_1_n_0\,
       D => \phase_reg[32]_i_1_n_7\,
       Q => phase_reg(32),
-      R => clear
+      R => '0'
     );
 \phase_reg[32]_i_1\: unisim.vcomponents.CARRY4
      port map (
@@ -6494,10 +6460,10 @@ phase_inc_carry: unisim.vcomponents.CARRY4
     )
         port map (
       C => audio_clk,
-      CE => \sine_step__0_i_1_n_0\,
+      CE => \sample_x[23]_i_1_n_0\,
       D => \phase_reg[32]_i_1_n_6\,
       Q => phase_reg(33),
-      R => clear
+      R => '0'
     );
 \phase_reg[34]\: unisim.vcomponents.FDRE
     generic map(
@@ -6505,10 +6471,10 @@ phase_inc_carry: unisim.vcomponents.CARRY4
     )
         port map (
       C => audio_clk,
-      CE => \sine_step__0_i_1_n_0\,
+      CE => \sample_x[23]_i_1_n_0\,
       D => \phase_reg[32]_i_1_n_5\,
       Q => phase_reg(34),
-      R => clear
+      R => '0'
     );
 \phase_reg[35]\: unisim.vcomponents.FDRE
     generic map(
@@ -6516,10 +6482,10 @@ phase_inc_carry: unisim.vcomponents.CARRY4
     )
         port map (
       C => audio_clk,
-      CE => \sine_step__0_i_1_n_0\,
+      CE => \sample_x[23]_i_1_n_0\,
       D => \phase_reg[32]_i_1_n_4\,
       Q => phase_reg(35),
-      R => clear
+      R => '0'
     );
 \phase_reg[36]\: unisim.vcomponents.FDRE
     generic map(
@@ -6527,10 +6493,10 @@ phase_inc_carry: unisim.vcomponents.CARRY4
     )
         port map (
       C => audio_clk,
-      CE => \sine_step__0_i_1_n_0\,
+      CE => \sample_x[23]_i_1_n_0\,
       D => \phase_reg[36]_i_1_n_7\,
       Q => phase_reg(36),
-      R => clear
+      R => '0'
     );
 \phase_reg[36]_i_1\: unisim.vcomponents.CARRY4
      port map (
@@ -6556,10 +6522,10 @@ phase_inc_carry: unisim.vcomponents.CARRY4
     )
         port map (
       C => audio_clk,
-      CE => \sine_step__0_i_1_n_0\,
+      CE => \sample_x[23]_i_1_n_0\,
       D => \phase_reg[36]_i_1_n_6\,
       Q => phase_reg(37),
-      R => clear
+      R => '0'
     );
 \phase_reg[38]\: unisim.vcomponents.FDRE
     generic map(
@@ -6567,10 +6533,10 @@ phase_inc_carry: unisim.vcomponents.CARRY4
     )
         port map (
       C => audio_clk,
-      CE => \sine_step__0_i_1_n_0\,
+      CE => \sample_x[23]_i_1_n_0\,
       D => \phase_reg[36]_i_1_n_5\,
       Q => phase_reg(38),
-      R => clear
+      R => '0'
     );
 \phase_reg[39]\: unisim.vcomponents.FDRE
     generic map(
@@ -6578,10 +6544,10 @@ phase_inc_carry: unisim.vcomponents.CARRY4
     )
         port map (
       C => audio_clk,
-      CE => \sine_step__0_i_1_n_0\,
+      CE => \sample_x[23]_i_1_n_0\,
       D => \phase_reg[36]_i_1_n_4\,
       Q => phase_reg(39),
-      R => clear
+      R => '0'
     );
 \phase_reg[3]\: unisim.vcomponents.FDRE
     generic map(
@@ -6589,10 +6555,10 @@ phase_inc_carry: unisim.vcomponents.CARRY4
     )
         port map (
       C => audio_clk,
-      CE => \sine_step__0_i_1_n_0\,
+      CE => \sample_x[23]_i_1_n_0\,
       D => \phase_reg[0]_i_1_n_4\,
       Q => phase_reg(3),
-      R => clear
+      R => '0'
     );
 \phase_reg[40]\: unisim.vcomponents.FDRE
     generic map(
@@ -6600,10 +6566,10 @@ phase_inc_carry: unisim.vcomponents.CARRY4
     )
         port map (
       C => audio_clk,
-      CE => \sine_step__0_i_1_n_0\,
+      CE => \sample_x[23]_i_1_n_0\,
       D => \phase_reg[40]_i_1_n_7\,
       Q => phase_reg(40),
-      R => clear
+      R => '0'
     );
 \phase_reg[40]_i_1\: unisim.vcomponents.CARRY4
      port map (
@@ -6629,10 +6595,10 @@ phase_inc_carry: unisim.vcomponents.CARRY4
     )
         port map (
       C => audio_clk,
-      CE => \sine_step__0_i_1_n_0\,
+      CE => \sample_x[23]_i_1_n_0\,
       D => \phase_reg[40]_i_1_n_6\,
       Q => phase_reg(41),
-      R => clear
+      R => '0'
     );
 \phase_reg[42]\: unisim.vcomponents.FDRE
     generic map(
@@ -6640,10 +6606,10 @@ phase_inc_carry: unisim.vcomponents.CARRY4
     )
         port map (
       C => audio_clk,
-      CE => \sine_step__0_i_1_n_0\,
+      CE => \sample_x[23]_i_1_n_0\,
       D => \phase_reg[40]_i_1_n_5\,
       Q => phase_reg(42),
-      R => clear
+      R => '0'
     );
 \phase_reg[43]\: unisim.vcomponents.FDRE
     generic map(
@@ -6651,10 +6617,10 @@ phase_inc_carry: unisim.vcomponents.CARRY4
     )
         port map (
       C => audio_clk,
-      CE => \sine_step__0_i_1_n_0\,
+      CE => \sample_x[23]_i_1_n_0\,
       D => \phase_reg[40]_i_1_n_4\,
       Q => phase_reg(43),
-      R => clear
+      R => '0'
     );
 \phase_reg[44]\: unisim.vcomponents.FDRE
     generic map(
@@ -6662,10 +6628,10 @@ phase_inc_carry: unisim.vcomponents.CARRY4
     )
         port map (
       C => audio_clk,
-      CE => \sine_step__0_i_1_n_0\,
+      CE => \sample_x[23]_i_1_n_0\,
       D => \phase_reg[44]_i_1_n_7\,
       Q => phase_reg(44),
-      R => clear
+      R => '0'
     );
 \phase_reg[44]_i_1\: unisim.vcomponents.CARRY4
      port map (
@@ -6688,10 +6654,10 @@ phase_inc_carry: unisim.vcomponents.CARRY4
     )
         port map (
       C => audio_clk,
-      CE => \sine_step__0_i_1_n_0\,
+      CE => \sample_x[23]_i_1_n_0\,
       D => \phase_reg[44]_i_1_n_6\,
       Q => phase_reg(45),
-      R => clear
+      R => '0'
     );
 \phase_reg[46]\: unisim.vcomponents.FDRE
     generic map(
@@ -6699,10 +6665,10 @@ phase_inc_carry: unisim.vcomponents.CARRY4
     )
         port map (
       C => audio_clk,
-      CE => \sine_step__0_i_1_n_0\,
+      CE => \sample_x[23]_i_1_n_0\,
       D => \phase_reg[44]_i_1_n_5\,
       Q => phase_reg(46),
-      R => clear
+      R => '0'
     );
 \phase_reg[47]\: unisim.vcomponents.FDRE
     generic map(
@@ -6710,10 +6676,10 @@ phase_inc_carry: unisim.vcomponents.CARRY4
     )
         port map (
       C => audio_clk,
-      CE => \sine_step__0_i_1_n_0\,
+      CE => \sample_x[23]_i_1_n_0\,
       D => \phase_reg[44]_i_1_n_4\,
       Q => phase_reg(47),
-      R => clear
+      R => '0'
     );
 \phase_reg[4]\: unisim.vcomponents.FDRE
     generic map(
@@ -6721,10 +6687,10 @@ phase_inc_carry: unisim.vcomponents.CARRY4
     )
         port map (
       C => audio_clk,
-      CE => \sine_step__0_i_1_n_0\,
+      CE => \sample_x[23]_i_1_n_0\,
       D => \phase_reg[4]_i_1_n_7\,
       Q => phase_reg(4),
-      R => clear
+      R => '0'
     );
 \phase_reg[4]_i_1\: unisim.vcomponents.CARRY4
      port map (
@@ -6750,10 +6716,10 @@ phase_inc_carry: unisim.vcomponents.CARRY4
     )
         port map (
       C => audio_clk,
-      CE => \sine_step__0_i_1_n_0\,
+      CE => \sample_x[23]_i_1_n_0\,
       D => \phase_reg[4]_i_1_n_6\,
       Q => phase_reg(5),
-      R => clear
+      R => '0'
     );
 \phase_reg[6]\: unisim.vcomponents.FDRE
     generic map(
@@ -6761,10 +6727,10 @@ phase_inc_carry: unisim.vcomponents.CARRY4
     )
         port map (
       C => audio_clk,
-      CE => \sine_step__0_i_1_n_0\,
+      CE => \sample_x[23]_i_1_n_0\,
       D => \phase_reg[4]_i_1_n_5\,
       Q => phase_reg(6),
-      R => clear
+      R => '0'
     );
 \phase_reg[7]\: unisim.vcomponents.FDRE
     generic map(
@@ -6772,10 +6738,10 @@ phase_inc_carry: unisim.vcomponents.CARRY4
     )
         port map (
       C => audio_clk,
-      CE => \sine_step__0_i_1_n_0\,
+      CE => \sample_x[23]_i_1_n_0\,
       D => \phase_reg[4]_i_1_n_4\,
       Q => phase_reg(7),
-      R => clear
+      R => '0'
     );
 \phase_reg[8]\: unisim.vcomponents.FDRE
     generic map(
@@ -6783,10 +6749,10 @@ phase_inc_carry: unisim.vcomponents.CARRY4
     )
         port map (
       C => audio_clk,
-      CE => \sine_step__0_i_1_n_0\,
+      CE => \sample_x[23]_i_1_n_0\,
       D => \phase_reg[8]_i_1_n_7\,
       Q => phase_reg(8),
-      R => clear
+      R => '0'
     );
 \phase_reg[8]_i_1\: unisim.vcomponents.CARRY4
      port map (
@@ -6812,21 +6778,20 @@ phase_inc_carry: unisim.vcomponents.CARRY4
     )
         port map (
       C => audio_clk,
-      CE => \sine_step__0_i_1_n_0\,
+      CE => \sample_x[23]_i_1_n_0\,
       D => \phase_reg[8]_i_1_n_6\,
       Q => phase_reg(9),
-      R => clear
+      R => '0'
     );
-\rd_addr[10]_i_1\: unisim.vcomponents.LUT5
+\rd_addr[10]_i_1\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"00028000"
+      INIT => X"4002"
     )
         port map (
-      I0 => rst_n,
-      I1 => \state_reg_n_0_[0]\,
+      I0 => \state_reg_n_0_[3]\,
+      I1 => \state_reg_n_0_[2]\,
       I2 => \state_reg_n_0_[1]\,
-      I3 => \state_reg_n_0_[2]\,
-      I4 => \state_reg_n_0_[3]\,
+      I3 => \state_reg_n_0_[0]\,
       O => \rd_addr[10]_i_1_n_0\
     );
 \rd_addr_reg[0]\: unisim.vcomponents.FDRE
@@ -7285,38 +7250,25 @@ sample_buf_reg_1: unisim.vcomponents.RAMB18E1
       WEA(0) => '1',
       WEBWE(3 downto 0) => B"0000"
     );
-sample_out_valid_i_1: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"00080000"
-    )
-        port map (
-      I0 => \state_reg_n_0_[2]\,
-      I1 => \state_reg_n_0_[3]\,
-      I2 => \state_reg_n_0_[1]\,
-      I3 => \state_reg_n_0_[0]\,
-      I4 => rst_n,
-      O => sample_out_valid_i_1_n_0
-    );
 sample_out_valid_reg: unisim.vcomponents.FDRE
      port map (
       C => audio_clk,
       CE => '1',
-      D => sample_out_valid_i_1_n_0,
+      D => mixed_i_2_n_0,
       Q => sample_out_valid,
       R => '0'
     );
-\sample_x[23]_i_1\: unisim.vcomponents.LUT6
+\sample_x[23]_i_1\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"0000000200000000"
+      INIT => X"00000002"
     )
         port map (
-      I0 => rst_n,
-      I1 => \state_reg_n_0_[0]\,
-      I2 => \state_reg_n_0_[3]\,
-      I3 => \state_reg_n_0_[1]\,
-      I4 => \state_reg_n_0_[2]\,
-      I5 => sample_in_valid,
-      O => \sample_x__0\(0)
+      I0 => sample_in_valid,
+      I1 => \state_reg_n_0_[2]\,
+      I2 => \state_reg_n_0_[1]\,
+      I3 => \state_reg_n_0_[3]\,
+      I4 => \state_reg_n_0_[0]\,
+      O => \sample_x[23]_i_1_n_0\
     );
 \sample_x_reg[0]\: unisim.vcomponents.FDRE
     generic map(
@@ -7324,7 +7276,7 @@ sample_out_valid_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => audio_clk,
-      CE => \sample_x__0\(0),
+      CE => \sample_x[23]_i_1_n_0\,
       D => sample_in(0),
       Q => sample_x(0),
       R => '0'
@@ -7335,7 +7287,7 @@ sample_out_valid_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => audio_clk,
-      CE => \sample_x__0\(0),
+      CE => \sample_x[23]_i_1_n_0\,
       D => sample_in(10),
       Q => sample_x(10),
       R => '0'
@@ -7346,7 +7298,7 @@ sample_out_valid_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => audio_clk,
-      CE => \sample_x__0\(0),
+      CE => \sample_x[23]_i_1_n_0\,
       D => sample_in(11),
       Q => sample_x(11),
       R => '0'
@@ -7357,7 +7309,7 @@ sample_out_valid_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => audio_clk,
-      CE => \sample_x__0\(0),
+      CE => \sample_x[23]_i_1_n_0\,
       D => sample_in(12),
       Q => sample_x(12),
       R => '0'
@@ -7368,7 +7320,7 @@ sample_out_valid_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => audio_clk,
-      CE => \sample_x__0\(0),
+      CE => \sample_x[23]_i_1_n_0\,
       D => sample_in(13),
       Q => sample_x(13),
       R => '0'
@@ -7379,7 +7331,7 @@ sample_out_valid_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => audio_clk,
-      CE => \sample_x__0\(0),
+      CE => \sample_x[23]_i_1_n_0\,
       D => sample_in(14),
       Q => sample_x(14),
       R => '0'
@@ -7390,7 +7342,7 @@ sample_out_valid_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => audio_clk,
-      CE => \sample_x__0\(0),
+      CE => \sample_x[23]_i_1_n_0\,
       D => sample_in(15),
       Q => sample_x(15),
       R => '0'
@@ -7401,7 +7353,7 @@ sample_out_valid_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => audio_clk,
-      CE => \sample_x__0\(0),
+      CE => \sample_x[23]_i_1_n_0\,
       D => sample_in(16),
       Q => sample_x(16),
       R => '0'
@@ -7412,7 +7364,7 @@ sample_out_valid_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => audio_clk,
-      CE => \sample_x__0\(0),
+      CE => \sample_x[23]_i_1_n_0\,
       D => sample_in(17),
       Q => sample_x(17),
       R => '0'
@@ -7423,7 +7375,7 @@ sample_out_valid_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => audio_clk,
-      CE => \sample_x__0\(0),
+      CE => \sample_x[23]_i_1_n_0\,
       D => sample_in(18),
       Q => sample_x(18),
       R => '0'
@@ -7434,7 +7386,7 @@ sample_out_valid_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => audio_clk,
-      CE => \sample_x__0\(0),
+      CE => \sample_x[23]_i_1_n_0\,
       D => sample_in(19),
       Q => sample_x(19),
       R => '0'
@@ -7445,7 +7397,7 @@ sample_out_valid_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => audio_clk,
-      CE => \sample_x__0\(0),
+      CE => \sample_x[23]_i_1_n_0\,
       D => sample_in(1),
       Q => sample_x(1),
       R => '0'
@@ -7456,7 +7408,7 @@ sample_out_valid_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => audio_clk,
-      CE => \sample_x__0\(0),
+      CE => \sample_x[23]_i_1_n_0\,
       D => sample_in(20),
       Q => sample_x(20),
       R => '0'
@@ -7467,7 +7419,7 @@ sample_out_valid_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => audio_clk,
-      CE => \sample_x__0\(0),
+      CE => \sample_x[23]_i_1_n_0\,
       D => sample_in(21),
       Q => sample_x(21),
       R => '0'
@@ -7478,7 +7430,7 @@ sample_out_valid_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => audio_clk,
-      CE => \sample_x__0\(0),
+      CE => \sample_x[23]_i_1_n_0\,
       D => sample_in(22),
       Q => sample_x(22),
       R => '0'
@@ -7489,7 +7441,7 @@ sample_out_valid_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => audio_clk,
-      CE => \sample_x__0\(0),
+      CE => \sample_x[23]_i_1_n_0\,
       D => sample_in(23),
       Q => sample_x(23),
       R => '0'
@@ -7500,7 +7452,7 @@ sample_out_valid_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => audio_clk,
-      CE => \sample_x__0\(0),
+      CE => \sample_x[23]_i_1_n_0\,
       D => sample_in(2),
       Q => sample_x(2),
       R => '0'
@@ -7511,7 +7463,7 @@ sample_out_valid_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => audio_clk,
-      CE => \sample_x__0\(0),
+      CE => \sample_x[23]_i_1_n_0\,
       D => sample_in(3),
       Q => sample_x(3),
       R => '0'
@@ -7522,7 +7474,7 @@ sample_out_valid_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => audio_clk,
-      CE => \sample_x__0\(0),
+      CE => \sample_x[23]_i_1_n_0\,
       D => sample_in(4),
       Q => sample_x(4),
       R => '0'
@@ -7533,7 +7485,7 @@ sample_out_valid_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => audio_clk,
-      CE => \sample_x__0\(0),
+      CE => \sample_x[23]_i_1_n_0\,
       D => sample_in(5),
       Q => sample_x(5),
       R => '0'
@@ -7544,7 +7496,7 @@ sample_out_valid_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => audio_clk,
-      CE => \sample_x__0\(0),
+      CE => \sample_x[23]_i_1_n_0\,
       D => sample_in(6),
       Q => sample_x(6),
       R => '0'
@@ -7555,7 +7507,7 @@ sample_out_valid_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => audio_clk,
-      CE => \sample_x__0\(0),
+      CE => \sample_x[23]_i_1_n_0\,
       D => sample_in(7),
       Q => sample_x(7),
       R => '0'
@@ -7566,7 +7518,7 @@ sample_out_valid_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => audio_clk,
-      CE => \sample_x__0\(0),
+      CE => \sample_x[23]_i_1_n_0\,
       D => sample_in(8),
       Q => sample_x(8),
       R => '0'
@@ -7577,7 +7529,7 @@ sample_out_valid_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => audio_clk,
-      CE => \sample_x__0\(0),
+      CE => \sample_x[23]_i_1_n_0\,
       D => sample_in(9),
       Q => sample_x(9),
       R => '0'
@@ -7722,18 +7674,17 @@ sample_out_valid_reg: unisim.vcomponents.FDRE
       I5 => \sine_addr_reg_n_0_[4]\,
       O => \sine_addr[8]_i_2_n_0\
     );
-\sine_addr[9]_i_1\: unisim.vcomponents.LUT6
+\sine_addr[9]_i_1\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"0000000000002220"
+      INIT => X"00001110"
     )
         port map (
-      I0 => rst_n,
-      I1 => \state_reg_n_0_[1]\,
-      I2 => sample_in_valid,
-      I3 => \state_reg_n_0_[0]\,
-      I4 => \state_reg_n_0_[2]\,
-      I5 => \state_reg_n_0_[3]\,
-      O => sine_addr(0)
+      I0 => \state_reg_n_0_[3]\,
+      I1 => \state_reg_n_0_[2]\,
+      I2 => \state_reg_n_0_[0]\,
+      I3 => sample_in_valid,
+      I4 => \state_reg_n_0_[1]\,
+      O => \sine_addr[9]_i_1_n_0\
     );
 \sine_addr[9]_i_2\: unisim.vcomponents.LUT5
     generic map(
@@ -7763,7 +7714,7 @@ sample_out_valid_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => audio_clk,
-      CE => sine_addr(0),
+      CE => \sine_addr[9]_i_1_n_0\,
       D => \sine_addr[0]_i_1_n_0\,
       Q => \sine_addr_reg_n_0_[0]\,
       R => '0'
@@ -7774,7 +7725,7 @@ sample_out_valid_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => audio_clk,
-      CE => sine_addr(0),
+      CE => \sine_addr[9]_i_1_n_0\,
       D => \sine_addr[1]_i_1_n_0\,
       Q => \sine_addr_reg_n_0_[1]\,
       R => '0'
@@ -7785,7 +7736,7 @@ sample_out_valid_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => audio_clk,
-      CE => sine_addr(0),
+      CE => \sine_addr[9]_i_1_n_0\,
       D => \sine_addr[2]_i_1_n_0\,
       Q => \sine_addr_reg_n_0_[2]\,
       R => '0'
@@ -7796,7 +7747,7 @@ sample_out_valid_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => audio_clk,
-      CE => sine_addr(0),
+      CE => \sine_addr[9]_i_1_n_0\,
       D => \sine_addr[3]_i_1_n_0\,
       Q => \sine_addr_reg_n_0_[3]\,
       R => '0'
@@ -7807,7 +7758,7 @@ sample_out_valid_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => audio_clk,
-      CE => sine_addr(0),
+      CE => \sine_addr[9]_i_1_n_0\,
       D => \sine_addr[4]_i_1_n_0\,
       Q => \sine_addr_reg_n_0_[4]\,
       R => '0'
@@ -7818,7 +7769,7 @@ sample_out_valid_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => audio_clk,
-      CE => sine_addr(0),
+      CE => \sine_addr[9]_i_1_n_0\,
       D => \sine_addr[5]_i_1_n_0\,
       Q => \sine_addr_reg_n_0_[5]\,
       R => '0'
@@ -7829,7 +7780,7 @@ sample_out_valid_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => audio_clk,
-      CE => sine_addr(0),
+      CE => \sine_addr[9]_i_1_n_0\,
       D => \sine_addr[6]_i_1_n_0\,
       Q => \sine_addr_reg_n_0_[6]\,
       R => '0'
@@ -7840,7 +7791,7 @@ sample_out_valid_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => audio_clk,
-      CE => sine_addr(0),
+      CE => \sine_addr[9]_i_1_n_0\,
       D => \sine_addr[7]_i_1_n_0\,
       Q => \sine_addr_reg_n_0_[7]\,
       R => '0'
@@ -7851,7 +7802,7 @@ sample_out_valid_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => audio_clk,
-      CE => sine_addr(0),
+      CE => \sine_addr[9]_i_1_n_0\,
       D => \sine_addr[8]_i_1_n_0\,
       Q => \sine_addr_reg_n_0_[8]\,
       R => '0'
@@ -7862,7 +7813,7 @@ sample_out_valid_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => audio_clk,
-      CE => sine_addr(0),
+      CE => \sine_addr[9]_i_1_n_0\,
       D => \sine_addr[9]_i_2_n_0\,
       Q => \sine_addr_reg_n_0_[9]\,
       R => '0'
@@ -8090,8 +8041,8 @@ sine_step: unisim.vcomponents.DSP48E1
       AREG => 1,
       AUTORESET_PATDET => "NO_RESET",
       A_INPUT => "DIRECT",
-      BCASCREG => 1,
-      BREG => 1,
+      BCASCREG => 2,
+      BREG => 2,
       B_INPUT => "DIRECT",
       CARRYINREG => 0,
       CARRYINSELREG => 0,
@@ -8122,7 +8073,18 @@ sine_step: unisim.vcomponents.DSP48E1
       ACOUT(29 downto 0) => NLW_sine_step_ACOUT_UNCONNECTED(29 downto 0),
       ALUMODE(3 downto 0) => B"0000",
       B(17 downto 12) => B"000000",
-      B(11 downto 0) => \sine_step__12\(11 downto 0),
+      B(11) => \phase0_carry__8_n_6\,
+      B(10) => \phase0_carry__8_n_7\,
+      B(9) => \phase0_carry__7_n_4\,
+      B(8) => \phase0_carry__7_n_5\,
+      B(7) => \phase0_carry__7_n_6\,
+      B(6) => \phase0_carry__7_n_7\,
+      B(5) => \phase0_carry__6_n_4\,
+      B(4) => \phase0_carry__6_n_5\,
+      B(3) => \phase0_carry__6_n_6\,
+      B(2) => \phase0_carry__6_n_7\,
+      B(1) => \phase0_carry__5_n_4\,
+      B(0) => \phase0_carry__5_n_5\,
       BCIN(17 downto 0) => B"000000000000000000",
       BCOUT(17 downto 0) => NLW_sine_step_BCOUT_UNCONNECTED(17 downto 0),
       C(47 downto 0) => B"111111111111111111111111111111111111111111111111",
@@ -8132,15 +8094,15 @@ sine_step: unisim.vcomponents.DSP48E1
       CARRYINSEL(2 downto 0) => B"000",
       CARRYOUT(3 downto 0) => NLW_sine_step_CARRYOUT_UNCONNECTED(3 downto 0),
       CEA1 => '0',
-      CEA2 => sine_s0(0),
+      CEA2 => sine_step_i_1_n_0,
       CEAD => '0',
       CEALUMODE => '0',
-      CEB1 => '0',
-      CEB2 => \sample_x__0\(0),
+      CEB1 => \sample_x[23]_i_1_n_0\,
+      CEB2 => \sample_x[23]_i_1_n_0\,
       CEC => '0',
       CECARRYIN => '0',
       CECTRL => '0',
-      CED => sine_s1(0),
+      CED => sine_step_i_2_n_0,
       CEINMODE => '0',
       CEM => '0',
       CEP => '0',
@@ -8183,137 +8145,27 @@ sine_step: unisim.vcomponents.DSP48E1
       RSTP => '0',
       UNDERFLOW => NLW_sine_step_UNDERFLOW_UNCONNECTED
     );
-\sine_step__0\: unisim.vcomponents.FDRE
-     port map (
-      C => audio_clk,
-      CE => \sine_step__0_i_1_n_0\,
-      D => \phase0_carry__8_n_6\,
-      Q => \sine_step__12\(11),
-      R => clear
-    );
-\sine_step__0_i_1\: unisim.vcomponents.LUT5
+sine_step_i_1: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"00000002"
+      INIT => X"0010"
     )
         port map (
-      I0 => sample_in_valid,
+      I0 => \state_reg_n_0_[3]\,
       I1 => \state_reg_n_0_[2]\,
       I2 => \state_reg_n_0_[1]\,
-      I3 => \state_reg_n_0_[3]\,
-      I4 => \state_reg_n_0_[0]\,
-      O => \sine_step__0_i_1_n_0\
+      I3 => \state_reg_n_0_[0]\,
+      O => sine_step_i_1_n_0
     );
-\sine_step__1\: unisim.vcomponents.FDRE
-     port map (
-      C => audio_clk,
-      CE => \sine_step__0_i_1_n_0\,
-      D => \phase0_carry__8_n_7\,
-      Q => \sine_step__12\(10),
-      R => clear
-    );
-\sine_step__10\: unisim.vcomponents.FDRE
-     port map (
-      C => audio_clk,
-      CE => \sine_step__0_i_1_n_0\,
-      D => \phase0_carry__5_n_4\,
-      Q => \sine_step__12\(1),
-      R => clear
-    );
-\sine_step__11\: unisim.vcomponents.FDRE
-     port map (
-      C => audio_clk,
-      CE => \sine_step__0_i_1_n_0\,
-      D => \phase0_carry__5_n_5\,
-      Q => \sine_step__12\(0),
-      R => clear
-    );
-\sine_step__2\: unisim.vcomponents.FDRE
-     port map (
-      C => audio_clk,
-      CE => \sine_step__0_i_1_n_0\,
-      D => \phase0_carry__7_n_4\,
-      Q => \sine_step__12\(9),
-      R => clear
-    );
-\sine_step__3\: unisim.vcomponents.FDRE
-     port map (
-      C => audio_clk,
-      CE => \sine_step__0_i_1_n_0\,
-      D => \phase0_carry__7_n_5\,
-      Q => \sine_step__12\(8),
-      R => clear
-    );
-\sine_step__4\: unisim.vcomponents.FDRE
-     port map (
-      C => audio_clk,
-      CE => \sine_step__0_i_1_n_0\,
-      D => \phase0_carry__7_n_6\,
-      Q => \sine_step__12\(7),
-      R => clear
-    );
-\sine_step__5\: unisim.vcomponents.FDRE
-     port map (
-      C => audio_clk,
-      CE => \sine_step__0_i_1_n_0\,
-      D => \phase0_carry__7_n_7\,
-      Q => \sine_step__12\(6),
-      R => clear
-    );
-\sine_step__6\: unisim.vcomponents.FDRE
-     port map (
-      C => audio_clk,
-      CE => \sine_step__0_i_1_n_0\,
-      D => \phase0_carry__6_n_4\,
-      Q => \sine_step__12\(5),
-      R => clear
-    );
-\sine_step__7\: unisim.vcomponents.FDRE
-     port map (
-      C => audio_clk,
-      CE => \sine_step__0_i_1_n_0\,
-      D => \phase0_carry__6_n_5\,
-      Q => \sine_step__12\(4),
-      R => clear
-    );
-\sine_step__8\: unisim.vcomponents.FDRE
-     port map (
-      C => audio_clk,
-      CE => \sine_step__0_i_1_n_0\,
-      D => \phase0_carry__6_n_6\,
-      Q => \sine_step__12\(3),
-      R => clear
-    );
-\sine_step__9\: unisim.vcomponents.FDRE
-     port map (
-      C => audio_clk,
-      CE => \sine_step__0_i_1_n_0\,
-      D => \phase0_carry__6_n_7\,
-      Q => \sine_step__12\(2),
-      R => clear
-    );
-sine_step_i_1: unisim.vcomponents.LUT5
+sine_step_i_2: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"00000020"
+      INIT => X"0008"
     )
         port map (
-      I0 => rst_n,
-      I1 => \state_reg_n_0_[0]\,
-      I2 => \state_reg_n_0_[1]\,
-      I3 => \state_reg_n_0_[2]\,
-      I4 => \state_reg_n_0_[3]\,
-      O => sine_s0(0)
-    );
-sine_step_i_2: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"02000000"
-    )
-        port map (
-      I0 => rst_n,
-      I1 => \state_reg_n_0_[2]\,
+      I0 => \state_reg_n_0_[0]\,
+      I1 => \state_reg_n_0_[1]\,
       I2 => \state_reg_n_0_[3]\,
-      I3 => \state_reg_n_0_[1]\,
-      I4 => \state_reg_n_0_[0]\,
-      O => sine_s1(0)
+      I3 => \state_reg_n_0_[2]\,
+      O => sine_step_i_2_n_0
     );
 \state[0]_i_1\: unisim.vcomponents.LUT3
     generic map(
@@ -8379,7 +8231,7 @@ sine_step_i_2: unisim.vcomponents.LUT5
       CE => \state[3]_i_1_n_0\,
       D => state(0),
       Q => \state_reg_n_0_[0]\,
-      R => clear
+      R => '0'
     );
 \state_reg[1]\: unisim.vcomponents.FDRE
     generic map(
@@ -8390,7 +8242,7 @@ sine_step_i_2: unisim.vcomponents.LUT5
       CE => \state[3]_i_1_n_0\,
       D => state(1),
       Q => \state_reg_n_0_[1]\,
-      R => clear
+      R => '0'
     );
 \state_reg[2]\: unisim.vcomponents.FDRE
     generic map(
@@ -8401,7 +8253,7 @@ sine_step_i_2: unisim.vcomponents.LUT5
       CE => \state[3]_i_1_n_0\,
       D => state(2),
       Q => \state_reg_n_0_[2]\,
-      R => clear
+      R => '0'
     );
 \state_reg[3]\: unisim.vcomponents.FDRE
     generic map(
@@ -8412,7 +8264,7 @@ sine_step_i_2: unisim.vcomponents.LUT5
       CE => \state[3]_i_1_n_0\,
       D => state(3),
       Q => \state_reg_n_0_[3]\,
-      R => clear
+      R => '0'
     );
 \wr_addr[0]_i_1\: unisim.vcomponents.LUT1
     generic map(
@@ -8554,7 +8406,7 @@ sine_step_i_2: unisim.vcomponents.LUT5
       CE => mixed_i_2_n_0,
       D => \p_0_in__0\(0),
       Q => wr_addr_reg(0),
-      R => clear
+      R => '0'
     );
 \wr_addr_reg[10]\: unisim.vcomponents.FDRE
     generic map(
@@ -8565,7 +8417,7 @@ sine_step_i_2: unisim.vcomponents.LUT5
       CE => mixed_i_2_n_0,
       D => \p_0_in__0\(10),
       Q => wr_addr_reg(10),
-      R => clear
+      R => '0'
     );
 \wr_addr_reg[1]\: unisim.vcomponents.FDRE
     generic map(
@@ -8576,7 +8428,7 @@ sine_step_i_2: unisim.vcomponents.LUT5
       CE => mixed_i_2_n_0,
       D => \p_0_in__0\(1),
       Q => wr_addr_reg(1),
-      R => clear
+      R => '0'
     );
 \wr_addr_reg[2]\: unisim.vcomponents.FDRE
     generic map(
@@ -8587,7 +8439,7 @@ sine_step_i_2: unisim.vcomponents.LUT5
       CE => mixed_i_2_n_0,
       D => \p_0_in__0\(2),
       Q => wr_addr_reg(2),
-      R => clear
+      R => '0'
     );
 \wr_addr_reg[3]\: unisim.vcomponents.FDRE
     generic map(
@@ -8598,7 +8450,7 @@ sine_step_i_2: unisim.vcomponents.LUT5
       CE => mixed_i_2_n_0,
       D => \p_0_in__0\(3),
       Q => wr_addr_reg(3),
-      R => clear
+      R => '0'
     );
 \wr_addr_reg[4]\: unisim.vcomponents.FDRE
     generic map(
@@ -8609,7 +8461,7 @@ sine_step_i_2: unisim.vcomponents.LUT5
       CE => mixed_i_2_n_0,
       D => \p_0_in__0\(4),
       Q => wr_addr_reg(4),
-      R => clear
+      R => '0'
     );
 \wr_addr_reg[5]\: unisim.vcomponents.FDRE
     generic map(
@@ -8620,7 +8472,7 @@ sine_step_i_2: unisim.vcomponents.LUT5
       CE => mixed_i_2_n_0,
       D => \p_0_in__0\(5),
       Q => wr_addr_reg(5),
-      R => clear
+      R => '0'
     );
 \wr_addr_reg[6]\: unisim.vcomponents.FDRE
     generic map(
@@ -8631,7 +8483,7 @@ sine_step_i_2: unisim.vcomponents.LUT5
       CE => mixed_i_2_n_0,
       D => \p_0_in__0\(6),
       Q => wr_addr_reg(6),
-      R => clear
+      R => '0'
     );
 \wr_addr_reg[7]\: unisim.vcomponents.FDRE
     generic map(
@@ -8642,7 +8494,7 @@ sine_step_i_2: unisim.vcomponents.LUT5
       CE => mixed_i_2_n_0,
       D => \p_0_in__0\(7),
       Q => wr_addr_reg(7),
-      R => clear
+      R => '0'
     );
 \wr_addr_reg[8]\: unisim.vcomponents.FDRE
     generic map(
@@ -8653,7 +8505,7 @@ sine_step_i_2: unisim.vcomponents.LUT5
       CE => mixed_i_2_n_0,
       D => \p_0_in__0\(8),
       Q => wr_addr_reg(8),
-      R => clear
+      R => '0'
     );
 \wr_addr_reg[9]\: unisim.vcomponents.FDRE
     generic map(
@@ -8664,7 +8516,7 @@ sine_step_i_2: unisim.vcomponents.LUT5
       CE => mixed_i_2_n_0,
       D => \p_0_in__0\(9),
       Q => wr_addr_reg(9),
-      R => clear
+      R => '0'
     );
 end STRUCTURE;
 library IEEE;
@@ -11034,7 +10886,6 @@ entity design_1_chorus_axi_wrapper_0_0_chorus_axi_wrapper is
     s00_axi_araddr : in STD_LOGIC_VECTOR ( 1 downto 0 );
     s00_axi_aresetn : in STD_LOGIC;
     s00_axi_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    rst_n : in STD_LOGIC;
     s00_axi_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
     sample_in_valid : in STD_LOGIC;
     s00_axi_bready : in STD_LOGIC
@@ -11180,7 +11031,6 @@ chorus_internals: entity work.design_1_chorus_axi_wrapper_0_0_chorus
       mixed0_0(1) => chorus_axi_wrapper_slave_lite_v1_0_S00_AXI_inst_n_132,
       mixed0_0(0) => chorus_axi_wrapper_slave_lite_v1_0_S00_AXI_inst_n_133,
       mixed_0(15 downto 0) => slv_reg2(15 downto 0),
-      rst_n => rst_n,
       sample_in(23 downto 0) => sample_in(23 downto 0),
       sample_in_valid => sample_in_valid,
       sample_out(23 downto 0) => sample_out(23 downto 0),
@@ -11196,7 +11046,6 @@ entity design_1_chorus_axi_wrapper_0_0 is
     audio_clk : in STD_LOGIC;
     sample_in : in STD_LOGIC_VECTOR ( 23 downto 0 );
     sample_in_valid : in STD_LOGIC;
-    rst_n : in STD_LOGIC;
     sample_out : out STD_LOGIC_VECTOR ( 23 downto 0 );
     sample_out_valid : out STD_LOGIC;
     s00_axi_aclk : in STD_LOGIC;
@@ -11239,9 +11088,6 @@ architecture STRUCTURE of design_1_chorus_axi_wrapper_0_0 is
   attribute X_INTERFACE_MODE of audio_clk : signal is "slave";
   attribute X_INTERFACE_PARAMETER : string;
   attribute X_INTERFACE_PARAMETER of audio_clk : signal is "XIL_INTERFACENAME audio_clk, FREQ_HZ 12288013, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN /clk_wiz_0_clk_out1, INSERT_VIP 0";
-  attribute X_INTERFACE_INFO of rst_n : signal is "xilinx.com:signal:reset:1.0 rst_n RST";
-  attribute X_INTERFACE_MODE of rst_n : signal is "slave";
-  attribute X_INTERFACE_PARAMETER of rst_n : signal is "XIL_INTERFACENAME rst_n, POLARITY ACTIVE_LOW, INSERT_VIP 0";
   attribute X_INTERFACE_INFO of s00_axi_aclk : signal is "xilinx.com:signal:clock:1.0 S00_AXI_CLK CLK";
   attribute X_INTERFACE_MODE of s00_axi_aclk : signal is "slave";
   attribute X_INTERFACE_PARAMETER of s00_axi_aclk : signal is "XIL_INTERFACENAME S00_AXI_CLK, ASSOCIATED_BUSIF S00_AXI, ASSOCIATED_RESET s00_axi_aresetn, FREQ_HZ 50000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0";
@@ -11284,7 +11130,6 @@ inst: entity work.design_1_chorus_axi_wrapper_0_0_chorus_axi_wrapper
       axi_arready_reg => s00_axi_arready,
       axi_awready_reg => s00_axi_awready,
       axi_rvalid_reg => s00_axi_rvalid,
-      rst_n => rst_n,
       s00_axi_aclk => s00_axi_aclk,
       s00_axi_araddr(1 downto 0) => s00_axi_araddr(3 downto 2),
       s00_axi_aresetn => s00_axi_aresetn,

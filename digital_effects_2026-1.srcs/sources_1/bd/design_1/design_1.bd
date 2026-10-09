@@ -21,7 +21,10 @@
       "delay_axi_wrapper_0": "",
       "axi_smc": "",
       "rst_ps7_0_50M": "",
-      "chorus_axi_wrapper_0": ""
+      "chorus_axi_wrapper_0": "",
+      "reverb_axi_wrapper_0": "",
+      "overdrive_axi_wrapper_0": "",
+      "distortion_axi_wrapp_0": ""
     },
     "interface_ports": {
       "DDR": {
@@ -1676,7 +1679,7 @@
       },
       "delay_axi_wrapper_0": {
         "vlnv": "xilinx.com:user:delay_axi_wrapper:1.0",
-        "ip_revision": "9",
+        "ip_revision": "10",
         "xci_name": "design_1_delay_axi_wrapper_0_0",
         "xci_path": "ip\\design_1_delay_axi_wrapper_0_0\\design_1_delay_axi_wrapper_0_0.xci",
         "inst_hier_path": "delay_axi_wrapper_0",
@@ -1691,7 +1694,7 @@
         "has_run_ip_tcl": "true",
         "parameters": {
           "NUM_MI": {
-            "value": "2"
+            "value": "5"
           },
           "NUM_SI": {
             "value": "1"
@@ -1704,11 +1707,14 @@
             "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
             "bridges": [
               "M00_AXI",
-              "M01_AXI"
+              "M01_AXI",
+              "M02_AXI",
+              "M03_AXI",
+              "M04_AXI"
             ],
             "bd_attributes": {
               "BRIDGES": {
-                "value": "M00_AXI:M01_AXI",
+                "value": "M00_AXI:M01_AXI:M02_AXI:M03_AXI:M04_AXI",
                 "value_src": "auto"
               },
               "TYPE": {
@@ -1738,6 +1744,39 @@
                 "value_src": "default"
               }
             }
+          },
+          "M02_AXI": {
+            "mode": "Master",
+            "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
+            "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
+            "bd_attributes": {
+              "TYPE": {
+                "value": "interior",
+                "value_src": "default"
+              }
+            }
+          },
+          "M03_AXI": {
+            "mode": "Master",
+            "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
+            "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
+            "bd_attributes": {
+              "TYPE": {
+                "value": "interior",
+                "value_src": "default"
+              }
+            }
+          },
+          "M04_AXI": {
+            "mode": "Master",
+            "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
+            "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
+            "bd_attributes": {
+              "TYPE": {
+                "value": "interior",
+                "value_src": "default"
+              }
+            }
           }
         }
       },
@@ -1751,10 +1790,34 @@
       },
       "chorus_axi_wrapper_0": {
         "vlnv": "xilinx.com:user:chorus_axi_wrapper:1.0",
-        "ip_revision": "8",
+        "ip_revision": "9",
         "xci_name": "design_1_chorus_axi_wrapper_0_0",
         "xci_path": "ip\\design_1_chorus_axi_wrapper_0_0\\design_1_chorus_axi_wrapper_0_0.xci",
         "inst_hier_path": "chorus_axi_wrapper_0",
+        "has_run_ip_tcl": "true"
+      },
+      "reverb_axi_wrapper_0": {
+        "vlnv": "xilinx.com:user:reverb_axi_wrapper:1.0",
+        "ip_revision": "3",
+        "xci_name": "design_1_reverb_axi_wrapper_0_0",
+        "xci_path": "ip\\design_1_reverb_axi_wrapper_0_0\\design_1_reverb_axi_wrapper_0_0.xci",
+        "inst_hier_path": "reverb_axi_wrapper_0",
+        "has_run_ip_tcl": "true"
+      },
+      "overdrive_axi_wrapper_0": {
+        "vlnv": "xilinx.com:user:overdrive_axi_wrapper:1.0",
+        "ip_revision": "3",
+        "xci_name": "design_1_overdrive_axi_wrapper_0_0",
+        "xci_path": "ip\\design_1_overdrive_axi_wrapper_0_0\\design_1_overdrive_axi_wrapper_0_0.xci",
+        "inst_hier_path": "overdrive_axi_wrapper_0",
+        "has_run_ip_tcl": "true"
+      },
+      "distortion_axi_wrapp_0": {
+        "vlnv": "xilinx.com:user:distortion_axi_wrapper:1.0",
+        "ip_revision": "2",
+        "xci_name": "design_1_distortion_axi_wrapp_0_0",
+        "xci_path": "ip\\design_1_distortion_axi_wrapp_0_0\\design_1_distortion_axi_wrapp_0_0.xci",
+        "inst_hier_path": "distortion_axi_wrapp_0",
         "has_run_ip_tcl": "true"
       }
     },
@@ -1769,6 +1832,24 @@
         "interface_ports": [
           "axi_smc/M01_AXI",
           "chorus_axi_wrapper_0/S00_AXI"
+        ]
+      },
+      "axi_smc_M02_AXI": {
+        "interface_ports": [
+          "axi_smc/M02_AXI",
+          "distortion_axi_wrapp_0/S00_AXI"
+        ]
+      },
+      "axi_smc_M03_AXI": {
+        "interface_ports": [
+          "axi_smc/M03_AXI",
+          "overdrive_axi_wrapper_0/S00_AXI"
+        ]
+      },
+      "axi_smc_M04_AXI": {
+        "interface_ports": [
+          "axi_smc/M04_AXI",
+          "reverb_axi_wrapper_0/S00_AXI"
         ]
       },
       "processing_system7_0_DDR": {
@@ -1823,18 +1904,6 @@
           "i2s_tx_0/bclk_rise_en"
         ]
       },
-      "chorus_axi_wrapper_0_sample_out": {
-        "ports": [
-          "chorus_axi_wrapper_0/sample_out",
-          "i2s_tx_0/sample_in"
-        ]
-      },
-      "chorus_axi_wrapper_0_sample_out_valid": {
-        "ports": [
-          "chorus_axi_wrapper_0/sample_out_valid",
-          "i2s_tx_0/sample_in_valid"
-        ]
-      },
       "clk_wiz_0_clk_out1": {
         "ports": [
           "clk_wiz_0/clk_out1",
@@ -1842,8 +1911,23 @@
           "i2s_rx_0/mclk",
           "i2s_tx_0/mclk",
           "ac_mclk",
+          "chorus_axi_wrapper_0/audio_clk",
           "delay_axi_wrapper_0/audio_clk",
-          "chorus_axi_wrapper_0/audio_clk"
+          "overdrive_axi_wrapper_0/audio_clk",
+          "distortion_axi_wrapp_0/audio_clk",
+          "reverb_axi_wrapper_0/audio_clk"
+        ]
+      },
+      "distortion_axi_wrapp_0_sample_out": {
+        "ports": [
+          "distortion_axi_wrapp_0/sample_out",
+          "i2s_tx_0/sample_in"
+        ]
+      },
+      "distortion_axi_wrapp_0_sample_out_valid": {
+        "ports": [
+          "distortion_axi_wrapp_0/sample_out_valid",
+          "i2s_tx_0/sample_in_valid"
         ]
       },
       "i2s_rx_0_lrc": {
@@ -1855,13 +1939,21 @@
       "i2s_rx_0_sample_out": {
         "ports": [
           "i2s_rx_0/sample_out",
-          "chorus_axi_wrapper_0/sample_in"
+          "chorus_axi_wrapper_0/sample_in",
+          "delay_axi_wrapper_0/sample_in",
+          "distortion_axi_wrapp_0/sample_in",
+          "overdrive_axi_wrapper_0/sample_in",
+          "reverb_axi_wrapper_0/sample_in"
         ]
       },
       "i2s_rx_0_sample_out_valid": {
         "ports": [
           "i2s_rx_0/sample_out_valid",
-          "chorus_axi_wrapper_0/sample_in_valid"
+          "chorus_axi_wrapper_0/sample_in_valid",
+          "delay_axi_wrapper_0/sample_in_valid",
+          "overdrive_axi_wrapper_0/sample_in_valid",
+          "distortion_axi_wrapp_0/sample_in_valid",
+          "reverb_axi_wrapper_0/sample_in_valid"
         ]
       },
       "i2s_tx_0_lrc": {
@@ -1885,8 +1977,7 @@
       "ilconstant_1_dout": {
         "ports": [
           "ilconstant_1/dout",
-          "ac_muten",
-          "chorus_axi_wrapper_0/rst_n"
+          "ac_muten"
         ]
       },
       "processing_system7_0_FCLK_CLK0": {
@@ -1895,8 +1986,11 @@
           "processing_system7_0/M_AXI_GP0_ACLK",
           "axi_smc/aclk",
           "rst_ps7_0_50M/slowest_sync_clk",
+          "chorus_axi_wrapper_0/s00_axi_aclk",
           "delay_axi_wrapper_0/s00_axi_aclk",
-          "chorus_axi_wrapper_0/s00_axi_aclk"
+          "distortion_axi_wrapp_0/s00_axi_aclk",
+          "overdrive_axi_wrapper_0/s00_axi_aclk",
+          "reverb_axi_wrapper_0/s00_axi_aclk"
         ]
       },
       "processing_system7_0_FCLK_RESET0_N": {
@@ -1909,8 +2003,11 @@
         "ports": [
           "rst_ps7_0_50M/peripheral_aresetn",
           "axi_smc/aresetn",
+          "chorus_axi_wrapper_0/s00_axi_aresetn",
           "delay_axi_wrapper_0/s00_axi_aresetn",
-          "chorus_axi_wrapper_0/s00_axi_aresetn"
+          "distortion_axi_wrapp_0/s00_axi_aresetn",
+          "overdrive_axi_wrapper_0/s00_axi_aresetn",
+          "reverb_axi_wrapper_0/s00_axi_aresetn"
         ]
       },
       "sys_clock_1": {
@@ -1935,6 +2032,27 @@
               "SEG_delay_axi_wrapper_0_S00_AXI_reg": {
                 "address_block": "/delay_axi_wrapper_0/S00_AXI/S00_AXI_reg",
                 "offset": "0x43C00000",
+                "range": "64K",
+                "offset_base_param": "C_S00_AXI_BASEADDR",
+                "offset_high_param": "C_S00_AXI_HIGHADDR"
+              },
+              "SEG_distortion_axi_wrapp_0_S00_AXI_reg": {
+                "address_block": "/distortion_axi_wrapp_0/S00_AXI/S00_AXI_reg",
+                "offset": "0x43C20000",
+                "range": "64K",
+                "offset_base_param": "C_S00_AXI_BASEADDR",
+                "offset_high_param": "C_S00_AXI_HIGHADDR"
+              },
+              "SEG_overdrive_axi_wrapper_0_S00_AXI_reg": {
+                "address_block": "/overdrive_axi_wrapper_0/S00_AXI/S00_AXI_reg",
+                "offset": "0x43C30000",
+                "range": "64K",
+                "offset_base_param": "C_S00_AXI_BASEADDR",
+                "offset_high_param": "C_S00_AXI_HIGHADDR"
+              },
+              "SEG_reverb_axi_wrapper_0_S00_AXI_reg": {
+                "address_block": "/reverb_axi_wrapper_0/S00_AXI/S00_AXI_reg",
+                "offset": "0x43C40000",
                 "range": "64K",
                 "offset_base_param": "C_S00_AXI_BASEADDR",
                 "offset_high_param": "C_S00_AXI_HIGHADDR"

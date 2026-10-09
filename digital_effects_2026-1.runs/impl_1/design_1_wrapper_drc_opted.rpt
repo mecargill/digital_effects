@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2026.1 (win64) Build 6511674 Tue Jun 16 11:02:23 MDT 2026
-| Date         : Thu Oct  8 19:24:01 2026
+| Date         : Fri Oct  9 11:16:00 2026
 | Host         : MostlyEtc running 64-bit major release  (build 9200)
 | Command      : report_drc -file design_1_wrapper_drc_opted.rpt -pb design_1_wrapper_drc_opted.pb -rpx design_1_wrapper_drc_opted.rpx
 | Design       : design_1_wrapper
@@ -24,201 +24,85 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max checks: <unlimited>
-             Checks found: 37
-+-----------+----------+-------------------------------+--------+
-| Rule      | Severity | Description                   | Checks |
-+-----------+----------+-------------------------------+--------+
-| DPIP-1    | Warning  | Input pipelining              | 15     |
-| DPOP-1    | Warning  | PREG Output pipelining        | 9      |
-| DPOP-2    | Warning  | MREG Output pipelining        | 10     |
-| REQP-1723 | Warning  | DSP_Abus_sign_bit_restriction | 3      |
-+-----------+----------+-------------------------------+--------+
+             Checks found: 14
++--------+----------+------------------------+--------+
+| Rule   | Severity | Description            | Checks |
++--------+----------+------------------------+--------+
+| DPIP-1 | Warning  | Input pipelining       | 7      |
+| DPOP-1 | Warning  | PREG Output pipelining | 3      |
+| DPOP-2 | Warning  | MREG Output pipelining | 4      |
++--------+----------+------------------------+--------+
 
 2. REPORT DETAILS
 -----------------
 DPIP-1#1 Warning
 Input pipelining  
-DSP design_1_i/chorus_axi_wrapper_0/inst/chorus_internals/delay_unclamped input design_1_i/chorus_axi_wrapper_0/inst/chorus_internals/delay_unclamped/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP design_1_i/distortion_axi_wrapp_0/inst/u_distortion/clipped2 input design_1_i/distortion_axi_wrapp_0/inst/u_distortion/clipped2/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#2 Warning
 Input pipelining  
-DSP design_1_i/chorus_axi_wrapper_0/inst/chorus_internals/delay_unclamped input design_1_i/chorus_axi_wrapper_0/inst/chorus_internals/delay_unclamped/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP design_1_i/distortion_axi_wrapp_0/inst/u_distortion/clipped2 input design_1_i/distortion_axi_wrapp_0/inst/u_distortion/clipped2/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#3 Warning
 Input pipelining  
-DSP design_1_i/chorus_axi_wrapper_0/inst/chorus_internals/depth_scaled input design_1_i/chorus_axi_wrapper_0/inst/chorus_internals/depth_scaled/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP design_1_i/distortion_axi_wrapp_0/inst/u_distortion/sample_out_reg input design_1_i/distortion_axi_wrapp_0/inst/u_distortion/sample_out_reg/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#4 Warning
 Input pipelining  
-DSP design_1_i/chorus_axi_wrapper_0/inst/chorus_internals/depth_term input design_1_i/chorus_axi_wrapper_0/inst/chorus_internals/depth_term/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP design_1_i/distortion_axi_wrapp_0/inst/u_distortion/sample_out_reg input design_1_i/distortion_axi_wrapp_0/inst/u_distortion/sample_out_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#5 Warning
 Input pipelining  
-DSP design_1_i/chorus_axi_wrapper_0/inst/chorus_internals/depth_term input design_1_i/chorus_axi_wrapper_0/inst/chorus_internals/depth_term/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP design_1_i/distortion_axi_wrapp_0/inst/u_distortion/tone_state2 input design_1_i/distortion_axi_wrapp_0/inst/u_distortion/tone_state2/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#6 Warning
 Input pipelining  
-DSP design_1_i/chorus_axi_wrapper_0/inst/chorus_internals/depth_term__0 input design_1_i/chorus_axi_wrapper_0/inst/chorus_internals/depth_term__0/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP design_1_i/distortion_axi_wrapp_0/inst/u_distortion/tone_state4 input design_1_i/distortion_axi_wrapp_0/inst/u_distortion/tone_state4/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#7 Warning
 Input pipelining  
-DSP design_1_i/chorus_axi_wrapper_0/inst/chorus_internals/depth_term__0 input design_1_i/chorus_axi_wrapper_0/inst/chorus_internals/depth_term__0/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
-Related violations: <none>
-
-DPIP-1#8 Warning
-Input pipelining  
-DSP design_1_i/chorus_axi_wrapper_0/inst/chorus_internals/depth_term__1 input design_1_i/chorus_axi_wrapper_0/inst/chorus_internals/depth_term__1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
-Related violations: <none>
-
-DPIP-1#9 Warning
-Input pipelining  
-DSP design_1_i/chorus_axi_wrapper_0/inst/chorus_internals/depth_term__1 input design_1_i/chorus_axi_wrapper_0/inst/chorus_internals/depth_term__1/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
-Related violations: <none>
-
-DPIP-1#10 Warning
-Input pipelining  
-DSP design_1_i/chorus_axi_wrapper_0/inst/chorus_internals/interp input design_1_i/chorus_axi_wrapper_0/inst/chorus_internals/interp/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
-Related violations: <none>
-
-DPIP-1#11 Warning
-Input pipelining  
-DSP design_1_i/chorus_axi_wrapper_0/inst/chorus_internals/interp0 input design_1_i/chorus_axi_wrapper_0/inst/chorus_internals/interp0/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
-Related violations: <none>
-
-DPIP-1#12 Warning
-Input pipelining  
-DSP design_1_i/chorus_axi_wrapper_0/inst/chorus_internals/mixed input design_1_i/chorus_axi_wrapper_0/inst/chorus_internals/mixed/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
-Related violations: <none>
-
-DPIP-1#13 Warning
-Input pipelining  
-DSP design_1_i/chorus_axi_wrapper_0/inst/chorus_internals/mixed input design_1_i/chorus_axi_wrapper_0/inst/chorus_internals/mixed/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
-Related violations: <none>
-
-DPIP-1#14 Warning
-Input pipelining  
-DSP design_1_i/chorus_axi_wrapper_0/inst/chorus_internals/mixed0 input design_1_i/chorus_axi_wrapper_0/inst/chorus_internals/mixed0/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
-Related violations: <none>
-
-DPIP-1#15 Warning
-Input pipelining  
-DSP design_1_i/chorus_axi_wrapper_0/inst/chorus_internals/phase_inc input design_1_i/chorus_axi_wrapper_0/inst/chorus_internals/phase_inc/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP design_1_i/distortion_axi_wrapp_0/inst/u_distortion/tone_state4 input design_1_i/distortion_axi_wrapp_0/inst/u_distortion/tone_state4/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPOP-1#1 Warning
 PREG Output pipelining  
-DSP design_1_i/chorus_axi_wrapper_0/inst/chorus_internals/delay_unclamped output design_1_i/chorus_axi_wrapper_0/inst/chorus_internals/delay_unclamped/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+DSP design_1_i/distortion_axi_wrapp_0/inst/u_distortion/clipped2 output design_1_i/distortion_axi_wrapp_0/inst/u_distortion/clipped2/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
 Related violations: <none>
 
 DPOP-1#2 Warning
 PREG Output pipelining  
-DSP design_1_i/chorus_axi_wrapper_0/inst/chorus_internals/depth_scaled output design_1_i/chorus_axi_wrapper_0/inst/chorus_internals/depth_scaled/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+DSP design_1_i/distortion_axi_wrapp_0/inst/u_distortion/tone_state2 output design_1_i/distortion_axi_wrapp_0/inst/u_distortion/tone_state2/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
 Related violations: <none>
 
 DPOP-1#3 Warning
 PREG Output pipelining  
-DSP design_1_i/chorus_axi_wrapper_0/inst/chorus_internals/depth_term output design_1_i/chorus_axi_wrapper_0/inst/chorus_internals/depth_term/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
-Related violations: <none>
-
-DPOP-1#4 Warning
-PREG Output pipelining  
-DSP design_1_i/chorus_axi_wrapper_0/inst/chorus_internals/depth_term__1 output design_1_i/chorus_axi_wrapper_0/inst/chorus_internals/depth_term__1/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
-Related violations: <none>
-
-DPOP-1#5 Warning
-PREG Output pipelining  
-DSP design_1_i/chorus_axi_wrapper_0/inst/chorus_internals/interp output design_1_i/chorus_axi_wrapper_0/inst/chorus_internals/interp/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
-Related violations: <none>
-
-DPOP-1#6 Warning
-PREG Output pipelining  
-DSP design_1_i/chorus_axi_wrapper_0/inst/chorus_internals/interp0 output design_1_i/chorus_axi_wrapper_0/inst/chorus_internals/interp0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
-Related violations: <none>
-
-DPOP-1#7 Warning
-PREG Output pipelining  
-DSP design_1_i/chorus_axi_wrapper_0/inst/chorus_internals/mixed0 output design_1_i/chorus_axi_wrapper_0/inst/chorus_internals/mixed0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
-Related violations: <none>
-
-DPOP-1#8 Warning
-PREG Output pipelining  
-DSP design_1_i/chorus_axi_wrapper_0/inst/chorus_internals/phase_inc output design_1_i/chorus_axi_wrapper_0/inst/chorus_internals/phase_inc/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
-Related violations: <none>
-
-DPOP-1#9 Warning
-PREG Output pipelining  
-DSP design_1_i/chorus_axi_wrapper_0/inst/chorus_internals/sine_step output design_1_i/chorus_axi_wrapper_0/inst/chorus_internals/sine_step/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+DSP design_1_i/distortion_axi_wrapp_0/inst/u_distortion/tone_state4 output design_1_i/distortion_axi_wrapp_0/inst/u_distortion/tone_state4/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
 Related violations: <none>
 
 DPOP-2#1 Warning
 MREG Output pipelining  
-DSP design_1_i/chorus_axi_wrapper_0/inst/chorus_internals/delay_unclamped multiplier stage design_1_i/chorus_axi_wrapper_0/inst/chorus_internals/delay_unclamped/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+DSP design_1_i/distortion_axi_wrapp_0/inst/u_distortion/clipped2 multiplier stage design_1_i/distortion_axi_wrapp_0/inst/u_distortion/clipped2/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
 Related violations: <none>
 
 DPOP-2#2 Warning
 MREG Output pipelining  
-DSP design_1_i/chorus_axi_wrapper_0/inst/chorus_internals/depth_scaled multiplier stage design_1_i/chorus_axi_wrapper_0/inst/chorus_internals/depth_scaled/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+DSP design_1_i/distortion_axi_wrapp_0/inst/u_distortion/sample_out_reg multiplier stage design_1_i/distortion_axi_wrapp_0/inst/u_distortion/sample_out_reg/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
 Related violations: <none>
 
 DPOP-2#3 Warning
 MREG Output pipelining  
-DSP design_1_i/chorus_axi_wrapper_0/inst/chorus_internals/depth_term multiplier stage design_1_i/chorus_axi_wrapper_0/inst/chorus_internals/depth_term/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+DSP design_1_i/distortion_axi_wrapp_0/inst/u_distortion/tone_state2 multiplier stage design_1_i/distortion_axi_wrapp_0/inst/u_distortion/tone_state2/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
 Related violations: <none>
 
 DPOP-2#4 Warning
 MREG Output pipelining  
-DSP design_1_i/chorus_axi_wrapper_0/inst/chorus_internals/depth_term__1 multiplier stage design_1_i/chorus_axi_wrapper_0/inst/chorus_internals/depth_term__1/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
-Related violations: <none>
-
-DPOP-2#5 Warning
-MREG Output pipelining  
-DSP design_1_i/chorus_axi_wrapper_0/inst/chorus_internals/interp multiplier stage design_1_i/chorus_axi_wrapper_0/inst/chorus_internals/interp/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
-Related violations: <none>
-
-DPOP-2#6 Warning
-MREG Output pipelining  
-DSP design_1_i/chorus_axi_wrapper_0/inst/chorus_internals/interp0 multiplier stage design_1_i/chorus_axi_wrapper_0/inst/chorus_internals/interp0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
-Related violations: <none>
-
-DPOP-2#7 Warning
-MREG Output pipelining  
-DSP design_1_i/chorus_axi_wrapper_0/inst/chorus_internals/mixed multiplier stage design_1_i/chorus_axi_wrapper_0/inst/chorus_internals/mixed/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
-Related violations: <none>
-
-DPOP-2#8 Warning
-MREG Output pipelining  
-DSP design_1_i/chorus_axi_wrapper_0/inst/chorus_internals/mixed0 multiplier stage design_1_i/chorus_axi_wrapper_0/inst/chorus_internals/mixed0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
-Related violations: <none>
-
-DPOP-2#9 Warning
-MREG Output pipelining  
-DSP design_1_i/chorus_axi_wrapper_0/inst/chorus_internals/phase_inc multiplier stage design_1_i/chorus_axi_wrapper_0/inst/chorus_internals/phase_inc/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
-Related violations: <none>
-
-DPOP-2#10 Warning
-MREG Output pipelining  
-DSP design_1_i/chorus_axi_wrapper_0/inst/chorus_internals/sine_step multiplier stage design_1_i/chorus_axi_wrapper_0/inst/chorus_internals/sine_step/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
-Related violations: <none>
-
-REQP-1723#1 Warning
-DSP_Abus_sign_bit_restriction  
-design_1_i/chorus_axi_wrapper_0/inst/chorus_internals/depth_term: When using the PreAdder and USE_DPORT is TRUE, the A operand should be restricted to 24 bit two's complement (and sign extended) to avoid over/underflow in the pre-add stage.
-Related violations: <none>
-
-REQP-1723#2 Warning
-DSP_Abus_sign_bit_restriction  
-design_1_i/chorus_axi_wrapper_0/inst/chorus_internals/depth_term__0: When using the PreAdder and USE_DPORT is TRUE, the A operand should be restricted to 24 bit two's complement (and sign extended) to avoid over/underflow in the pre-add stage.
-Related violations: <none>
-
-REQP-1723#3 Warning
-DSP_Abus_sign_bit_restriction  
-design_1_i/chorus_axi_wrapper_0/inst/chorus_internals/depth_term__1: When using the PreAdder and USE_DPORT is TRUE, the A operand should be restricted to 24 bit two's complement (and sign extended) to avoid over/underflow in the pre-add stage.
+DSP design_1_i/distortion_axi_wrapp_0/inst/u_distortion/tone_state4 multiplier stage design_1_i/distortion_axi_wrapp_0/inst/u_distortion/tone_state4/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
 Related violations: <none>
 
 

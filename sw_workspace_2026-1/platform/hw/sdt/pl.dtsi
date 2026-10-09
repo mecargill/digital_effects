@@ -42,5 +42,41 @@
 			clocks = <&misc_clk_0>, <&clkc 15>;
 			xlnx,name = "delay_axi_wrapper_0";
 		};
+		distortion_axi_wrapp_0: distortion_axi_wrapper@43c20000 {
+			xlnx,s00-axi-data-width = <32>;
+			compatible = "xlnx,distortion-axi-wrapper-1.0";
+			status = "okay";
+			clock-names = "audio_clk" , "s00_axi_aclk";
+			xlnx,s00-axi-addr-width = <4>;
+			xlnx,ip-name = "distortion_axi_wrapper";
+			xlnx,edk-iptype = "PERIPHERAL";
+			reg = <0x43c20000 0x10000>;
+			clocks = <&misc_clk_0>, <&clkc 15>;
+			xlnx,name = "distortion_axi_wrapp_0";
+		};
+		overdrive_axi_wrapper_0: overdrive_axi_wrapper@43c30000 {
+			xlnx,s00-axi-data-width = <32>;
+			compatible = "xlnx,overdrive-axi-wrapper-1.0";
+			status = "okay";
+			clock-names = "audio_clk" , "s00_axi_aclk";
+			xlnx,s00-axi-addr-width = <4>;
+			xlnx,ip-name = "overdrive_axi_wrapper";
+			xlnx,edk-iptype = "PERIPHERAL";
+			reg = <0x43c30000 0x10000>;
+			clocks = <&misc_clk_0>, <&clkc 15>;
+			xlnx,name = "overdrive_axi_wrapper_0";
+		};
+		reverb_axi_wrapper_0: reverb_axi_wrapper@43c40000 {
+			xlnx,s00-axi-data-width = <32>;
+			compatible = "xlnx,reverb-axi-wrapper-1.0";
+			status = "okay";
+			clock-names = "audio_clk" , "s00_axi_aclk";
+			xlnx,s00-axi-addr-width = <4>;
+			xlnx,ip-name = "reverb_axi_wrapper";
+			xlnx,edk-iptype = "PERIPHERAL";
+			reg = <0x43c40000 0x10000>;
+			clocks = <&misc_clk_0>, <&clkc 15>;
+			xlnx,name = "reverb_axi_wrapper_0";
+		};
 	};
 };

@@ -154,6 +154,8 @@ libsrc_folder: libsrc
 drv_info:
   chorus_axi_wrapper_0: None
   delay_axi_wrapper_0: None
+  distortion_axi_wrapp_0: None
+  overdrive_axi_wrapper_0: None
   ps7_afi_0: None
   ps7_afi_1: None
   ps7_afi_2: None
@@ -224,6 +226,7 @@ drv_info:
     driver: xadcps
     ip_name: ps7_xadc
     path: C:\AMDDesignTools\2026.1\Vitis\data\embeddedsw\XilinxProcessorIPLib\drivers\xadcps_v2_8
+  reverb_axi_wrapper_0: None
 lib_info:
   xiltimer:
     path: C:\AMDDesignTools\2026.1\Vitis\data\embeddedsw\lib\sw_services\xiltimer_v2_4

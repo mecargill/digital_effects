@@ -28,6 +28,9 @@
 
 #define DELAY_BASE_ADDR XPAR_DELAY_AXI_WRAPPER_0_BASEADDR 
 #define CHORUS_BASE_ADDR XPAR_CHORUS_AXI_WRAPPER_0_BASEADDR
+#define REVERB_BASE_ADDR XPAR_REVERB_AXI_WRAPPER_0_BASEADDR
+#define OVERDRIVE_BASE_ADDR XPAR_OVERDRIVE_AXI_WRAPPER_0_BASEADDR
+#define DISTORTION_BASE_ADDR XPAR_DISTORTION_AXI_WRAPPER_0_BASEADDR
 
 #define DELAY_SAMPLES_REG_OFFSET  0x00
 #define DELAY_FBK_REG_OFFSET  0x04
@@ -38,7 +41,20 @@
 #define CHORUS_MIX_REG_OFFSET  0x08
 #define CHORUS_BASE_MS_REG_OFFSET  0x0C
 
-#define CHORUS
+#define REVERB_DECAY_REG_OFFSET    0x00
+#define REVERB_DAMPING_REG_OFFSET  0x04
+#define REVERB_MIX_REG_OFFSET      0x08
+
+#define OVERDRIVE_DRIVE_REG_OFFSET      0x00
+#define OVERDRIVE_TONE_REG_OFFSET       0x04
+#define OVERDRIVE_LEVEL_REG_OFFSET      0x08
+#define OVERDRIVE_ASYMMETRY_REG_OFFSET  0x0C
+
+#define DISTORTION_DRIVE_REG_OFFSET  0x00
+#define DISTORTION_TONE_REG_OFFSET   0x04
+#define DISTORTION_LEVEL_REG_OFFSET  0x08
+
+#define DISTORTION
 
 XIicPs Iic;
 
@@ -82,6 +98,44 @@ void print_chorus_params() {
 	printf("base_ms = %u\n",
 	Xil_In32(CHORUS_BASE_ADDR + CHORUS_BASE_MS_REG_OFFSET));
 }
+
+void print_reverb_params() {
+    printf("decay = %u\n",
+        Xil_In32(REVERB_BASE_ADDR + REVERB_DECAY_REG_OFFSET));
+
+    printf("damping = %u\n",
+        Xil_In32(REVERB_BASE_ADDR + REVERB_DAMPING_REG_OFFSET));
+
+    printf("mix = %u\n",
+        Xil_In32(REVERB_BASE_ADDR + REVERB_MIX_REG_OFFSET));
+}
+
+void print_overdrive_params() {
+    printf("drive = %u\n",
+        Xil_In32(OVERDRIVE_BASE_ADDR + OVERDRIVE_DRIVE_REG_OFFSET));
+
+    printf("tone = %u\n",
+        Xil_In32(OVERDRIVE_BASE_ADDR + OVERDRIVE_TONE_REG_OFFSET));
+
+    printf("level = %u\n",
+        Xil_In32(OVERDRIVE_BASE_ADDR + OVERDRIVE_LEVEL_REG_OFFSET));
+
+    printf("asymmetry = %u\n",
+        Xil_In32(OVERDRIVE_BASE_ADDR + OVERDRIVE_ASYMMETRY_REG_OFFSET));
+}
+
+void print_distortion_params() {
+    printf("drive = %u\n",
+        Xil_In32(DISTORTION_BASE_ADDR + DISTORTION_DRIVE_REG_OFFSET));
+
+    printf("tone = %u\n",
+        Xil_In32(DISTORTION_BASE_ADDR + DISTORTION_TONE_REG_OFFSET));
+
+    printf("level = %u\n",
+        Xil_In32(DISTORTION_BASE_ADDR + DISTORTION_LEVEL_REG_OFFSET));
+}
+
+
 
 void delay_control_loop() {
 	u32 sel = 5;
@@ -158,6 +212,138 @@ void chorus_control_loop() {
 	}
 }
 
+void reverb_control_loop() {
+    Xil_Out32(REVERB_BASE_ADDR + REVERB_DECAY_REG_OFFSET, 50000);
+    Xil_Out32(REVERB_BASE_ADDR + REVERB_DAMPING_REG_OFFSET, 30000);
+    Xil_Out32(REVERB_BASE_ADDR + REVERB_MIX_REG_OFFSET, 30000);
+
+    u32 sel = 1;
+    u32 input;
+
+    while (sel != 0) {
+        print_reverb_params();
+        print("Select register to write:\n\r"
+              "[0] to quit\n\r"
+              "[1] Decay / feedback (0 is no tails)\n\r"
+              "[2] Damping (0 is no high freq damping)\n\r"
+              "[3] Mix ratio (0 is dry) \n\r");
+
+        scanf("%u", &sel);
+
+        if (sel != 0) {
+            print("What value to write?\n\r");
+            scanf("%u", &input);
+        }
+
+        switch (sel) {
+        case 0:
+            print("Quitting\n\r");
+            break;
+        case 1:
+            Xil_Out32(REVERB_BASE_ADDR + REVERB_DECAY_REG_OFFSET, input);
+            break;
+        case 2:
+            Xil_Out32(REVERB_BASE_ADDR + REVERB_DAMPING_REG_OFFSET, input);
+            break;
+        case 3:
+            Xil_Out32(REVERB_BASE_ADDR + REVERB_MIX_REG_OFFSET, input);
+            break;
+        default:
+            print("You've selected an invalid register\n\r");
+        }
+    }
+}
+
+void overdrive_control_loop() {
+    Xil_Out32(OVERDRIVE_BASE_ADDR + OVERDRIVE_DRIVE_REG_OFFSET, 512);
+    Xil_Out32(OVERDRIVE_BASE_ADDR + OVERDRIVE_TONE_REG_OFFSET, 32768);
+    Xil_Out32(OVERDRIVE_BASE_ADDR + OVERDRIVE_LEVEL_REG_OFFSET, 32768);
+    Xil_Out32(OVERDRIVE_BASE_ADDR + OVERDRIVE_ASYMMETRY_REG_OFFSET, 0);
+
+    u32 sel = 1;
+    u32 input;
+
+    while (sel != 0) {
+        print_overdrive_params();
+        print("Select register to write:\n\r"
+              "[0] to quit\n\r"
+              "[1] Drive (256 = gain of 1, 8 bits after decimal)\n\r"
+              "[2] Tone (0 to 65535)\n\r"
+              "[3] Level (0 is muted, 65535 is 0 atten)\n\r"
+              "[4] Asymmetry (0 = symmetric)\n\r");
+
+        scanf("%u", &sel);
+
+        if (sel != 0) {
+            print("What value to write?\n\r");
+            scanf("%u", &input);
+        }
+
+        switch (sel) {
+        case 0:
+            print("Quitting\n\r");
+            break;
+        case 1:
+            Xil_Out32(OVERDRIVE_BASE_ADDR + OVERDRIVE_DRIVE_REG_OFFSET, input);
+            break;
+        case 2:
+            Xil_Out32(OVERDRIVE_BASE_ADDR + OVERDRIVE_TONE_REG_OFFSET, input);
+            break;
+        case 3:
+            Xil_Out32(OVERDRIVE_BASE_ADDR + OVERDRIVE_LEVEL_REG_OFFSET, input);
+            break;
+        case 4:
+            Xil_Out32(OVERDRIVE_BASE_ADDR + OVERDRIVE_ASYMMETRY_REG_OFFSET, input);
+            break;
+        default:
+            print("You've selected an invalid register\n\r");
+        }
+    }
+}
+
+void distortion_control_loop() {
+    Xil_Out32(DISTORTION_BASE_ADDR + DISTORTION_DRIVE_REG_OFFSET, 90);
+    Xil_Out32(DISTORTION_BASE_ADDR + DISTORTION_TONE_REG_OFFSET, 32768);
+    Xil_Out32(DISTORTION_BASE_ADDR + DISTORTION_LEVEL_REG_OFFSET, 1500);
+
+    u32 sel = 1;
+    u32 input;
+
+    while (sel != 0) {
+        print_distortion_params();
+        print("Select register to write:\n\r"
+              "[0] to quit\n\r"
+              "[1] Drive (1 to 64, 1 is unity gain) DONT GO OVER 64\n\r"
+              "[2] Tone \n\r"
+              "[3] Level (65535 is unity)\n\r");
+
+        scanf("%u", &sel);
+
+        if (sel != 0) {
+            print("What value to write?\n\r");
+            scanf("%u", &input);
+        }
+
+        switch (sel) {
+        case 0:
+            print("Quitting\n\r");
+            break;
+        case 1:
+            Xil_Out32(DISTORTION_BASE_ADDR + DISTORTION_DRIVE_REG_OFFSET, input);
+            break;
+        case 2:
+            Xil_Out32(DISTORTION_BASE_ADDR + DISTORTION_TONE_REG_OFFSET, input);
+            break;
+        case 3:
+            Xil_Out32(DISTORTION_BASE_ADDR + DISTORTION_LEVEL_REG_OFFSET, input);
+            break;
+        default:
+            print("You've selected an invalid register\n\r");
+        }
+    }
+}
+
+
 int main()
 {
 
@@ -196,7 +382,19 @@ int main()
 		delay_control_loop();
 	#endif
 	
+	#ifdef REVERB
+		reverb_control_loop();
+	#endif
+
+	#ifdef OVERDRIVE
+		overdrive_control_loop();
+	#endif
+
+	#ifdef DISTORTION
+		distortion_control_loop();
+	#endif
 	
+	print("uh oh, you probably spelled the macro wrong\r\n");
 	codec_write_reg(0x0F, 0x00); // Reset Codec
 	
     cleanup_platform();

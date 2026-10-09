@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1791501542">
+<GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1791558615">
   <File Type="PA-TCL" Name="design_1_wrapper.tcl"/>
   <File Type="REPORTS-TCL" Name="design_1_wrapper_reports.tcl"/>
   <File Type="RDS-RDS" Name="design_1_wrapper.vds"/>
@@ -46,14 +46,6 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/delay.sv">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
       <Option Name="TopModule" Val="design_1_wrapper"/>
@@ -90,6 +82,9 @@
   <BlockFileSet Type="BlockSrcs" Name="design_1_clk_wiz_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_i2s_tx_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_rst_ps7_0_50M_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_delay_axi_wrapper_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_chorus_axi_wrapper_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_delay_axi_wrapper_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_reverb_axi_wrapper_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_distortion_axi_wrapp_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_overdrive_axi_wrapper_0_0"/>
 </GenRun>

@@ -4,8 +4,8 @@ INFO: [Common 17-3922] A valid Vivado Design Suite BASIC license has been detect
 # SW Build 6511674 on Tue Jun 16 11:02:23 MDT 2026
 # IP Build 6504888 on Tue Jun 09 09:05:25 MDT 2026
 # SharedData Build 6501428 on Mon Jun 08 17:34:18 MDT 2026
-# Start of session at: Thu Oct  8 19:19:04 2026
-# Process ID         : 30084
+# Start of session at: Fri Oct  9 08:24:33 2026
+# Process ID         : 43492
 # Current directory  : C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.runs/design_1_chorus_axi_wrapper_0_0_synth_1
 # Command line       : vivado.exe -log design_1_chorus_axi_wrapper_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_chorus_axi_wrapper_0_0.tcl
 # Log file           : C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.runs/design_1_chorus_axi_wrapper_0_0_synth_1/design_1_chorus_axi_wrapper_0_0.vds
@@ -20,10 +20,10 @@ INFO: [Common 17-3922] A valid Vivado Design Suite BASIC license has been detect
 # Host memory        : 16834 MB
 # Swap memory        : 15032 MB
 # Total Virtual      : 31867 MB
-# Available Virtual  : 10099 MB
+# Available Virtual  : 10187 MB
 #-----------------------------------------------------------
 source design_1_chorus_axi_wrapper_0_0.tcl -notrace
-create_project: Time (s): cpu = 00:00:17 ; elapsed = 00:00:15 . Memory (MB): peak = 580.121 ; gain = 265.918
+create_project: Time (s): cpu = 00:00:13 ; elapsed = 00:00:08 . Memory (MB): peak = 583.863 ; gain = 269.301
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/ip_repo'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/AMDDesignTools/2026.1/Vivado/data/ip'.
@@ -37,24 +37,24 @@ INFO: [Device 21-403] Loading part xc7z010clg400-1
 INFO: [Designutils 20-5008] Incremental synthesis strategy off
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 41292
+INFO: [Synth 8-7075] Helper process launched with PID 38660
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1380.023 ; gain = 577.656
+Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1380.691 ; gain = 577.664
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'design_1_chorus_axi_wrapper_0_0' [c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/ip/design_1_chorus_axi_wrapper_0_0/synth/design_1_chorus_axi_wrapper_0_0.v:53]
-INFO: [Synth 8-6157] synthesizing module 'chorus_axi_wrapper' [c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/ipshared/caaf/hdl/chorus_axi_wrapper.v:4]
-INFO: [Synth 8-6157] synthesizing module 'chorus_axi_wrapper_slave_lite_v1_0_S00_AXI' [c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/ipshared/caaf/hdl/chorus_axi_wrapper_slave_lite_v1_0_S00_AXI.v:4]
-INFO: [Synth 8-155] case statement is not full and has no default [c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/ipshared/caaf/hdl/chorus_axi_wrapper_slave_lite_v1_0_S00_AXI.v:144]
-INFO: [Synth 8-226] default block is never used [c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/ipshared/caaf/hdl/chorus_axi_wrapper_slave_lite_v1_0_S00_AXI.v:218]
-INFO: [Synth 8-155] case statement is not full and has no default [c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/ipshared/caaf/hdl/chorus_axi_wrapper_slave_lite_v1_0_S00_AXI.v:271]
-INFO: [Synth 8-6155] done synthesizing module 'chorus_axi_wrapper_slave_lite_v1_0_S00_AXI' (0#1) [c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/ipshared/caaf/hdl/chorus_axi_wrapper_slave_lite_v1_0_S00_AXI.v:4]
-WARNING: [Synth 8-689] width (16) of port connection 'rate' does not match port width (32) of module 'chorus_axi_wrapper_slave_lite_v1_0_S00_AXI' [c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/ipshared/caaf/hdl/chorus_axi_wrapper.v:83]
-WARNING: [Synth 8-689] width (16) of port connection 'depth' does not match port width (32) of module 'chorus_axi_wrapper_slave_lite_v1_0_S00_AXI' [c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/ipshared/caaf/hdl/chorus_axi_wrapper.v:84]
-WARNING: [Synth 8-689] width (16) of port connection 'mix' does not match port width (32) of module 'chorus_axi_wrapper_slave_lite_v1_0_S00_AXI' [c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/ipshared/caaf/hdl/chorus_axi_wrapper.v:85]
-WARNING: [Synth 8-689] width (16) of port connection 'base_ms' does not match port width (32) of module 'chorus_axi_wrapper_slave_lite_v1_0_S00_AXI' [c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/ipshared/caaf/hdl/chorus_axi_wrapper.v:86]
-INFO: [Synth 8-6157] synthesizing module 'chorus' [c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/ipshared/caaf/src/chorus.sv:50]
-INFO: [Synth 8-6155] done synthesizing module 'chorus' (0#1) [c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/ipshared/caaf/src/chorus.sv:50]
-INFO: [Synth 8-6155] done synthesizing module 'chorus_axi_wrapper' (0#1) [c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/ipshared/caaf/hdl/chorus_axi_wrapper.v:4]
+INFO: [Synth 8-6157] synthesizing module 'chorus_axi_wrapper' [c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/ipshared/0bc4/hdl/chorus_axi_wrapper.v:4]
+INFO: [Synth 8-6157] synthesizing module 'chorus_axi_wrapper_slave_lite_v1_0_S00_AXI' [c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/ipshared/0bc4/hdl/chorus_axi_wrapper_slave_lite_v1_0_S00_AXI.v:4]
+INFO: [Synth 8-155] case statement is not full and has no default [c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/ipshared/0bc4/hdl/chorus_axi_wrapper_slave_lite_v1_0_S00_AXI.v:144]
+INFO: [Synth 8-226] default block is never used [c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/ipshared/0bc4/hdl/chorus_axi_wrapper_slave_lite_v1_0_S00_AXI.v:218]
+INFO: [Synth 8-155] case statement is not full and has no default [c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/ipshared/0bc4/hdl/chorus_axi_wrapper_slave_lite_v1_0_S00_AXI.v:271]
+INFO: [Synth 8-6155] done synthesizing module 'chorus_axi_wrapper_slave_lite_v1_0_S00_AXI' (0#1) [c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/ipshared/0bc4/hdl/chorus_axi_wrapper_slave_lite_v1_0_S00_AXI.v:4]
+WARNING: [Synth 8-689] width (16) of port connection 'rate' does not match port width (32) of module 'chorus_axi_wrapper_slave_lite_v1_0_S00_AXI' [c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/ipshared/0bc4/hdl/chorus_axi_wrapper.v:82]
+WARNING: [Synth 8-689] width (16) of port connection 'depth' does not match port width (32) of module 'chorus_axi_wrapper_slave_lite_v1_0_S00_AXI' [c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/ipshared/0bc4/hdl/chorus_axi_wrapper.v:83]
+WARNING: [Synth 8-689] width (16) of port connection 'mix' does not match port width (32) of module 'chorus_axi_wrapper_slave_lite_v1_0_S00_AXI' [c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/ipshared/0bc4/hdl/chorus_axi_wrapper.v:84]
+WARNING: [Synth 8-689] width (16) of port connection 'base_ms' does not match port width (32) of module 'chorus_axi_wrapper_slave_lite_v1_0_S00_AXI' [c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/ipshared/0bc4/hdl/chorus_axi_wrapper.v:85]
+INFO: [Synth 8-6157] synthesizing module 'chorus' [c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/ipshared/0bc4/src/chorus.sv:50]
+INFO: [Synth 8-6155] done synthesizing module 'chorus' (0#1) [c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/ipshared/0bc4/src/chorus.sv:50]
+INFO: [Synth 8-6155] done synthesizing module 'chorus_axi_wrapper' (0#1) [c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/ipshared/0bc4/hdl/chorus_axi_wrapper.v:4]
 INFO: [Synth 8-6155] done synthesizing module 'design_1_chorus_axi_wrapper_0_0' (0#1) [c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/ip/design_1_chorus_axi_wrapper_0_0/synth/design_1_chorus_axi_wrapper_0_0.v:53]
 INFO: [Synth 8-7129] Port S_AXI_AWPROT[2] in module chorus_axi_wrapper_slave_lite_v1_0_S00_AXI is either unconnected or has no load
 INFO: [Synth 8-7129] Port S_AXI_AWPROT[1] in module chorus_axi_wrapper_slave_lite_v1_0_S00_AXI is either unconnected or has no load
@@ -63,45 +63,45 @@ INFO: [Synth 8-7129] Port S_AXI_ARPROT[2] in module chorus_axi_wrapper_slave_lit
 INFO: [Synth 8-7129] Port S_AXI_ARPROT[1] in module chorus_axi_wrapper_slave_lite_v1_0_S00_AXI is either unconnected or has no load
 INFO: [Synth 8-7129] Port S_AXI_ARPROT[0] in module chorus_axi_wrapper_slave_lite_v1_0_S00_AXI is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1512.375 ; gain = 710.008
+Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1513.523 ; gain = 710.496
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1512.375 ; gain = 710.008
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1513.523 ; gain = 710.496
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1512.375 ; gain = 710.008
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1513.523 ; gain = 710.496
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1512.375 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1513.523 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1573.316 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1547.277 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.112 . Memory (MB): peak = 1573.477 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.044 . Memory (MB): peak = 1547.551 ; gain = 0.000
 INFO: [Designutils 20-5008] Incremental synthesis strategy off
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 1573.477 ; gain = 771.109
+Finished Constraint Validation : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1547.551 ; gain = 744.523
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z010clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 1573.477 ; gain = 771.109
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1547.551 ; gain = 744.523
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 1573.477 ; gain = 771.109
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1547.551 ; gain = 744.523
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_write_reg' in module 'chorus_axi_wrapper_slave_lite_v1_0_S00_AXI'
 INFO: [Synth 8-802] inferred FSM for state register 'state_read_reg' in module 'chorus_axi_wrapper_slave_lite_v1_0_S00_AXI'
@@ -123,7 +123,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'state_write_reg' using enc
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_read_reg' using encoding 'sequential' in module 'chorus_axi_wrapper_slave_lite_v1_0_S00_AXI'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:26 ; elapsed = 00:00:29 . Memory (MB): peak = 1573.477 ; gain = 771.109
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1547.551 ; gain = 744.523
 ---------------------------------------------------------------------------------
 No constraint files found.
 ---------------------------------------------------------------------------------
@@ -238,7 +238,7 @@ INFO: [Synth 8-7129] Port s00_axi_arprot[1] in module design_1_chorus_axi_wrappe
 INFO: [Synth 8-7129] Port s00_axi_arprot[0] in module design_1_chorus_axi_wrapper_0_0 is either unconnected or has no load
 INFO: [Synth 8-3332] Sequential element (inst/chorus_internals/sine_step) is unused and will be removed from module design_1_chorus_axi_wrapper_0_0.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:31 ; elapsed = 00:00:35 . Memory (MB): peak = 1591.340 ; gain = 788.973
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1586.980 ; gain = 783.953
 ---------------------------------------------------------------------------------
  Sort Area is  inst/chorus_internals/depth_term_6 : 0 0 : 3692 7403 : Used 1 time 0
  Sort Area is  inst/chorus_internals/depth_term_6 : 0 1 : 3711 7403 : Used 1 time 0
@@ -290,7 +290,7 @@ No constraint files found.
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:31 ; elapsed = 00:00:35 . Memory (MB): peak = 1591.340 ; gain = 788.973
+Finished Timing Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1586.980 ; gain = 783.953
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -313,7 +313,7 @@ INFO: [Synth 8-7052] The timing for the instance inst/chorus_internals/sine_q_re
 INFO: [Synth 8-7052] The timing for the instance inst/chorus_internals/sample_buf_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance inst/chorus_internals/sample_buf_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:31 ; elapsed = 00:00:35 . Memory (MB): peak = 1591.340 ; gain = 788.973
+Finished Technology Mapping : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1587.004 ; gain = 783.977
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -331,37 +331,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:38 ; elapsed = 00:00:42 . Memory (MB): peak = 1842.203 ; gain = 1039.836
+Finished IO Insertion : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1837.684 ; gain = 1034.656
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:38 ; elapsed = 00:00:42 . Memory (MB): peak = 1842.203 ; gain = 1039.836
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1837.684 ; gain = 1034.656
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:38 ; elapsed = 00:00:42 . Memory (MB): peak = 1842.203 ; gain = 1039.836
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1837.684 ; gain = 1034.656
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:38 ; elapsed = 00:00:42 . Memory (MB): peak = 1842.203 ; gain = 1039.836
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1837.684 ; gain = 1034.656
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:38 ; elapsed = 00:00:42 . Memory (MB): peak = 1842.203 ; gain = 1039.836
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1837.684 ; gain = 1034.656
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:38 ; elapsed = 00:00:42 . Memory (MB): peak = 1842.203 ; gain = 1039.836
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1837.684 ; gain = 1034.656
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -374,7 +374,7 @@ DSP Final Report (the ' indicates corresponding REG is set)
 |chorus                          | A*B                | 23     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
 |chorus                          | A'*B               | 30     | 16     | -      | -      | 41     | 1    | 0    | -    | -    | -     | 0    | 0    | 
 |chorus                          | A*B                | 19     | 16     | -      | -      | 38     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|chorus                          | D'-A'*B'           | 30     | 12     | -      | 25     | 38     | 1    | 1    | -    | 1    | 0     | 0    | 0    | 
+|chorus                          | D'-A'*B''          | 30     | 12     | -      | 25     | 38     | 1    | 2    | -    | 1    | 0     | 0    | 0    | 
 |design_1_chorus_axi_wrapper_0_0 | (D'+A)'*B          | 30     | 18     | -      | 25     | 48     | 0    | 0    | -    | 1    | 1     | 0    | 0    | 
 |design_1_chorus_axi_wrapper_0_0 | (D'+A)'*B          | 30     | 17     | -      | 25     | 48     | 0    | 0    | -    | 1    | 1     | 0    | 0    | 
 |design_1_chorus_axi_wrapper_0_0 | PCIN>>17+(D'+A)'*B | 30     | 17     | -      | 25     | 48     | 0    | 0    | -    | 1    | 1     | 0    | 0    | 
@@ -397,42 +397,42 @@ Report Cell Usage:
 +------+---------+------+
 |1     |CARRY4   |    54|
 |2     |DSP48E1  |    11|
-|3     |LUT1     |    35|
+|3     |LUT1     |    34|
 |4     |LUT2     |   224|
 |5     |LUT3     |    19|
-|6     |LUT4     |    11|
-|7     |LUT5     |    22|
-|8     |LUT6     |    67|
+|6     |LUT4     |    20|
+|7     |LUT5     |    14|
+|8     |LUT6     |    63|
 |9     |RAMB18E1 |     1|
 |10    |RAMB36E1 |     2|
-|11    |FDRE     |   309|
+|11    |FDRE     |   297|
 +------+---------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:38 ; elapsed = 00:00:42 . Memory (MB): peak = 1842.203 ; gain = 1039.836
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1837.684 ; gain = 1034.656
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:23 ; elapsed = 00:00:39 . Memory (MB): peak = 1842.203 ; gain = 978.734
-Synthesis Optimization Complete : Time (s): cpu = 00:00:38 ; elapsed = 00:00:42 . Memory (MB): peak = 1842.203 ; gain = 1039.836
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:18 ; elapsed = 00:00:28 . Memory (MB): peak = 1837.684 ; gain = 1000.629
+Synthesis Optimization Complete : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1838.664 ; gain = 1034.656
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1854.215 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1850.773 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 68 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1954.570 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1951.727 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete | Checksum: 33435fbc
+Synth Design complete | Checksum: aba67a7e
 INFO: [Common 17-83] Releasing license: Vivado_Synthesis
 50 Infos, 6 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:45 ; elapsed = 00:01:13 . Memory (MB): peak = 1954.578 ; gain = 1349.863
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1954.578 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:34 ; elapsed = 00:00:36 . Memory (MB): peak = 1951.766 ; gain = 1344.445
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1951.766 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.runs/design_1_chorus_axi_wrapper_0_0_synth_1/design_1_chorus_axi_wrapper_0_0.dcp' has been generated.
-INFO: [Ipptcl 7-1612] Added synthesis output to IP cache for IP design_1_chorus_axi_wrapper_0_0, cache-ID = 656ebe3e43a634b2
+INFO: [Ipptcl 7-1612] Added synthesis output to IP cache for IP design_1_chorus_axi_wrapper_0_0, cache-ID = 643fa49f2e7a90ac
 INFO: [Coretcl 2-1174] Renamed 3 cell refs.
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1954.578 ; gain = 0.000
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1951.766 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.runs/design_1_chorus_axi_wrapper_0_0_synth_1/design_1_chorus_axi_wrapper_0_0.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file design_1_chorus_axi_wrapper_0_0_utilization_synth.rpt -pb design_1_chorus_axi_wrapper_0_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu Oct  8 19:20:41 2026...
+INFO: [Common 17-206] Exiting Vivado at Fri Oct  9 08:25:24 2026...

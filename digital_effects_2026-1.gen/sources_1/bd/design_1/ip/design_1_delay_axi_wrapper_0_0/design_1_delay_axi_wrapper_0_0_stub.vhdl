@@ -2,7 +2,7 @@
 -- Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2026.1 (win64) Build 6511674 Tue Jun 16 11:02:23 MDT 2026
--- Date        : Wed Sep  2 23:26:33 2026
+-- Date        : Fri Oct  9 08:25:23 2026
 -- Host        : MostlyEtc running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode synth_stub
 --               c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/ip/design_1_delay_axi_wrapper_0_0/design_1_delay_axi_wrapper_0_0_stub.vhdl
@@ -46,7 +46,7 @@ entity design_1_delay_axi_wrapper_0_0 is
   attribute CHECK_LICENSE_TYPE : string;
   attribute CHECK_LICENSE_TYPE of design_1_delay_axi_wrapper_0_0 : entity is "design_1_delay_axi_wrapper_0_0,delay_axi_wrapper,{}";
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of design_1_delay_axi_wrapper_0_0 : entity is "design_1_delay_axi_wrapper_0_0,delay_axi_wrapper,{x_ipProduct=Vivado 2026.1,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=delay_axi_wrapper,x_ipVersion=1.0,x_ipCoreRevision=9,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=4}";
+  attribute CORE_GENERATION_INFO of design_1_delay_axi_wrapper_0_0 : entity is "design_1_delay_axi_wrapper_0_0,delay_axi_wrapper,{x_ipProduct=Vivado 2026.1,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=delay_axi_wrapper,x_ipVersion=1.0,x_ipCoreRevision=10,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=4}";
   attribute DowngradeIPIdentifiedWarnings : string;
   attribute DowngradeIPIdentifiedWarnings of design_1_delay_axi_wrapper_0_0 : entity is "yes";
 end design_1_delay_axi_wrapper_0_0;

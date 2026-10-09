@@ -48,17 +48,16 @@
 
 
 // IP VLNV: xilinx.com:user:chorus_axi_wrapper:1.0
-// IP Revision: 8
+// IP Revision: 9
 
 (* X_CORE_INFO = "chorus_axi_wrapper,Vivado 2026.1" *)
 (* CHECK_LICENSE_TYPE = "design_1_chorus_axi_wrapper_0_0,chorus_axi_wrapper,{}" *)
-(* CORE_GENERATION_INFO = "design_1_chorus_axi_wrapper_0_0,chorus_axi_wrapper,{x_ipProduct=Vivado 2026.1,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=chorus_axi_wrapper,x_ipVersion=1.0,x_ipCoreRevision=8,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=4}" *)
+(* CORE_GENERATION_INFO = "design_1_chorus_axi_wrapper_0_0,chorus_axi_wrapper,{x_ipProduct=Vivado 2026.1,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=chorus_axi_wrapper,x_ipVersion=1.0,x_ipCoreRevision=9,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=4}" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module design_1_chorus_axi_wrapper_0_0 (
   audio_clk,
   sample_in,
   sample_in_valid,
-  rst_n,
   sample_out,
   sample_out_valid,
   s00_axi_aclk,
@@ -90,10 +89,6 @@ module design_1_chorus_axi_wrapper_0_0 (
 input wire audio_clk;
 input wire [23 : 0] sample_in;
 input wire sample_in_valid;
-(* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 rst_n RST" *)
-(* X_INTERFACE_MODE = "slave" *)
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME rst_n, POLARITY ACTIVE_LOW, INSERT_VIP 0" *)
-input wire rst_n;
 output wire [23 : 0] sample_out;
 output wire sample_out_valid;
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 S00_AXI_CLK CLK" *)
@@ -153,7 +148,6 @@ input wire s00_axi_rready;
     .audio_clk(audio_clk),
     .sample_in(sample_in),
     .sample_in_valid(sample_in_valid),
-    .rst_n(rst_n),
     .sample_out(sample_out),
     .sample_out_valid(sample_out_valid),
     .s00_axi_aclk(s00_axi_aclk),

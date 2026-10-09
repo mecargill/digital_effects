@@ -2,7 +2,7 @@
 // Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2026.1 (win64) Build 6511674 Tue Jun 16 11:02:23 MDT 2026
-// Date        : Thu Oct  8 19:20:41 2026
+// Date        : Fri Oct  9 08:25:24 2026
 // Host        : MostlyEtc running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
 //               c:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/digital_effects_2026-1.gen/sources_1/bd/design_1/ip/design_1_chorus_axi_wrapper_0_0/design_1_chorus_axi_wrapper_0_0_sim_netlist.v
@@ -19,7 +19,6 @@ module design_1_chorus_axi_wrapper_0_0
    (audio_clk,
     sample_in,
     sample_in_valid,
-    rst_n,
     sample_out,
     sample_out_valid,
     s00_axi_aclk,
@@ -46,7 +45,6 @@ module design_1_chorus_axi_wrapper_0_0
   (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 audio_clk CLK" *) (* X_INTERFACE_MODE = "slave" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME audio_clk, FREQ_HZ 12288013, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN /clk_wiz_0_clk_out1, INSERT_VIP 0" *) input audio_clk;
   input [23:0]sample_in;
   input sample_in_valid;
-  (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 rst_n RST" *) (* X_INTERFACE_MODE = "slave" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME rst_n, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input rst_n;
   output [23:0]sample_out;
   output sample_out_valid;
   (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 S00_AXI_CLK CLK" *) (* X_INTERFACE_MODE = "slave" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME S00_AXI_CLK, ASSOCIATED_BUSIF S00_AXI, ASSOCIATED_RESET s00_axi_aresetn, FREQ_HZ 50000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0" *) input s00_axi_aclk;
@@ -73,7 +71,6 @@ module design_1_chorus_axi_wrapper_0_0
 
   wire \<const0> ;
   wire audio_clk;
-  wire rst_n;
   wire s00_axi_aclk;
   wire [3:0]s00_axi_araddr;
   wire s00_axi_aresetn;
@@ -107,7 +104,6 @@ module design_1_chorus_axi_wrapper_0_0
         .axi_arready_reg(s00_axi_arready),
         .axi_awready_reg(s00_axi_awready),
         .axi_rvalid_reg(s00_axi_rvalid),
-        .rst_n(rst_n),
         .s00_axi_aclk(s00_axi_aclk),
         .s00_axi_araddr(s00_axi_araddr[3:2]),
         .s00_axi_aresetn(s00_axi_aresetn),
@@ -144,7 +140,6 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     i__carry__1_i_4_0,
     i__carry__2_i_4_0,
     i__carry__3_i_2_0,
-    rst_n,
     sample_in_valid);
   output [23:0]sample_out;
   output sample_out_valid;
@@ -160,27 +155,25 @@ module design_1_chorus_axi_wrapper_0_0_chorus
   input [3:0]i__carry__1_i_4_0;
   input [3:0]i__carry__2_i_4_0;
   input [1:0]i__carry__3_i_2_0;
-  input rst_n;
   input sample_in_valid;
 
   wire [23:0]A;
   wire [15:0]B;
   wire [39:10]C;
   wire [2:0]S;
-  wire \_inferred__3/i__carry__0_n_0 ;
-  wire \_inferred__3/i__carry__0_n_1 ;
-  wire \_inferred__3/i__carry__0_n_2 ;
-  wire \_inferred__3/i__carry__0_n_3 ;
-  wire \_inferred__3/i__carry__1_n_2 ;
-  wire \_inferred__3/i__carry__1_n_3 ;
-  wire \_inferred__3/i__carry_n_0 ;
-  wire \_inferred__3/i__carry_n_1 ;
-  wire \_inferred__3/i__carry_n_2 ;
-  wire \_inferred__3/i__carry_n_3 ;
+  wire \_inferred__2/i__carry__0_n_0 ;
+  wire \_inferred__2/i__carry__0_n_1 ;
+  wire \_inferred__2/i__carry__0_n_2 ;
+  wire \_inferred__2/i__carry__0_n_3 ;
+  wire \_inferred__2/i__carry__1_n_2 ;
+  wire \_inferred__2/i__carry__1_n_3 ;
+  wire \_inferred__2/i__carry_n_0 ;
+  wire \_inferred__2/i__carry_n_1 ;
+  wire \_inferred__2/i__carry_n_2 ;
+  wire \_inferred__2/i__carry_n_3 ;
   wire audio_clk;
   wire buf_we;
-  wire buf_we_i_1_n_0;
-  wire clear;
+  wire [0:0]delay_frac;
   wire \delay_frac_reg_n_0_[0] ;
   wire \delay_frac_reg_n_0_[10] ;
   wire \delay_frac_reg_n_0_[11] ;
@@ -194,8 +187,6 @@ module design_1_chorus_axi_wrapper_0_0_chorus
   wire \delay_frac_reg_n_0_[8] ;
   wire \delay_frac_reg_n_0_[9] ;
   wire [10:0]delay_int;
-  wire [0:0]delay_int_0;
-  wire [0:0]delay_q;
   wire delay_q1;
   wire delay_q10_in;
   wire delay_q1_carry__0_i_1_n_0;
@@ -282,6 +273,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
   wire \delay_q[28]_i_1_n_0 ;
   wire \delay_q[29]_i_1_n_0 ;
   wire \delay_q[30]_i_1_n_0 ;
+  wire \delay_q[30]_i_2_n_0 ;
   wire \delay_q[30]_i_3_n_0 ;
   wire \delay_q[8]_i_1_n_0 ;
   wire \delay_q[9]_i_1_n_0 ;
@@ -502,6 +494,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
   wire depth_term__1_n_97;
   wire depth_term__1_n_98;
   wire depth_term__1_n_99;
+  wire depth_term_i_1_n_0;
   wire depth_term_n_100;
   wire depth_term_n_101;
   wire depth_term_n_102;
@@ -601,6 +594,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
   wire interp0_i_14_n_0;
   wire interp0_i_15_n_0;
   wire interp0_i_16_n_0;
+  wire interp0_i_1_n_0;
   wire interp0_i_2_n_0;
   wire interp0_i_2_n_2;
   wire interp0_i_2_n_3;
@@ -670,6 +664,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
   wire interp_i_11_n_0;
   wire interp_i_12_n_0;
   wire interp_i_13_n_0;
+  wire interp_i_1_n_0;
   wire interp_i_2_n_0;
   wire interp_i_3_n_0;
   wire interp_i_4_n_0;
@@ -690,7 +685,6 @@ module design_1_chorus_axi_wrapper_0_0_chorus
   wire interp_n_97;
   wire interp_n_98;
   wire interp_n_99;
-  wire [0:0]lfo;
   wire [24:0]lfo_next0;
   wire [15:0]mixed0_0;
   wire mixed0_n_100;
@@ -735,6 +729,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
   wire mixed0_n_98;
   wire mixed0_n_99;
   wire [15:0]mixed_0;
+  wire mixed_i_1_n_0;
   wire mixed_i_2_n_0;
   wire mixed_n_100;
   wire mixed_n_101;
@@ -1062,17 +1057,12 @@ module design_1_chorus_axi_wrapper_0_0_chorus
   wire \rd_addr[10]_i_1_n_0 ;
   wire [10:0]rd_addr__0;
   wire [23:0]rd_data;
-  wire rst_n;
-  wire [0:0]s_far;
-  wire [0:0]s_near;
   wire [23:0]sample_in;
   wire sample_in_valid;
   wire [23:0]sample_out;
   wire sample_out_valid;
-  wire sample_out_valid_i_1_n_0;
   wire [23:0]sample_x;
-  wire [0:0]sample_x__0;
-  wire [0:0]sine_addr;
+  wire \sample_x[23]_i_1_n_0 ;
   wire \sine_addr[0]_i_1_n_0 ;
   wire \sine_addr[1]_i_1_n_0 ;
   wire \sine_addr[2]_i_1_n_0 ;
@@ -1085,6 +1075,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
   wire \sine_addr[7]_i_1_n_0 ;
   wire \sine_addr[8]_i_1_n_0 ;
   wire \sine_addr[8]_i_2_n_0 ;
+  wire \sine_addr[9]_i_1_n_0 ;
   wire \sine_addr[9]_i_2_n_0 ;
   wire \sine_addr[9]_i_3_n_0 ;
   wire \sine_addr_reg_n_0_[0] ;
@@ -1098,10 +1089,8 @@ module design_1_chorus_axi_wrapper_0_0_chorus
   wire \sine_addr_reg_n_0_[8] ;
   wire \sine_addr_reg_n_0_[9] ;
   wire [23:0]sine_q_reg__0;
-  wire [0:0]sine_s0;
-  wire [0:0]sine_s1;
-  wire sine_step__0_i_1_n_0;
-  wire [11:0]sine_step__12;
+  wire sine_step_i_1_n_0;
+  wire sine_step_i_2_n_0;
   wire sine_step_n_100;
   wire sine_step_n_101;
   wire sine_step_n_102;
@@ -1121,11 +1110,10 @@ module design_1_chorus_axi_wrapper_0_0_chorus
   wire \state_reg_n_0_[1] ;
   wire \state_reg_n_0_[2] ;
   wire \state_reg_n_0_[3] ;
-  wire [0:0]wet;
   wire \wr_addr[10]_i_2_n_0 ;
   wire [10:0]wr_addr_reg;
-  wire [3:2]\NLW__inferred__3/i__carry__1_CO_UNCONNECTED ;
-  wire [3:3]\NLW__inferred__3/i__carry__1_O_UNCONNECTED ;
+  wire [3:2]\NLW__inferred__2/i__carry__1_CO_UNCONNECTED ;
+  wire [3:3]\NLW__inferred__2/i__carry__1_O_UNCONNECTED ;
   wire [3:0]NLW_delay_q1_carry_O_UNCONNECTED;
   wire [3:0]NLW_delay_q1_carry__0_O_UNCONNECTED;
   wire [3:0]NLW_delay_q1_carry__1_O_UNCONNECTED;
@@ -1300,63 +1288,52 @@ module design_1_chorus_axi_wrapper_0_0_chorus
 
   (* ADDER_THRESHOLD = "35" *) 
   (* METHODOLOGY_DRC_VIOS = "{SYNTH-8 {cell *THIS*}}" *) 
-  CARRY4 \_inferred__3/i__carry 
+  CARRY4 \_inferred__2/i__carry 
        (.CI(1'b0),
-        .CO({\_inferred__3/i__carry_n_0 ,\_inferred__3/i__carry_n_1 ,\_inferred__3/i__carry_n_2 ,\_inferred__3/i__carry_n_3 }),
+        .CO({\_inferred__2/i__carry_n_0 ,\_inferred__2/i__carry_n_1 ,\_inferred__2/i__carry_n_2 ,\_inferred__2/i__carry_n_3 }),
         .CYINIT(wr_addr_reg[0]),
         .DI({wr_addr_reg[3:1],p_1_in}),
         .O(rd_addr__0[3:0]),
         .S({i__carry_i_2__0_n_0,i__carry_i_3__0_n_0,i__carry_i_4__0_n_0,i__carry_i_5_n_0}));
   (* ADDER_THRESHOLD = "35" *) 
   (* METHODOLOGY_DRC_VIOS = "{SYNTH-8 {cell *THIS*}}" *) 
-  CARRY4 \_inferred__3/i__carry__0 
-       (.CI(\_inferred__3/i__carry_n_0 ),
-        .CO({\_inferred__3/i__carry__0_n_0 ,\_inferred__3/i__carry__0_n_1 ,\_inferred__3/i__carry__0_n_2 ,\_inferred__3/i__carry__0_n_3 }),
+  CARRY4 \_inferred__2/i__carry__0 
+       (.CI(\_inferred__2/i__carry_n_0 ),
+        .CO({\_inferred__2/i__carry__0_n_0 ,\_inferred__2/i__carry__0_n_1 ,\_inferred__2/i__carry__0_n_2 ,\_inferred__2/i__carry__0_n_3 }),
         .CYINIT(1'b0),
         .DI(wr_addr_reg[7:4]),
         .O(rd_addr__0[7:4]),
         .S({i__carry__0_i_1__0_n_0,i__carry__0_i_2__0_n_0,i__carry__0_i_3__0_n_0,i__carry__0_i_4__0_n_0}));
   (* ADDER_THRESHOLD = "35" *) 
   (* METHODOLOGY_DRC_VIOS = "{SYNTH-8 {cell *THIS*}}" *) 
-  CARRY4 \_inferred__3/i__carry__1 
-       (.CI(\_inferred__3/i__carry__0_n_0 ),
-        .CO({\NLW__inferred__3/i__carry__1_CO_UNCONNECTED [3:2],\_inferred__3/i__carry__1_n_2 ,\_inferred__3/i__carry__1_n_3 }),
+  CARRY4 \_inferred__2/i__carry__1 
+       (.CI(\_inferred__2/i__carry__0_n_0 ),
+        .CO({\NLW__inferred__2/i__carry__1_CO_UNCONNECTED [3:2],\_inferred__2/i__carry__1_n_2 ,\_inferred__2/i__carry__1_n_3 }),
         .CYINIT(1'b0),
         .DI({1'b0,1'b0,wr_addr_reg[9:8]}),
-        .O({\NLW__inferred__3/i__carry__1_O_UNCONNECTED [3],rd_addr__0[10:8]}),
+        .O({\NLW__inferred__2/i__carry__1_O_UNCONNECTED [3],rd_addr__0[10:8]}),
         .S({1'b0,i__carry__1_i_1__0_n_0,i__carry__1_i_2__0_n_0,i__carry__1_i_3__0_n_0}));
-  LUT6 #(
-    .INIT(64'h0001000000000000)) 
-    buf_we_i_1
-       (.I0(\state_reg_n_0_[0] ),
-        .I1(\state_reg_n_0_[3] ),
-        .I2(\state_reg_n_0_[1] ),
-        .I3(\state_reg_n_0_[2] ),
-        .I4(sample_in_valid),
-        .I5(rst_n),
-        .O(buf_we_i_1_n_0));
   FDRE #(
     .INIT(1'b0)) 
     buf_we_reg
        (.C(audio_clk),
         .CE(1'b1),
-        .D(buf_we_i_1_n_0),
+        .D(\sample_x[23]_i_1_n_0 ),
         .Q(buf_we),
         .R(1'b0));
-  LUT5 #(
-    .INIT(32'h00000080)) 
+  LUT4 #(
+    .INIT(16'h1000)) 
     \delay_frac[11]_i_1 
-       (.I0(rst_n),
-        .I1(\state_reg_n_0_[2] ),
+       (.I0(\state_reg_n_0_[3] ),
+        .I1(\state_reg_n_0_[0] ),
         .I2(\state_reg_n_0_[1] ),
-        .I3(\state_reg_n_0_[0] ),
-        .I4(\state_reg_n_0_[3] ),
-        .O(delay_int_0));
+        .I3(\state_reg_n_0_[2] ),
+        .O(delay_frac));
   FDRE #(
     .INIT(1'b0)) 
     \delay_frac_reg[0] 
        (.C(audio_clk),
-        .CE(delay_int_0),
+        .CE(delay_frac),
         .D(p_0_in[0]),
         .Q(\delay_frac_reg_n_0_[0] ),
         .R(1'b0));
@@ -1364,7 +1341,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \delay_frac_reg[10] 
        (.C(audio_clk),
-        .CE(delay_int_0),
+        .CE(delay_frac),
         .D(p_0_in[10]),
         .Q(\delay_frac_reg_n_0_[10] ),
         .R(1'b0));
@@ -1372,7 +1349,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \delay_frac_reg[11] 
        (.C(audio_clk),
-        .CE(delay_int_0),
+        .CE(delay_frac),
         .D(p_0_in[11]),
         .Q(\delay_frac_reg_n_0_[11] ),
         .R(1'b0));
@@ -1380,7 +1357,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \delay_frac_reg[1] 
        (.C(audio_clk),
-        .CE(delay_int_0),
+        .CE(delay_frac),
         .D(p_0_in[1]),
         .Q(\delay_frac_reg_n_0_[1] ),
         .R(1'b0));
@@ -1388,7 +1365,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \delay_frac_reg[2] 
        (.C(audio_clk),
-        .CE(delay_int_0),
+        .CE(delay_frac),
         .D(p_0_in[2]),
         .Q(\delay_frac_reg_n_0_[2] ),
         .R(1'b0));
@@ -1396,7 +1373,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \delay_frac_reg[3] 
        (.C(audio_clk),
-        .CE(delay_int_0),
+        .CE(delay_frac),
         .D(p_0_in[3]),
         .Q(\delay_frac_reg_n_0_[3] ),
         .R(1'b0));
@@ -1404,7 +1381,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \delay_frac_reg[4] 
        (.C(audio_clk),
-        .CE(delay_int_0),
+        .CE(delay_frac),
         .D(p_0_in[4]),
         .Q(\delay_frac_reg_n_0_[4] ),
         .R(1'b0));
@@ -1412,7 +1389,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \delay_frac_reg[5] 
        (.C(audio_clk),
-        .CE(delay_int_0),
+        .CE(delay_frac),
         .D(p_0_in[5]),
         .Q(\delay_frac_reg_n_0_[5] ),
         .R(1'b0));
@@ -1420,7 +1397,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \delay_frac_reg[6] 
        (.C(audio_clk),
-        .CE(delay_int_0),
+        .CE(delay_frac),
         .D(p_0_in[6]),
         .Q(\delay_frac_reg_n_0_[6] ),
         .R(1'b0));
@@ -1428,7 +1405,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \delay_frac_reg[7] 
        (.C(audio_clk),
-        .CE(delay_int_0),
+        .CE(delay_frac),
         .D(p_0_in[7]),
         .Q(\delay_frac_reg_n_0_[7] ),
         .R(1'b0));
@@ -1436,7 +1413,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \delay_frac_reg[8] 
        (.C(audio_clk),
-        .CE(delay_int_0),
+        .CE(delay_frac),
         .D(p_0_in[8]),
         .Q(\delay_frac_reg_n_0_[8] ),
         .R(1'b0));
@@ -1444,7 +1421,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \delay_frac_reg[9] 
        (.C(audio_clk),
-        .CE(delay_int_0),
+        .CE(delay_frac),
         .D(p_0_in[9]),
         .Q(\delay_frac_reg_n_0_[9] ),
         .R(1'b0));
@@ -1452,7 +1429,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \delay_int_reg[0] 
        (.C(audio_clk),
-        .CE(delay_int_0),
+        .CE(delay_frac),
         .D(\delay_q_reg_n_0_[20] ),
         .Q(delay_int[0]),
         .R(1'b0));
@@ -1460,7 +1437,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \delay_int_reg[10] 
        (.C(audio_clk),
-        .CE(delay_int_0),
+        .CE(delay_frac),
         .D(\delay_q_reg_n_0_[30] ),
         .Q(delay_int[10]),
         .R(1'b0));
@@ -1468,7 +1445,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \delay_int_reg[1] 
        (.C(audio_clk),
-        .CE(delay_int_0),
+        .CE(delay_frac),
         .D(\delay_q_reg_n_0_[21] ),
         .Q(delay_int[1]),
         .R(1'b0));
@@ -1476,7 +1453,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \delay_int_reg[2] 
        (.C(audio_clk),
-        .CE(delay_int_0),
+        .CE(delay_frac),
         .D(\delay_q_reg_n_0_[22] ),
         .Q(delay_int[2]),
         .R(1'b0));
@@ -1484,7 +1461,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \delay_int_reg[3] 
        (.C(audio_clk),
-        .CE(delay_int_0),
+        .CE(delay_frac),
         .D(\delay_q_reg_n_0_[23] ),
         .Q(delay_int[3]),
         .R(1'b0));
@@ -1492,7 +1469,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \delay_int_reg[4] 
        (.C(audio_clk),
-        .CE(delay_int_0),
+        .CE(delay_frac),
         .D(\delay_q_reg_n_0_[24] ),
         .Q(delay_int[4]),
         .R(1'b0));
@@ -1500,7 +1477,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \delay_int_reg[5] 
        (.C(audio_clk),
-        .CE(delay_int_0),
+        .CE(delay_frac),
         .D(\delay_q_reg_n_0_[25] ),
         .Q(delay_int[5]),
         .R(1'b0));
@@ -1508,7 +1485,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \delay_int_reg[6] 
        (.C(audio_clk),
-        .CE(delay_int_0),
+        .CE(delay_frac),
         .D(\delay_q_reg_n_0_[26] ),
         .Q(delay_int[6]),
         .R(1'b0));
@@ -1516,7 +1493,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \delay_int_reg[7] 
        (.C(audio_clk),
-        .CE(delay_int_0),
+        .CE(delay_frac),
         .D(\delay_q_reg_n_0_[27] ),
         .Q(delay_int[7]),
         .R(1'b0));
@@ -1524,7 +1501,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \delay_int_reg[8] 
        (.C(audio_clk),
-        .CE(delay_int_0),
+        .CE(delay_frac),
         .D(\delay_q_reg_n_0_[28] ),
         .Q(delay_int[8]),
         .R(1'b0));
@@ -1532,7 +1509,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \delay_int_reg[9] 
        (.C(audio_clk),
-        .CE(delay_int_0),
+        .CE(delay_frac),
         .D(\delay_q_reg_n_0_[29] ),
         .Q(delay_int[9]),
         .R(1'b0));
@@ -1886,7 +1863,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
        (.I0(delay_q10_in),
         .I1(delay_q1),
         .I2(delay_unclamped__0[20]),
-        .I3(delay_q),
+        .I3(\delay_q[30]_i_2_n_0 ),
         .I4(\delay_q_reg_n_0_[20] ),
         .O(\delay_q[20]_i_1_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair11" *) 
@@ -1952,25 +1929,23 @@ module design_1_chorus_axi_wrapper_0_0_chorus
        (.I0(delay_q1),
         .I1(delay_unclamped__0[29]),
         .O(\delay_q[29]_i_1_n_0 ));
-  LUT6 #(
-    .INIT(64'h0200000000000000)) 
-    \delay_q[30]_i_1 
-       (.I0(delay_q10_in),
-        .I1(\state_reg_n_0_[3] ),
-        .I2(\state_reg_n_0_[1] ),
-        .I3(\state_reg_n_0_[0] ),
-        .I4(\state_reg_n_0_[2] ),
-        .I5(rst_n),
-        .O(\delay_q[30]_i_1_n_0 ));
   LUT5 #(
     .INIT(32'h00000080)) 
-    \delay_q[30]_i_2 
-       (.I0(rst_n),
+    \delay_q[30]_i_1 
+       (.I0(delay_q10_in),
         .I1(\state_reg_n_0_[2] ),
         .I2(\state_reg_n_0_[0] ),
         .I3(\state_reg_n_0_[1] ),
         .I4(\state_reg_n_0_[3] ),
-        .O(delay_q));
+        .O(\delay_q[30]_i_1_n_0 ));
+  LUT4 #(
+    .INIT(16'h1000)) 
+    \delay_q[30]_i_2 
+       (.I0(\state_reg_n_0_[3] ),
+        .I1(\state_reg_n_0_[1] ),
+        .I2(\state_reg_n_0_[0] ),
+        .I3(\state_reg_n_0_[2] ),
+        .O(\delay_q[30]_i_2_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair15" *) 
   LUT2 #(
     .INIT(4'hE)) 
@@ -1996,7 +1971,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \delay_q_reg[10] 
        (.C(audio_clk),
-        .CE(delay_q),
+        .CE(\delay_q[30]_i_2_n_0 ),
         .D(\delay_q[10]_i_1_n_0 ),
         .Q(p_0_in[2]),
         .R(\delay_q[30]_i_1_n_0 ));
@@ -2004,7 +1979,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \delay_q_reg[11] 
        (.C(audio_clk),
-        .CE(delay_q),
+        .CE(\delay_q[30]_i_2_n_0 ),
         .D(\delay_q[11]_i_1_n_0 ),
         .Q(p_0_in[3]),
         .R(\delay_q[30]_i_1_n_0 ));
@@ -2012,7 +1987,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \delay_q_reg[12] 
        (.C(audio_clk),
-        .CE(delay_q),
+        .CE(\delay_q[30]_i_2_n_0 ),
         .D(\delay_q[12]_i_1_n_0 ),
         .Q(p_0_in[4]),
         .R(\delay_q[30]_i_1_n_0 ));
@@ -2020,7 +1995,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \delay_q_reg[13] 
        (.C(audio_clk),
-        .CE(delay_q),
+        .CE(\delay_q[30]_i_2_n_0 ),
         .D(\delay_q[13]_i_1_n_0 ),
         .Q(p_0_in[5]),
         .R(\delay_q[30]_i_1_n_0 ));
@@ -2028,7 +2003,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \delay_q_reg[14] 
        (.C(audio_clk),
-        .CE(delay_q),
+        .CE(\delay_q[30]_i_2_n_0 ),
         .D(\delay_q[14]_i_1_n_0 ),
         .Q(p_0_in[6]),
         .R(\delay_q[30]_i_1_n_0 ));
@@ -2036,7 +2011,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \delay_q_reg[15] 
        (.C(audio_clk),
-        .CE(delay_q),
+        .CE(\delay_q[30]_i_2_n_0 ),
         .D(\delay_q[15]_i_1_n_0 ),
         .Q(p_0_in[7]),
         .R(\delay_q[30]_i_1_n_0 ));
@@ -2044,7 +2019,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \delay_q_reg[16] 
        (.C(audio_clk),
-        .CE(delay_q),
+        .CE(\delay_q[30]_i_2_n_0 ),
         .D(\delay_q[16]_i_1_n_0 ),
         .Q(p_0_in[8]),
         .R(\delay_q[30]_i_1_n_0 ));
@@ -2052,7 +2027,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \delay_q_reg[17] 
        (.C(audio_clk),
-        .CE(delay_q),
+        .CE(\delay_q[30]_i_2_n_0 ),
         .D(\delay_q[17]_i_1_n_0 ),
         .Q(p_0_in[9]),
         .R(\delay_q[30]_i_1_n_0 ));
@@ -2060,7 +2035,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \delay_q_reg[18] 
        (.C(audio_clk),
-        .CE(delay_q),
+        .CE(\delay_q[30]_i_2_n_0 ),
         .D(\delay_q[18]_i_1_n_0 ),
         .Q(p_0_in[10]),
         .R(\delay_q[30]_i_1_n_0 ));
@@ -2068,7 +2043,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \delay_q_reg[19] 
        (.C(audio_clk),
-        .CE(delay_q),
+        .CE(\delay_q[30]_i_2_n_0 ),
         .D(\delay_q[19]_i_1_n_0 ),
         .Q(p_0_in[11]),
         .R(\delay_q[30]_i_1_n_0 ));
@@ -2084,7 +2059,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \delay_q_reg[21] 
        (.C(audio_clk),
-        .CE(delay_q),
+        .CE(\delay_q[30]_i_2_n_0 ),
         .D(\delay_q[21]_i_1_n_0 ),
         .Q(\delay_q_reg_n_0_[21] ),
         .R(\delay_q[30]_i_1_n_0 ));
@@ -2092,7 +2067,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \delay_q_reg[22] 
        (.C(audio_clk),
-        .CE(delay_q),
+        .CE(\delay_q[30]_i_2_n_0 ),
         .D(\delay_q[22]_i_1_n_0 ),
         .Q(\delay_q_reg_n_0_[22] ),
         .R(\delay_q[30]_i_1_n_0 ));
@@ -2100,7 +2075,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \delay_q_reg[23] 
        (.C(audio_clk),
-        .CE(delay_q),
+        .CE(\delay_q[30]_i_2_n_0 ),
         .D(\delay_q[23]_i_1_n_0 ),
         .Q(\delay_q_reg_n_0_[23] ),
         .R(\delay_q[30]_i_1_n_0 ));
@@ -2108,7 +2083,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \delay_q_reg[24] 
        (.C(audio_clk),
-        .CE(delay_q),
+        .CE(\delay_q[30]_i_2_n_0 ),
         .D(\delay_q[24]_i_1_n_0 ),
         .Q(\delay_q_reg_n_0_[24] ),
         .R(\delay_q[30]_i_1_n_0 ));
@@ -2116,7 +2091,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \delay_q_reg[25] 
        (.C(audio_clk),
-        .CE(delay_q),
+        .CE(\delay_q[30]_i_2_n_0 ),
         .D(\delay_q[25]_i_1_n_0 ),
         .Q(\delay_q_reg_n_0_[25] ),
         .R(\delay_q[30]_i_1_n_0 ));
@@ -2124,7 +2099,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \delay_q_reg[26] 
        (.C(audio_clk),
-        .CE(delay_q),
+        .CE(\delay_q[30]_i_2_n_0 ),
         .D(\delay_q[26]_i_1_n_0 ),
         .Q(\delay_q_reg_n_0_[26] ),
         .R(\delay_q[30]_i_1_n_0 ));
@@ -2132,7 +2107,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \delay_q_reg[27] 
        (.C(audio_clk),
-        .CE(delay_q),
+        .CE(\delay_q[30]_i_2_n_0 ),
         .D(\delay_q[27]_i_1_n_0 ),
         .Q(\delay_q_reg_n_0_[27] ),
         .R(\delay_q[30]_i_1_n_0 ));
@@ -2140,7 +2115,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \delay_q_reg[28] 
        (.C(audio_clk),
-        .CE(delay_q),
+        .CE(\delay_q[30]_i_2_n_0 ),
         .D(\delay_q[28]_i_1_n_0 ),
         .Q(\delay_q_reg_n_0_[28] ),
         .R(\delay_q[30]_i_1_n_0 ));
@@ -2148,7 +2123,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \delay_q_reg[29] 
        (.C(audio_clk),
-        .CE(delay_q),
+        .CE(\delay_q[30]_i_2_n_0 ),
         .D(\delay_q[29]_i_1_n_0 ),
         .Q(\delay_q_reg_n_0_[29] ),
         .R(\delay_q[30]_i_1_n_0 ));
@@ -2156,7 +2131,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \delay_q_reg[30] 
        (.C(audio_clk),
-        .CE(delay_q),
+        .CE(\delay_q[30]_i_2_n_0 ),
         .D(\delay_q[30]_i_3_n_0 ),
         .Q(\delay_q_reg_n_0_[30] ),
         .R(\delay_q[30]_i_1_n_0 ));
@@ -2164,7 +2139,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \delay_q_reg[8] 
        (.C(audio_clk),
-        .CE(delay_q),
+        .CE(\delay_q[30]_i_2_n_0 ),
         .D(\delay_q[8]_i_1_n_0 ),
         .Q(p_0_in[0]),
         .R(\delay_q[30]_i_1_n_0 ));
@@ -2172,7 +2147,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \delay_q_reg[9] 
        (.C(audio_clk),
-        .CE(delay_q),
+        .CE(\delay_q[30]_i_2_n_0 ),
         .D(\delay_q[9]_i_1_n_0 ),
         .Q(p_0_in[1]),
         .R(\delay_q[30]_i_1_n_0 ));
@@ -2611,14 +2586,14 @@ module design_1_chorus_axi_wrapper_0_0_chorus
         .CARRYOUT(NLW_depth_term_CARRYOUT_UNCONNECTED[3:0]),
         .CEA1(1'b0),
         .CEA2(1'b0),
-        .CEAD(lfo),
+        .CEAD(depth_term_i_1_n_0),
         .CEALUMODE(1'b0),
         .CEB1(1'b0),
         .CEB2(1'b0),
         .CEC(1'b0),
         .CECARRYIN(1'b0),
         .CECTRL(1'b0),
-        .CED(sine_s0),
+        .CED(sine_step_i_1_n_0),
         .CEINMODE(1'b0),
         .CEM(1'b0),
         .CEP(1'b0),
@@ -2688,14 +2663,14 @@ module design_1_chorus_axi_wrapper_0_0_chorus
         .CARRYOUT(NLW_depth_term__0_CARRYOUT_UNCONNECTED[3:0]),
         .CEA1(1'b0),
         .CEA2(1'b0),
-        .CEAD(lfo),
+        .CEAD(depth_term_i_1_n_0),
         .CEALUMODE(1'b0),
         .CEB1(1'b0),
         .CEB2(1'b0),
         .CEC(1'b0),
         .CECARRYIN(1'b0),
         .CECTRL(1'b0),
-        .CED(sine_s0),
+        .CED(sine_step_i_1_n_0),
         .CEINMODE(1'b0),
         .CEM(1'b0),
         .CEP(1'b0),
@@ -2765,14 +2740,14 @@ module design_1_chorus_axi_wrapper_0_0_chorus
         .CARRYOUT(NLW_depth_term__1_CARRYOUT_UNCONNECTED[3:0]),
         .CEA1(1'b0),
         .CEA2(1'b0),
-        .CEAD(lfo),
+        .CEAD(depth_term_i_1_n_0),
         .CEALUMODE(1'b0),
         .CEB1(1'b0),
         .CEB2(1'b0),
         .CEC(1'b0),
         .CECARRYIN(1'b0),
         .CECTRL(1'b0),
-        .CED(sine_s0),
+        .CED(sine_step_i_1_n_0),
         .CEINMODE(1'b0),
         .CEM(1'b0),
         .CEP(1'b0),
@@ -2799,15 +2774,14 @@ module design_1_chorus_axi_wrapper_0_0_chorus
         .RSTM(1'b0),
         .RSTP(1'b0),
         .UNDERFLOW(NLW_depth_term__1_UNDERFLOW_UNCONNECTED));
-  LUT5 #(
-    .INIT(32'h00000020)) 
+  LUT4 #(
+    .INIT(16'h0010)) 
     depth_term_i_1
-       (.I0(rst_n),
-        .I1(\state_reg_n_0_[1] ),
+       (.I0(\state_reg_n_0_[3] ),
+        .I1(\state_reg_n_0_[0] ),
         .I2(\state_reg_n_0_[2] ),
-        .I3(\state_reg_n_0_[0] ),
-        .I4(\state_reg_n_0_[3] ),
-        .O(lfo));
+        .I3(\state_reg_n_0_[1] ),
+        .O(depth_term_i_1_n_0));
   LUT2 #(
     .INIT(4'h6)) 
     i__carry__0_i_1
@@ -3095,11 +3069,11 @@ module design_1_chorus_axi_wrapper_0_0_chorus
         .CARRYINSEL({1'b0,1'b0,1'b0}),
         .CARRYOUT(NLW_interp_CARRYOUT_UNCONNECTED[3:0]),
         .CEA1(1'b0),
-        .CEA2(s_far),
+        .CEA2(interp_i_1_n_0),
         .CEAD(1'b0),
         .CEALUMODE(1'b0),
-        .CEB1(delay_q),
-        .CEB2(delay_int_0),
+        .CEB1(\delay_q[30]_i_2_n_0 ),
+        .CEB2(delay_frac),
         .CEC(1'b0),
         .CECARRYIN(1'b0),
         .CECTRL(1'b0),
@@ -3172,7 +3146,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
         .CARRYINSEL({1'b0,1'b0,1'b0}),
         .CARRYOUT(NLW_interp0_CARRYOUT_UNCONNECTED[3:0]),
         .CEA1(1'b0),
-        .CEA2(s_near),
+        .CEA2(interp0_i_1_n_0),
         .CEAD(1'b0),
         .CEALUMODE(1'b0),
         .CEB1(1'b0),
@@ -3207,15 +3181,14 @@ module design_1_chorus_axi_wrapper_0_0_chorus
         .RSTM(1'b0),
         .RSTP(1'b0),
         .UNDERFLOW(NLW_interp0_UNDERFLOW_UNCONNECTED));
-  LUT5 #(
-    .INIT(32'h00000080)) 
+  LUT4 #(
+    .INIT(16'h1000)) 
     interp0_i_1
-       (.I0(rst_n),
-        .I1(\state_reg_n_0_[3] ),
+       (.I0(\state_reg_n_0_[1] ),
+        .I1(\state_reg_n_0_[2] ),
         .I2(\state_reg_n_0_[0] ),
-        .I3(\state_reg_n_0_[2] ),
-        .I4(\state_reg_n_0_[1] ),
-        .O(s_near));
+        .I3(\state_reg_n_0_[3] ),
+        .O(interp0_i_1_n_0));
   LUT1 #(
     .INIT(2'h1)) 
     interp0_i_10
@@ -3297,15 +3270,14 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     interp0_i_9
        (.I0(\delay_frac_reg_n_0_[7] ),
         .O(interp0_i_9_n_0));
-  LUT5 #(
-    .INIT(32'h00000080)) 
+  LUT4 #(
+    .INIT(16'h1000)) 
     interp_i_1
-       (.I0(rst_n),
-        .I1(\state_reg_n_0_[3] ),
+       (.I0(\state_reg_n_0_[0] ),
+        .I1(\state_reg_n_0_[2] ),
         .I2(\state_reg_n_0_[1] ),
-        .I3(\state_reg_n_0_[2] ),
-        .I4(\state_reg_n_0_[0] ),
-        .O(s_far));
+        .I3(\state_reg_n_0_[3] ),
+        .O(interp_i_1_n_0));
   LUT3 #(
     .INIT(8'h04)) 
     interp_i_10
@@ -3431,7 +3403,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
         .CARRYINSEL({1'b0,1'b0,1'b0}),
         .CARRYOUT(NLW_mixed_CARRYOUT_UNCONNECTED[3:0]),
         .CEA1(1'b0),
-        .CEA2(wet),
+        .CEA2(mixed_i_1_n_0),
         .CEAD(1'b0),
         .CEALUMODE(1'b0),
         .CEB1(1'b0),
@@ -3464,7 +3436,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
         .RSTD(1'b0),
         .RSTINMODE(1'b0),
         .RSTM(1'b0),
-        .RSTP(clear),
+        .RSTP(1'b0),
         .UNDERFLOW(NLW_mixed_UNDERFLOW_UNCONNECTED));
   (* METHODOLOGY_DRC_VIOS = "{SYNTH-11 {cell *THIS*}}" *) 
   DSP48E1 #(
@@ -3508,7 +3480,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
         .CARRYINSEL({1'b0,1'b0,1'b0}),
         .CARRYOUT(NLW_mixed0_CARRYOUT_UNCONNECTED[3:0]),
         .CEA1(1'b0),
-        .CEA2(sample_x__0),
+        .CEA2(\sample_x[23]_i_1_n_0 ),
         .CEAD(1'b0),
         .CEALUMODE(1'b0),
         .CEB1(1'b0),
@@ -3543,15 +3515,14 @@ module design_1_chorus_axi_wrapper_0_0_chorus
         .RSTM(1'b0),
         .RSTP(1'b0),
         .UNDERFLOW(NLW_mixed0_UNDERFLOW_UNCONNECTED));
-  LUT5 #(
-    .INIT(32'h20000000)) 
+  LUT4 #(
+    .INIT(16'h0080)) 
     mixed_i_1
-       (.I0(rst_n),
-        .I1(\state_reg_n_0_[2] ),
+       (.I0(\state_reg_n_0_[0] ),
+        .I1(\state_reg_n_0_[1] ),
         .I2(\state_reg_n_0_[3] ),
-        .I3(\state_reg_n_0_[1] ),
-        .I4(\state_reg_n_0_[0] ),
-        .O(wet));
+        .I3(\state_reg_n_0_[2] ),
+        .O(mixed_i_1_n_0));
   LUT4 #(
     .INIT(16'h1000)) 
     mixed_i_2
@@ -3560,11 +3531,6 @@ module design_1_chorus_axi_wrapper_0_0_chorus
         .I2(\state_reg_n_0_[3] ),
         .I3(\state_reg_n_0_[2] ),
         .O(mixed_i_2_n_0));
-  LUT1 #(
-    .INIT(2'h1)) 
-    mixed_i_3
-       (.I0(rst_n),
-        .O(clear));
   CARRY4 phase0_carry
        (.CI(1'b0),
         .CO({phase0_carry_n_0,phase0_carry_n_1,phase0_carry_n_2,phase0_carry_n_3}),
@@ -4271,10 +4237,10 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \phase_reg[0] 
        (.C(audio_clk),
-        .CE(sine_step__0_i_1_n_0),
+        .CE(\sample_x[23]_i_1_n_0 ),
         .D(\phase_reg[0]_i_1_n_7 ),
         .Q(phase_reg[0]),
-        .R(clear));
+        .R(1'b0));
   (* ADDER_THRESHOLD = "35" *) 
   CARRY4 \phase_reg[0]_i_1 
        (.CI(1'b0),
@@ -4287,26 +4253,26 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \phase_reg[10] 
        (.C(audio_clk),
-        .CE(sine_step__0_i_1_n_0),
+        .CE(\sample_x[23]_i_1_n_0 ),
         .D(\phase_reg[8]_i_1_n_5 ),
         .Q(phase_reg[10]),
-        .R(clear));
+        .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \phase_reg[11] 
        (.C(audio_clk),
-        .CE(sine_step__0_i_1_n_0),
+        .CE(\sample_x[23]_i_1_n_0 ),
         .D(\phase_reg[8]_i_1_n_4 ),
         .Q(phase_reg[11]),
-        .R(clear));
+        .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \phase_reg[12] 
        (.C(audio_clk),
-        .CE(sine_step__0_i_1_n_0),
+        .CE(\sample_x[23]_i_1_n_0 ),
         .D(\phase_reg[12]_i_1_n_7 ),
         .Q(phase_reg[12]),
-        .R(clear));
+        .R(1'b0));
   (* ADDER_THRESHOLD = "35" *) 
   CARRY4 \phase_reg[12]_i_1 
        (.CI(\phase_reg[8]_i_1_n_0 ),
@@ -4319,34 +4285,34 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \phase_reg[13] 
        (.C(audio_clk),
-        .CE(sine_step__0_i_1_n_0),
+        .CE(\sample_x[23]_i_1_n_0 ),
         .D(\phase_reg[12]_i_1_n_6 ),
         .Q(phase_reg[13]),
-        .R(clear));
+        .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \phase_reg[14] 
        (.C(audio_clk),
-        .CE(sine_step__0_i_1_n_0),
+        .CE(\sample_x[23]_i_1_n_0 ),
         .D(\phase_reg[12]_i_1_n_5 ),
         .Q(phase_reg[14]),
-        .R(clear));
+        .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \phase_reg[15] 
        (.C(audio_clk),
-        .CE(sine_step__0_i_1_n_0),
+        .CE(\sample_x[23]_i_1_n_0 ),
         .D(\phase_reg[12]_i_1_n_4 ),
         .Q(phase_reg[15]),
-        .R(clear));
+        .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \phase_reg[16] 
        (.C(audio_clk),
-        .CE(sine_step__0_i_1_n_0),
+        .CE(\sample_x[23]_i_1_n_0 ),
         .D(\phase_reg[16]_i_1_n_7 ),
         .Q(phase_reg[16]),
-        .R(clear));
+        .R(1'b0));
   (* ADDER_THRESHOLD = "35" *) 
   CARRY4 \phase_reg[16]_i_1 
        (.CI(\phase_reg[12]_i_1_n_0 ),
@@ -4359,42 +4325,42 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \phase_reg[17] 
        (.C(audio_clk),
-        .CE(sine_step__0_i_1_n_0),
+        .CE(\sample_x[23]_i_1_n_0 ),
         .D(\phase_reg[16]_i_1_n_6 ),
         .Q(phase_reg[17]),
-        .R(clear));
+        .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \phase_reg[18] 
        (.C(audio_clk),
-        .CE(sine_step__0_i_1_n_0),
+        .CE(\sample_x[23]_i_1_n_0 ),
         .D(\phase_reg[16]_i_1_n_5 ),
         .Q(phase_reg[18]),
-        .R(clear));
+        .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \phase_reg[19] 
        (.C(audio_clk),
-        .CE(sine_step__0_i_1_n_0),
+        .CE(\sample_x[23]_i_1_n_0 ),
         .D(\phase_reg[16]_i_1_n_4 ),
         .Q(phase_reg[19]),
-        .R(clear));
+        .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \phase_reg[1] 
        (.C(audio_clk),
-        .CE(sine_step__0_i_1_n_0),
+        .CE(\sample_x[23]_i_1_n_0 ),
         .D(\phase_reg[0]_i_1_n_6 ),
         .Q(phase_reg[1]),
-        .R(clear));
+        .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \phase_reg[20] 
        (.C(audio_clk),
-        .CE(sine_step__0_i_1_n_0),
+        .CE(\sample_x[23]_i_1_n_0 ),
         .D(\phase_reg[20]_i_1_n_7 ),
         .Q(phase_reg[20]),
-        .R(clear));
+        .R(1'b0));
   (* ADDER_THRESHOLD = "35" *) 
   CARRY4 \phase_reg[20]_i_1 
        (.CI(\phase_reg[16]_i_1_n_0 ),
@@ -4407,34 +4373,34 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \phase_reg[21] 
        (.C(audio_clk),
-        .CE(sine_step__0_i_1_n_0),
+        .CE(\sample_x[23]_i_1_n_0 ),
         .D(\phase_reg[20]_i_1_n_6 ),
         .Q(phase_reg[21]),
-        .R(clear));
+        .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \phase_reg[22] 
        (.C(audio_clk),
-        .CE(sine_step__0_i_1_n_0),
+        .CE(\sample_x[23]_i_1_n_0 ),
         .D(\phase_reg[20]_i_1_n_5 ),
         .Q(phase_reg[22]),
-        .R(clear));
+        .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \phase_reg[23] 
        (.C(audio_clk),
-        .CE(sine_step__0_i_1_n_0),
+        .CE(\sample_x[23]_i_1_n_0 ),
         .D(\phase_reg[20]_i_1_n_4 ),
         .Q(phase_reg[23]),
-        .R(clear));
+        .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \phase_reg[24] 
        (.C(audio_clk),
-        .CE(sine_step__0_i_1_n_0),
+        .CE(\sample_x[23]_i_1_n_0 ),
         .D(\phase_reg[24]_i_1_n_7 ),
         .Q(phase_reg[24]),
-        .R(clear));
+        .R(1'b0));
   (* ADDER_THRESHOLD = "35" *) 
   CARRY4 \phase_reg[24]_i_1 
        (.CI(\phase_reg[20]_i_1_n_0 ),
@@ -4447,34 +4413,34 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \phase_reg[25] 
        (.C(audio_clk),
-        .CE(sine_step__0_i_1_n_0),
+        .CE(\sample_x[23]_i_1_n_0 ),
         .D(\phase_reg[24]_i_1_n_6 ),
         .Q(phase_reg[25]),
-        .R(clear));
+        .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \phase_reg[26] 
        (.C(audio_clk),
-        .CE(sine_step__0_i_1_n_0),
+        .CE(\sample_x[23]_i_1_n_0 ),
         .D(\phase_reg[24]_i_1_n_5 ),
         .Q(phase_reg[26]),
-        .R(clear));
+        .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \phase_reg[27] 
        (.C(audio_clk),
-        .CE(sine_step__0_i_1_n_0),
+        .CE(\sample_x[23]_i_1_n_0 ),
         .D(\phase_reg[24]_i_1_n_4 ),
         .Q(phase_reg[27]),
-        .R(clear));
+        .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \phase_reg[28] 
        (.C(audio_clk),
-        .CE(sine_step__0_i_1_n_0),
+        .CE(\sample_x[23]_i_1_n_0 ),
         .D(\phase_reg[28]_i_1_n_7 ),
         .Q(phase_reg[28]),
-        .R(clear));
+        .R(1'b0));
   (* ADDER_THRESHOLD = "35" *) 
   CARRY4 \phase_reg[28]_i_1 
        (.CI(\phase_reg[24]_i_1_n_0 ),
@@ -4487,42 +4453,42 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \phase_reg[29] 
        (.C(audio_clk),
-        .CE(sine_step__0_i_1_n_0),
+        .CE(\sample_x[23]_i_1_n_0 ),
         .D(\phase_reg[28]_i_1_n_6 ),
         .Q(phase_reg[29]),
-        .R(clear));
+        .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \phase_reg[2] 
        (.C(audio_clk),
-        .CE(sine_step__0_i_1_n_0),
+        .CE(\sample_x[23]_i_1_n_0 ),
         .D(\phase_reg[0]_i_1_n_5 ),
         .Q(phase_reg[2]),
-        .R(clear));
+        .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \phase_reg[30] 
        (.C(audio_clk),
-        .CE(sine_step__0_i_1_n_0),
+        .CE(\sample_x[23]_i_1_n_0 ),
         .D(\phase_reg[28]_i_1_n_5 ),
         .Q(phase_reg[30]),
-        .R(clear));
+        .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \phase_reg[31] 
        (.C(audio_clk),
-        .CE(sine_step__0_i_1_n_0),
+        .CE(\sample_x[23]_i_1_n_0 ),
         .D(\phase_reg[28]_i_1_n_4 ),
         .Q(phase_reg[31]),
-        .R(clear));
+        .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \phase_reg[32] 
        (.C(audio_clk),
-        .CE(sine_step__0_i_1_n_0),
+        .CE(\sample_x[23]_i_1_n_0 ),
         .D(\phase_reg[32]_i_1_n_7 ),
         .Q(phase_reg[32]),
-        .R(clear));
+        .R(1'b0));
   (* ADDER_THRESHOLD = "35" *) 
   CARRY4 \phase_reg[32]_i_1 
        (.CI(\phase_reg[28]_i_1_n_0 ),
@@ -4535,34 +4501,34 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \phase_reg[33] 
        (.C(audio_clk),
-        .CE(sine_step__0_i_1_n_0),
+        .CE(\sample_x[23]_i_1_n_0 ),
         .D(\phase_reg[32]_i_1_n_6 ),
         .Q(phase_reg[33]),
-        .R(clear));
+        .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \phase_reg[34] 
        (.C(audio_clk),
-        .CE(sine_step__0_i_1_n_0),
+        .CE(\sample_x[23]_i_1_n_0 ),
         .D(\phase_reg[32]_i_1_n_5 ),
         .Q(phase_reg[34]),
-        .R(clear));
+        .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \phase_reg[35] 
        (.C(audio_clk),
-        .CE(sine_step__0_i_1_n_0),
+        .CE(\sample_x[23]_i_1_n_0 ),
         .D(\phase_reg[32]_i_1_n_4 ),
         .Q(phase_reg[35]),
-        .R(clear));
+        .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \phase_reg[36] 
        (.C(audio_clk),
-        .CE(sine_step__0_i_1_n_0),
+        .CE(\sample_x[23]_i_1_n_0 ),
         .D(\phase_reg[36]_i_1_n_7 ),
         .Q(phase_reg[36]),
-        .R(clear));
+        .R(1'b0));
   (* ADDER_THRESHOLD = "35" *) 
   CARRY4 \phase_reg[36]_i_1 
        (.CI(\phase_reg[32]_i_1_n_0 ),
@@ -4575,42 +4541,42 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \phase_reg[37] 
        (.C(audio_clk),
-        .CE(sine_step__0_i_1_n_0),
+        .CE(\sample_x[23]_i_1_n_0 ),
         .D(\phase_reg[36]_i_1_n_6 ),
         .Q(phase_reg[37]),
-        .R(clear));
+        .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \phase_reg[38] 
        (.C(audio_clk),
-        .CE(sine_step__0_i_1_n_0),
+        .CE(\sample_x[23]_i_1_n_0 ),
         .D(\phase_reg[36]_i_1_n_5 ),
         .Q(phase_reg[38]),
-        .R(clear));
+        .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \phase_reg[39] 
        (.C(audio_clk),
-        .CE(sine_step__0_i_1_n_0),
+        .CE(\sample_x[23]_i_1_n_0 ),
         .D(\phase_reg[36]_i_1_n_4 ),
         .Q(phase_reg[39]),
-        .R(clear));
+        .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \phase_reg[3] 
        (.C(audio_clk),
-        .CE(sine_step__0_i_1_n_0),
+        .CE(\sample_x[23]_i_1_n_0 ),
         .D(\phase_reg[0]_i_1_n_4 ),
         .Q(phase_reg[3]),
-        .R(clear));
+        .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \phase_reg[40] 
        (.C(audio_clk),
-        .CE(sine_step__0_i_1_n_0),
+        .CE(\sample_x[23]_i_1_n_0 ),
         .D(\phase_reg[40]_i_1_n_7 ),
         .Q(phase_reg[40]),
-        .R(clear));
+        .R(1'b0));
   (* ADDER_THRESHOLD = "35" *) 
   CARRY4 \phase_reg[40]_i_1 
        (.CI(\phase_reg[36]_i_1_n_0 ),
@@ -4623,34 +4589,34 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \phase_reg[41] 
        (.C(audio_clk),
-        .CE(sine_step__0_i_1_n_0),
+        .CE(\sample_x[23]_i_1_n_0 ),
         .D(\phase_reg[40]_i_1_n_6 ),
         .Q(phase_reg[41]),
-        .R(clear));
+        .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \phase_reg[42] 
        (.C(audio_clk),
-        .CE(sine_step__0_i_1_n_0),
+        .CE(\sample_x[23]_i_1_n_0 ),
         .D(\phase_reg[40]_i_1_n_5 ),
         .Q(phase_reg[42]),
-        .R(clear));
+        .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \phase_reg[43] 
        (.C(audio_clk),
-        .CE(sine_step__0_i_1_n_0),
+        .CE(\sample_x[23]_i_1_n_0 ),
         .D(\phase_reg[40]_i_1_n_4 ),
         .Q(phase_reg[43]),
-        .R(clear));
+        .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \phase_reg[44] 
        (.C(audio_clk),
-        .CE(sine_step__0_i_1_n_0),
+        .CE(\sample_x[23]_i_1_n_0 ),
         .D(\phase_reg[44]_i_1_n_7 ),
         .Q(phase_reg[44]),
-        .R(clear));
+        .R(1'b0));
   (* ADDER_THRESHOLD = "35" *) 
   CARRY4 \phase_reg[44]_i_1 
        (.CI(\phase_reg[40]_i_1_n_0 ),
@@ -4663,34 +4629,34 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \phase_reg[45] 
        (.C(audio_clk),
-        .CE(sine_step__0_i_1_n_0),
+        .CE(\sample_x[23]_i_1_n_0 ),
         .D(\phase_reg[44]_i_1_n_6 ),
         .Q(phase_reg[45]),
-        .R(clear));
+        .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \phase_reg[46] 
        (.C(audio_clk),
-        .CE(sine_step__0_i_1_n_0),
+        .CE(\sample_x[23]_i_1_n_0 ),
         .D(\phase_reg[44]_i_1_n_5 ),
         .Q(phase_reg[46]),
-        .R(clear));
+        .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \phase_reg[47] 
        (.C(audio_clk),
-        .CE(sine_step__0_i_1_n_0),
+        .CE(\sample_x[23]_i_1_n_0 ),
         .D(\phase_reg[44]_i_1_n_4 ),
         .Q(phase_reg[47]),
-        .R(clear));
+        .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \phase_reg[4] 
        (.C(audio_clk),
-        .CE(sine_step__0_i_1_n_0),
+        .CE(\sample_x[23]_i_1_n_0 ),
         .D(\phase_reg[4]_i_1_n_7 ),
         .Q(phase_reg[4]),
-        .R(clear));
+        .R(1'b0));
   (* ADDER_THRESHOLD = "35" *) 
   CARRY4 \phase_reg[4]_i_1 
        (.CI(\phase_reg[0]_i_1_n_0 ),
@@ -4703,34 +4669,34 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \phase_reg[5] 
        (.C(audio_clk),
-        .CE(sine_step__0_i_1_n_0),
+        .CE(\sample_x[23]_i_1_n_0 ),
         .D(\phase_reg[4]_i_1_n_6 ),
         .Q(phase_reg[5]),
-        .R(clear));
+        .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \phase_reg[6] 
        (.C(audio_clk),
-        .CE(sine_step__0_i_1_n_0),
+        .CE(\sample_x[23]_i_1_n_0 ),
         .D(\phase_reg[4]_i_1_n_5 ),
         .Q(phase_reg[6]),
-        .R(clear));
+        .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \phase_reg[7] 
        (.C(audio_clk),
-        .CE(sine_step__0_i_1_n_0),
+        .CE(\sample_x[23]_i_1_n_0 ),
         .D(\phase_reg[4]_i_1_n_4 ),
         .Q(phase_reg[7]),
-        .R(clear));
+        .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \phase_reg[8] 
        (.C(audio_clk),
-        .CE(sine_step__0_i_1_n_0),
+        .CE(\sample_x[23]_i_1_n_0 ),
         .D(\phase_reg[8]_i_1_n_7 ),
         .Q(phase_reg[8]),
-        .R(clear));
+        .R(1'b0));
   (* ADDER_THRESHOLD = "35" *) 
   CARRY4 \phase_reg[8]_i_1 
        (.CI(\phase_reg[4]_i_1_n_0 ),
@@ -4743,18 +4709,17 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \phase_reg[9] 
        (.C(audio_clk),
-        .CE(sine_step__0_i_1_n_0),
+        .CE(\sample_x[23]_i_1_n_0 ),
         .D(\phase_reg[8]_i_1_n_6 ),
         .Q(phase_reg[9]),
-        .R(clear));
-  LUT5 #(
-    .INIT(32'h00028000)) 
+        .R(1'b0));
+  LUT4 #(
+    .INIT(16'h4002)) 
     \rd_addr[10]_i_1 
-       (.I0(rst_n),
-        .I1(\state_reg_n_0_[0] ),
+       (.I0(\state_reg_n_0_[3] ),
+        .I1(\state_reg_n_0_[2] ),
         .I2(\state_reg_n_0_[1] ),
-        .I3(\state_reg_n_0_[2] ),
-        .I4(\state_reg_n_0_[3] ),
+        .I3(\state_reg_n_0_[0] ),
         .O(\rd_addr[10]_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
@@ -5182,36 +5147,26 @@ module design_1_chorus_axi_wrapper_0_0_chorus
         .RSTREGB(1'b0),
         .WEA({buf_we,1'b1}),
         .WEBWE({1'b0,1'b0,1'b0,1'b0}));
-  LUT5 #(
-    .INIT(32'h00080000)) 
-    sample_out_valid_i_1
-       (.I0(\state_reg_n_0_[2] ),
-        .I1(\state_reg_n_0_[3] ),
-        .I2(\state_reg_n_0_[1] ),
-        .I3(\state_reg_n_0_[0] ),
-        .I4(rst_n),
-        .O(sample_out_valid_i_1_n_0));
   FDRE sample_out_valid_reg
        (.C(audio_clk),
         .CE(1'b1),
-        .D(sample_out_valid_i_1_n_0),
+        .D(mixed_i_2_n_0),
         .Q(sample_out_valid),
         .R(1'b0));
-  LUT6 #(
-    .INIT(64'h0000000200000000)) 
+  LUT5 #(
+    .INIT(32'h00000002)) 
     \sample_x[23]_i_1 
-       (.I0(rst_n),
-        .I1(\state_reg_n_0_[0] ),
-        .I2(\state_reg_n_0_[3] ),
-        .I3(\state_reg_n_0_[1] ),
-        .I4(\state_reg_n_0_[2] ),
-        .I5(sample_in_valid),
-        .O(sample_x__0));
+       (.I0(sample_in_valid),
+        .I1(\state_reg_n_0_[2] ),
+        .I2(\state_reg_n_0_[1] ),
+        .I3(\state_reg_n_0_[3] ),
+        .I4(\state_reg_n_0_[0] ),
+        .O(\sample_x[23]_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \sample_x_reg[0] 
        (.C(audio_clk),
-        .CE(sample_x__0),
+        .CE(\sample_x[23]_i_1_n_0 ),
         .D(sample_in[0]),
         .Q(sample_x[0]),
         .R(1'b0));
@@ -5219,7 +5174,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \sample_x_reg[10] 
        (.C(audio_clk),
-        .CE(sample_x__0),
+        .CE(\sample_x[23]_i_1_n_0 ),
         .D(sample_in[10]),
         .Q(sample_x[10]),
         .R(1'b0));
@@ -5227,7 +5182,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \sample_x_reg[11] 
        (.C(audio_clk),
-        .CE(sample_x__0),
+        .CE(\sample_x[23]_i_1_n_0 ),
         .D(sample_in[11]),
         .Q(sample_x[11]),
         .R(1'b0));
@@ -5235,7 +5190,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \sample_x_reg[12] 
        (.C(audio_clk),
-        .CE(sample_x__0),
+        .CE(\sample_x[23]_i_1_n_0 ),
         .D(sample_in[12]),
         .Q(sample_x[12]),
         .R(1'b0));
@@ -5243,7 +5198,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \sample_x_reg[13] 
        (.C(audio_clk),
-        .CE(sample_x__0),
+        .CE(\sample_x[23]_i_1_n_0 ),
         .D(sample_in[13]),
         .Q(sample_x[13]),
         .R(1'b0));
@@ -5251,7 +5206,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \sample_x_reg[14] 
        (.C(audio_clk),
-        .CE(sample_x__0),
+        .CE(\sample_x[23]_i_1_n_0 ),
         .D(sample_in[14]),
         .Q(sample_x[14]),
         .R(1'b0));
@@ -5259,7 +5214,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \sample_x_reg[15] 
        (.C(audio_clk),
-        .CE(sample_x__0),
+        .CE(\sample_x[23]_i_1_n_0 ),
         .D(sample_in[15]),
         .Q(sample_x[15]),
         .R(1'b0));
@@ -5267,7 +5222,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \sample_x_reg[16] 
        (.C(audio_clk),
-        .CE(sample_x__0),
+        .CE(\sample_x[23]_i_1_n_0 ),
         .D(sample_in[16]),
         .Q(sample_x[16]),
         .R(1'b0));
@@ -5275,7 +5230,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \sample_x_reg[17] 
        (.C(audio_clk),
-        .CE(sample_x__0),
+        .CE(\sample_x[23]_i_1_n_0 ),
         .D(sample_in[17]),
         .Q(sample_x[17]),
         .R(1'b0));
@@ -5283,7 +5238,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \sample_x_reg[18] 
        (.C(audio_clk),
-        .CE(sample_x__0),
+        .CE(\sample_x[23]_i_1_n_0 ),
         .D(sample_in[18]),
         .Q(sample_x[18]),
         .R(1'b0));
@@ -5291,7 +5246,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \sample_x_reg[19] 
        (.C(audio_clk),
-        .CE(sample_x__0),
+        .CE(\sample_x[23]_i_1_n_0 ),
         .D(sample_in[19]),
         .Q(sample_x[19]),
         .R(1'b0));
@@ -5299,7 +5254,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \sample_x_reg[1] 
        (.C(audio_clk),
-        .CE(sample_x__0),
+        .CE(\sample_x[23]_i_1_n_0 ),
         .D(sample_in[1]),
         .Q(sample_x[1]),
         .R(1'b0));
@@ -5307,7 +5262,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \sample_x_reg[20] 
        (.C(audio_clk),
-        .CE(sample_x__0),
+        .CE(\sample_x[23]_i_1_n_0 ),
         .D(sample_in[20]),
         .Q(sample_x[20]),
         .R(1'b0));
@@ -5315,7 +5270,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \sample_x_reg[21] 
        (.C(audio_clk),
-        .CE(sample_x__0),
+        .CE(\sample_x[23]_i_1_n_0 ),
         .D(sample_in[21]),
         .Q(sample_x[21]),
         .R(1'b0));
@@ -5323,7 +5278,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \sample_x_reg[22] 
        (.C(audio_clk),
-        .CE(sample_x__0),
+        .CE(\sample_x[23]_i_1_n_0 ),
         .D(sample_in[22]),
         .Q(sample_x[22]),
         .R(1'b0));
@@ -5331,7 +5286,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \sample_x_reg[23] 
        (.C(audio_clk),
-        .CE(sample_x__0),
+        .CE(\sample_x[23]_i_1_n_0 ),
         .D(sample_in[23]),
         .Q(sample_x[23]),
         .R(1'b0));
@@ -5339,7 +5294,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \sample_x_reg[2] 
        (.C(audio_clk),
-        .CE(sample_x__0),
+        .CE(\sample_x[23]_i_1_n_0 ),
         .D(sample_in[2]),
         .Q(sample_x[2]),
         .R(1'b0));
@@ -5347,7 +5302,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \sample_x_reg[3] 
        (.C(audio_clk),
-        .CE(sample_x__0),
+        .CE(\sample_x[23]_i_1_n_0 ),
         .D(sample_in[3]),
         .Q(sample_x[3]),
         .R(1'b0));
@@ -5355,7 +5310,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \sample_x_reg[4] 
        (.C(audio_clk),
-        .CE(sample_x__0),
+        .CE(\sample_x[23]_i_1_n_0 ),
         .D(sample_in[4]),
         .Q(sample_x[4]),
         .R(1'b0));
@@ -5363,7 +5318,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \sample_x_reg[5] 
        (.C(audio_clk),
-        .CE(sample_x__0),
+        .CE(\sample_x[23]_i_1_n_0 ),
         .D(sample_in[5]),
         .Q(sample_x[5]),
         .R(1'b0));
@@ -5371,7 +5326,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \sample_x_reg[6] 
        (.C(audio_clk),
-        .CE(sample_x__0),
+        .CE(\sample_x[23]_i_1_n_0 ),
         .D(sample_in[6]),
         .Q(sample_x[6]),
         .R(1'b0));
@@ -5379,7 +5334,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \sample_x_reg[7] 
        (.C(audio_clk),
-        .CE(sample_x__0),
+        .CE(\sample_x[23]_i_1_n_0 ),
         .D(sample_in[7]),
         .Q(sample_x[7]),
         .R(1'b0));
@@ -5387,7 +5342,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \sample_x_reg[8] 
        (.C(audio_clk),
-        .CE(sample_x__0),
+        .CE(\sample_x[23]_i_1_n_0 ),
         .D(sample_in[8]),
         .Q(sample_x[8]),
         .R(1'b0));
@@ -5395,7 +5350,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \sample_x_reg[9] 
        (.C(audio_clk),
-        .CE(sample_x__0),
+        .CE(\sample_x[23]_i_1_n_0 ),
         .D(sample_in[9]),
         .Q(sample_x[9]),
         .R(1'b0));
@@ -5508,16 +5463,15 @@ module design_1_chorus_axi_wrapper_0_0_chorus
         .I4(\sine_addr_reg_n_0_[2] ),
         .I5(\sine_addr_reg_n_0_[4] ),
         .O(\sine_addr[8]_i_2_n_0 ));
-  LUT6 #(
-    .INIT(64'h0000000000002220)) 
+  LUT5 #(
+    .INIT(32'h00001110)) 
     \sine_addr[9]_i_1 
-       (.I0(rst_n),
-        .I1(\state_reg_n_0_[1] ),
-        .I2(sample_in_valid),
-        .I3(\state_reg_n_0_[0] ),
-        .I4(\state_reg_n_0_[2] ),
-        .I5(\state_reg_n_0_[3] ),
-        .O(sine_addr));
+       (.I0(\state_reg_n_0_[3] ),
+        .I1(\state_reg_n_0_[2] ),
+        .I2(\state_reg_n_0_[0] ),
+        .I3(sample_in_valid),
+        .I4(\state_reg_n_0_[1] ),
+        .O(\sine_addr[9]_i_1_n_0 ));
   LUT5 #(
     .INIT(32'h78FF7800)) 
     \sine_addr[9]_i_2 
@@ -5539,7 +5493,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \sine_addr_reg[0] 
        (.C(audio_clk),
-        .CE(sine_addr),
+        .CE(\sine_addr[9]_i_1_n_0 ),
         .D(\sine_addr[0]_i_1_n_0 ),
         .Q(\sine_addr_reg_n_0_[0] ),
         .R(1'b0));
@@ -5547,7 +5501,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \sine_addr_reg[1] 
        (.C(audio_clk),
-        .CE(sine_addr),
+        .CE(\sine_addr[9]_i_1_n_0 ),
         .D(\sine_addr[1]_i_1_n_0 ),
         .Q(\sine_addr_reg_n_0_[1] ),
         .R(1'b0));
@@ -5555,7 +5509,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \sine_addr_reg[2] 
        (.C(audio_clk),
-        .CE(sine_addr),
+        .CE(\sine_addr[9]_i_1_n_0 ),
         .D(\sine_addr[2]_i_1_n_0 ),
         .Q(\sine_addr_reg_n_0_[2] ),
         .R(1'b0));
@@ -5563,7 +5517,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \sine_addr_reg[3] 
        (.C(audio_clk),
-        .CE(sine_addr),
+        .CE(\sine_addr[9]_i_1_n_0 ),
         .D(\sine_addr[3]_i_1_n_0 ),
         .Q(\sine_addr_reg_n_0_[3] ),
         .R(1'b0));
@@ -5571,7 +5525,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \sine_addr_reg[4] 
        (.C(audio_clk),
-        .CE(sine_addr),
+        .CE(\sine_addr[9]_i_1_n_0 ),
         .D(\sine_addr[4]_i_1_n_0 ),
         .Q(\sine_addr_reg_n_0_[4] ),
         .R(1'b0));
@@ -5579,7 +5533,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \sine_addr_reg[5] 
        (.C(audio_clk),
-        .CE(sine_addr),
+        .CE(\sine_addr[9]_i_1_n_0 ),
         .D(\sine_addr[5]_i_1_n_0 ),
         .Q(\sine_addr_reg_n_0_[5] ),
         .R(1'b0));
@@ -5587,7 +5541,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \sine_addr_reg[6] 
        (.C(audio_clk),
-        .CE(sine_addr),
+        .CE(\sine_addr[9]_i_1_n_0 ),
         .D(\sine_addr[6]_i_1_n_0 ),
         .Q(\sine_addr_reg_n_0_[6] ),
         .R(1'b0));
@@ -5595,7 +5549,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \sine_addr_reg[7] 
        (.C(audio_clk),
-        .CE(sine_addr),
+        .CE(\sine_addr[9]_i_1_n_0 ),
         .D(\sine_addr[7]_i_1_n_0 ),
         .Q(\sine_addr_reg_n_0_[7] ),
         .R(1'b0));
@@ -5603,7 +5557,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \sine_addr_reg[8] 
        (.C(audio_clk),
-        .CE(sine_addr),
+        .CE(\sine_addr[9]_i_1_n_0 ),
         .D(\sine_addr[8]_i_1_n_0 ),
         .Q(\sine_addr_reg_n_0_[8] ),
         .R(1'b0));
@@ -5611,7 +5565,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .INIT(1'b0)) 
     \sine_addr_reg[9] 
        (.C(audio_clk),
-        .CE(sine_addr),
+        .CE(\sine_addr[9]_i_1_n_0 ),
         .D(\sine_addr[9]_i_2_n_0 ),
         .Q(\sine_addr_reg_n_0_[9] ),
         .R(1'b0));
@@ -5834,8 +5788,8 @@ module design_1_chorus_axi_wrapper_0_0_chorus
     .AREG(1),
     .AUTORESET_PATDET("NO_RESET"),
     .A_INPUT("DIRECT"),
-    .BCASCREG(1),
-    .BREG(1),
+    .BCASCREG(2),
+    .BREG(2),
     .B_INPUT("DIRECT"),
     .CARRYINREG(0),
     .CARRYINSELREG(0),
@@ -5858,7 +5812,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
         .ACIN({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
         .ACOUT(NLW_sine_step_ACOUT_UNCONNECTED[29:0]),
         .ALUMODE({1'b0,1'b0,1'b0,1'b0}),
-        .B({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,sine_step__12}),
+        .B({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,phase0_carry__8_n_6,phase0_carry__8_n_7,phase0_carry__7_n_4,phase0_carry__7_n_5,phase0_carry__7_n_6,phase0_carry__7_n_7,phase0_carry__6_n_4,phase0_carry__6_n_5,phase0_carry__6_n_6,phase0_carry__6_n_7,phase0_carry__5_n_4,phase0_carry__5_n_5}),
         .BCIN({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
         .BCOUT(NLW_sine_step_BCOUT_UNCONNECTED[17:0]),
         .C({1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1}),
@@ -5868,15 +5822,15 @@ module design_1_chorus_axi_wrapper_0_0_chorus
         .CARRYINSEL({1'b0,1'b0,1'b0}),
         .CARRYOUT(NLW_sine_step_CARRYOUT_UNCONNECTED[3:0]),
         .CEA1(1'b0),
-        .CEA2(sine_s0),
+        .CEA2(sine_step_i_1_n_0),
         .CEAD(1'b0),
         .CEALUMODE(1'b0),
-        .CEB1(1'b0),
-        .CEB2(sample_x__0),
+        .CEB1(\sample_x[23]_i_1_n_0 ),
+        .CEB2(\sample_x[23]_i_1_n_0 ),
         .CEC(1'b0),
         .CECARRYIN(1'b0),
         .CECTRL(1'b0),
-        .CED(sine_s1),
+        .CED(sine_step_i_2_n_0),
         .CEINMODE(1'b0),
         .CEM(1'b0),
         .CEP(1'b0),
@@ -5903,105 +5857,22 @@ module design_1_chorus_axi_wrapper_0_0_chorus
         .RSTM(1'b0),
         .RSTP(1'b0),
         .UNDERFLOW(NLW_sine_step_UNDERFLOW_UNCONNECTED));
-  FDRE sine_step__0
-       (.C(audio_clk),
-        .CE(sine_step__0_i_1_n_0),
-        .D(phase0_carry__8_n_6),
-        .Q(sine_step__12[11]),
-        .R(clear));
-  LUT5 #(
-    .INIT(32'h00000002)) 
-    sine_step__0_i_1
-       (.I0(sample_in_valid),
-        .I1(\state_reg_n_0_[2] ),
-        .I2(\state_reg_n_0_[1] ),
-        .I3(\state_reg_n_0_[3] ),
-        .I4(\state_reg_n_0_[0] ),
-        .O(sine_step__0_i_1_n_0));
-  FDRE sine_step__1
-       (.C(audio_clk),
-        .CE(sine_step__0_i_1_n_0),
-        .D(phase0_carry__8_n_7),
-        .Q(sine_step__12[10]),
-        .R(clear));
-  FDRE sine_step__10
-       (.C(audio_clk),
-        .CE(sine_step__0_i_1_n_0),
-        .D(phase0_carry__5_n_4),
-        .Q(sine_step__12[1]),
-        .R(clear));
-  FDRE sine_step__11
-       (.C(audio_clk),
-        .CE(sine_step__0_i_1_n_0),
-        .D(phase0_carry__5_n_5),
-        .Q(sine_step__12[0]),
-        .R(clear));
-  FDRE sine_step__2
-       (.C(audio_clk),
-        .CE(sine_step__0_i_1_n_0),
-        .D(phase0_carry__7_n_4),
-        .Q(sine_step__12[9]),
-        .R(clear));
-  FDRE sine_step__3
-       (.C(audio_clk),
-        .CE(sine_step__0_i_1_n_0),
-        .D(phase0_carry__7_n_5),
-        .Q(sine_step__12[8]),
-        .R(clear));
-  FDRE sine_step__4
-       (.C(audio_clk),
-        .CE(sine_step__0_i_1_n_0),
-        .D(phase0_carry__7_n_6),
-        .Q(sine_step__12[7]),
-        .R(clear));
-  FDRE sine_step__5
-       (.C(audio_clk),
-        .CE(sine_step__0_i_1_n_0),
-        .D(phase0_carry__7_n_7),
-        .Q(sine_step__12[6]),
-        .R(clear));
-  FDRE sine_step__6
-       (.C(audio_clk),
-        .CE(sine_step__0_i_1_n_0),
-        .D(phase0_carry__6_n_4),
-        .Q(sine_step__12[5]),
-        .R(clear));
-  FDRE sine_step__7
-       (.C(audio_clk),
-        .CE(sine_step__0_i_1_n_0),
-        .D(phase0_carry__6_n_5),
-        .Q(sine_step__12[4]),
-        .R(clear));
-  FDRE sine_step__8
-       (.C(audio_clk),
-        .CE(sine_step__0_i_1_n_0),
-        .D(phase0_carry__6_n_6),
-        .Q(sine_step__12[3]),
-        .R(clear));
-  FDRE sine_step__9
-       (.C(audio_clk),
-        .CE(sine_step__0_i_1_n_0),
-        .D(phase0_carry__6_n_7),
-        .Q(sine_step__12[2]),
-        .R(clear));
-  LUT5 #(
-    .INIT(32'h00000020)) 
+  LUT4 #(
+    .INIT(16'h0010)) 
     sine_step_i_1
-       (.I0(rst_n),
-        .I1(\state_reg_n_0_[0] ),
-        .I2(\state_reg_n_0_[1] ),
-        .I3(\state_reg_n_0_[2] ),
-        .I4(\state_reg_n_0_[3] ),
-        .O(sine_s0));
-  LUT5 #(
-    .INIT(32'h02000000)) 
-    sine_step_i_2
-       (.I0(rst_n),
+       (.I0(\state_reg_n_0_[3] ),
         .I1(\state_reg_n_0_[2] ),
+        .I2(\state_reg_n_0_[1] ),
+        .I3(\state_reg_n_0_[0] ),
+        .O(sine_step_i_1_n_0));
+  LUT4 #(
+    .INIT(16'h0008)) 
+    sine_step_i_2
+       (.I0(\state_reg_n_0_[0] ),
+        .I1(\state_reg_n_0_[1] ),
         .I2(\state_reg_n_0_[3] ),
-        .I3(\state_reg_n_0_[1] ),
-        .I4(\state_reg_n_0_[0] ),
-        .O(sine_s1));
+        .I3(\state_reg_n_0_[2] ),
+        .O(sine_step_i_2_n_0));
   (* SOFT_HLUTNM = "soft_lutpair7" *) 
   LUT3 #(
     .INIT(8'h07)) 
@@ -6053,7 +5924,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
         .CE(\state[3]_i_1_n_0 ),
         .D(state[0]),
         .Q(\state_reg_n_0_[0] ),
-        .R(clear));
+        .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \state_reg[1] 
@@ -6061,7 +5932,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
         .CE(\state[3]_i_1_n_0 ),
         .D(state[1]),
         .Q(\state_reg_n_0_[1] ),
-        .R(clear));
+        .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \state_reg[2] 
@@ -6069,7 +5940,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
         .CE(\state[3]_i_1_n_0 ),
         .D(state[2]),
         .Q(\state_reg_n_0_[2] ),
-        .R(clear));
+        .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \state_reg[3] 
@@ -6077,7 +5948,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
         .CE(\state[3]_i_1_n_0 ),
         .D(state[3]),
         .Q(\state_reg_n_0_[3] ),
-        .R(clear));
+        .R(1'b0));
   LUT1 #(
     .INIT(2'h1)) 
     \wr_addr[0]_i_1 
@@ -6188,7 +6059,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
         .CE(mixed_i_2_n_0),
         .D(p_0_in__0[0]),
         .Q(wr_addr_reg[0]),
-        .R(clear));
+        .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \wr_addr_reg[10] 
@@ -6196,7 +6067,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
         .CE(mixed_i_2_n_0),
         .D(p_0_in__0[10]),
         .Q(wr_addr_reg[10]),
-        .R(clear));
+        .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \wr_addr_reg[1] 
@@ -6204,7 +6075,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
         .CE(mixed_i_2_n_0),
         .D(p_0_in__0[1]),
         .Q(wr_addr_reg[1]),
-        .R(clear));
+        .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \wr_addr_reg[2] 
@@ -6212,7 +6083,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
         .CE(mixed_i_2_n_0),
         .D(p_0_in__0[2]),
         .Q(wr_addr_reg[2]),
-        .R(clear));
+        .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \wr_addr_reg[3] 
@@ -6220,7 +6091,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
         .CE(mixed_i_2_n_0),
         .D(p_0_in__0[3]),
         .Q(wr_addr_reg[3]),
-        .R(clear));
+        .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \wr_addr_reg[4] 
@@ -6228,7 +6099,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
         .CE(mixed_i_2_n_0),
         .D(p_0_in__0[4]),
         .Q(wr_addr_reg[4]),
-        .R(clear));
+        .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \wr_addr_reg[5] 
@@ -6236,7 +6107,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
         .CE(mixed_i_2_n_0),
         .D(p_0_in__0[5]),
         .Q(wr_addr_reg[5]),
-        .R(clear));
+        .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \wr_addr_reg[6] 
@@ -6244,7 +6115,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
         .CE(mixed_i_2_n_0),
         .D(p_0_in__0[6]),
         .Q(wr_addr_reg[6]),
-        .R(clear));
+        .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \wr_addr_reg[7] 
@@ -6252,7 +6123,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
         .CE(mixed_i_2_n_0),
         .D(p_0_in__0[7]),
         .Q(wr_addr_reg[7]),
-        .R(clear));
+        .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \wr_addr_reg[8] 
@@ -6260,7 +6131,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
         .CE(mixed_i_2_n_0),
         .D(p_0_in__0[8]),
         .Q(wr_addr_reg[8]),
-        .R(clear));
+        .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \wr_addr_reg[9] 
@@ -6268,7 +6139,7 @@ module design_1_chorus_axi_wrapper_0_0_chorus
         .CE(mixed_i_2_n_0),
         .D(p_0_in__0[9]),
         .Q(wr_addr_reg[9]),
-        .R(clear));
+        .R(1'b0));
 endmodule
 
 (* ORIG_REF_NAME = "chorus_axi_wrapper" *) 
@@ -6292,7 +6163,6 @@ module design_1_chorus_axi_wrapper_0_0_chorus_axi_wrapper
     s00_axi_araddr,
     s00_axi_aresetn,
     s00_axi_wdata,
-    rst_n,
     s00_axi_wstrb,
     sample_in_valid,
     s00_axi_bready);
@@ -6315,7 +6185,6 @@ module design_1_chorus_axi_wrapper_0_0_chorus_axi_wrapper
   input [1:0]s00_axi_araddr;
   input s00_axi_aresetn;
   input [31:0]s00_axi_wdata;
-  input rst_n;
   input [3:0]s00_axi_wstrb;
   input sample_in_valid;
   input s00_axi_bready;
@@ -6357,7 +6226,6 @@ module design_1_chorus_axi_wrapper_0_0_chorus_axi_wrapper
   wire chorus_axi_wrapper_slave_lite_v1_0_S00_AXI_inst_n_5;
   wire chorus_axi_wrapper_slave_lite_v1_0_S00_AXI_inst_n_6;
   wire chorus_axi_wrapper_slave_lite_v1_0_S00_AXI_inst_n_7;
-  wire rst_n;
   wire s00_axi_aclk;
   wire [1:0]s00_axi_araddr;
   wire s00_axi_aresetn;
@@ -6421,7 +6289,6 @@ module design_1_chorus_axi_wrapper_0_0_chorus_axi_wrapper
         .i__carry__3_i_2_0({chorus_axi_wrapper_slave_lite_v1_0_S00_AXI_inst_n_36,chorus_axi_wrapper_slave_lite_v1_0_S00_AXI_inst_n_37}),
         .mixed0_0({chorus_axi_wrapper_slave_lite_v1_0_S00_AXI_inst_n_118,chorus_axi_wrapper_slave_lite_v1_0_S00_AXI_inst_n_119,chorus_axi_wrapper_slave_lite_v1_0_S00_AXI_inst_n_120,chorus_axi_wrapper_slave_lite_v1_0_S00_AXI_inst_n_121,chorus_axi_wrapper_slave_lite_v1_0_S00_AXI_inst_n_122,chorus_axi_wrapper_slave_lite_v1_0_S00_AXI_inst_n_123,chorus_axi_wrapper_slave_lite_v1_0_S00_AXI_inst_n_124,chorus_axi_wrapper_slave_lite_v1_0_S00_AXI_inst_n_125,chorus_axi_wrapper_slave_lite_v1_0_S00_AXI_inst_n_126,chorus_axi_wrapper_slave_lite_v1_0_S00_AXI_inst_n_127,chorus_axi_wrapper_slave_lite_v1_0_S00_AXI_inst_n_128,chorus_axi_wrapper_slave_lite_v1_0_S00_AXI_inst_n_129,chorus_axi_wrapper_slave_lite_v1_0_S00_AXI_inst_n_130,chorus_axi_wrapper_slave_lite_v1_0_S00_AXI_inst_n_131,chorus_axi_wrapper_slave_lite_v1_0_S00_AXI_inst_n_132,chorus_axi_wrapper_slave_lite_v1_0_S00_AXI_inst_n_133}),
         .mixed_0(slv_reg2),
-        .rst_n(rst_n),
         .sample_in(sample_in),
         .sample_in_valid(sample_in_valid),
         .sample_out(sample_out),
