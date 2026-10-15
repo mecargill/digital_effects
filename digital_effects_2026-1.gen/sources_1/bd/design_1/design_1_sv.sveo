@@ -100,7 +100,10 @@ design_1_sv your_instance_name (
   .ac_recdat(ac_recdat), // input wire ac_recdat
   .ac_reclrc(ac_reclrc), // output wire ac_reclrc
   .ac_mclk(ac_mclk), // output wire ac_mclk
-  .ac_muten(ac_muten) // output wire [0:0] ac_muten
+  .ac_muten(ac_muten), // output wire [0:0] ac_muten
+  .GPIO_0_0_tri_i(GPIO_0_0_tri_i), // input wire [14:0] GPIO_0_0_tri_i
+  .GPIO_0_0_tri_o(GPIO_0_0_tri_o), // output wire [14:0] GPIO_0_0_tri_o
+  .GPIO_0_0_tri_t(GPIO_0_0_tri_t) // output wire [14:0] GPIO_0_0_tri_t
 );
 // INST_TAG_END ------  End cut for WRAPPER INSTANTIATION Template  ------
 

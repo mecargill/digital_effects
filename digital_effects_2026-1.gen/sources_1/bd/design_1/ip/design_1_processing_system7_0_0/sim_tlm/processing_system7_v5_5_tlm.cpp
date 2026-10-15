@@ -144,6 +144,9 @@ void add_extensions_to_tlm(const xtlm::aximm_payload* xtlm_pay, tlm::tlm_generic
 
 processing_system7_v5_5_tlm :: processing_system7_v5_5_tlm (sc_core::sc_module_name name,
     xsc::common_cpp::properties& _prop): sc_module(name)//registering module name with parent
+        ,GPIO_I("GPIO_I")
+        ,GPIO_O("GPIO_O")
+        ,GPIO_T("GPIO_T")
         ,I2C0_SDA_I("I2C0_SDA_I")
         ,I2C0_SDA_O("I2C0_SDA_O")
         ,I2C0_SDA_T("I2C0_SDA_T")

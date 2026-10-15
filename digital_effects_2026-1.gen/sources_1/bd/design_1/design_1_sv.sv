@@ -122,7 +122,13 @@ module design_1_sv (
   (* X_INTERFACE_IGNORE = "true" *)
   output wire ac_mclk,
   (* X_INTERFACE_IGNORE = "true" *)
-  output wire [0:0] ac_muten
+  output wire [0:0] ac_muten,
+  (* X_INTERFACE_IGNORE = "true" *)
+  input wire [14:0] GPIO_0_0_tri_i,
+  (* X_INTERFACE_IGNORE = "true" *)
+  output wire [14:0] GPIO_0_0_tri_o,
+  (* X_INTERFACE_IGNORE = "true" *)
+  output wire [14:0] GPIO_0_0_tri_t
 );
 
   design_1 inst (
@@ -160,7 +166,10 @@ module design_1_sv (
     .ac_recdat(ac_recdat),
     .ac_reclrc(ac_reclrc),
     .ac_mclk(ac_mclk),
-    .ac_muten(ac_muten)
+    .ac_muten(ac_muten),
+    .GPIO_0_0_tri_i(GPIO_0_0_tri_i),
+    .GPIO_0_0_tri_o(GPIO_0_0_tri_o),
+    .GPIO_0_0_tri_t(GPIO_0_0_tri_t)
   );
 
 endmodule

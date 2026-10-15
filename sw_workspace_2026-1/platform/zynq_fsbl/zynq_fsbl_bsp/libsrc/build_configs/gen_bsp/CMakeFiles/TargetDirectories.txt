@@ -144,6 +144,13 @@ C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/sw_workspace_2026-1/pla
 C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/sw_workspace_2026-1/platform/zynq_fsbl/zynq_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/sdps/src/CMakeFiles/install.dir
 C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/sw_workspace_2026-1/platform/zynq_fsbl/zynq_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/sdps/src/CMakeFiles/install/local.dir
 C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/sw_workspace_2026-1/platform/zynq_fsbl/zynq_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/sdps/src/CMakeFiles/install/strip.dir
+C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/sw_workspace_2026-1/platform/zynq_fsbl/zynq_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/spips/src/CMakeFiles/spips.dir
+C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/sw_workspace_2026-1/platform/zynq_fsbl/zynq_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/spips/src/CMakeFiles/edit_cache.dir
+C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/sw_workspace_2026-1/platform/zynq_fsbl/zynq_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/spips/src/CMakeFiles/rebuild_cache.dir
+C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/sw_workspace_2026-1/platform/zynq_fsbl/zynq_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/spips/src/CMakeFiles/list_install_components.dir
+C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/sw_workspace_2026-1/platform/zynq_fsbl/zynq_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/spips/src/CMakeFiles/install.dir
+C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/sw_workspace_2026-1/platform/zynq_fsbl/zynq_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/spips/src/CMakeFiles/install/local.dir
+C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/sw_workspace_2026-1/platform/zynq_fsbl/zynq_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/spips/src/CMakeFiles/install/strip.dir
 C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/sw_workspace_2026-1/platform/zynq_fsbl/zynq_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/uartps/src/CMakeFiles/uartps.dir
 C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/sw_workspace_2026-1/platform/zynq_fsbl/zynq_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/uartps/src/CMakeFiles/edit_cache.dir
 C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/sw_workspace_2026-1/platform/zynq_fsbl/zynq_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/uartps/src/CMakeFiles/rebuild_cache.dir

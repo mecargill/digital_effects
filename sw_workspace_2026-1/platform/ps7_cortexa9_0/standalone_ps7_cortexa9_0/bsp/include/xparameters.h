@@ -198,6 +198,24 @@
 #define XPAR_XSDPS_0_HAS_WP 0x0
 #define XPAR_XSDPS_0_SDIO_CLK_FREQ_HZ 0x2faf080
 
+#define XPAR_XSPIPS_NUM_INSTANCES 1
+
+/* Definitions for peripheral SPI1 */
+#define XPAR_SPI1_COMPATIBLE "xlnx,zynq-spi-r1p6"
+#define XPAR_SPI1_BASEADDR 0xe0007000
+#define XPAR_SPI1_HIGHADDR 0xe0007fff
+#define XPAR_SPI1_SPI_CLK_FREQ_HZ 0x9ef21b0
+#define XPAR_SPI1_INTERRUPTS 0x4031
+#define XPAR_SPI1_INTERRUPT_PARENT 0xf8f01000
+
+/* Canonical definitions for peripheral SPI1 */
+#define XPAR_XSPIPS_0_BASEADDR 0xe0007000
+#define XPAR_XSPIPS_0_HIGHADDR 0xe0007fff
+#define XPAR_XSPIPS_0_COMPATIBLE "xlnx,zynq-spi-r1p6"
+#define XPAR_XSPIPS_0_INTERRUPTS 0x4031
+#define XPAR_XSPIPS_0_INTERRUPT_PARENT 0xf8f01000
+#define XPAR_XSPIPS_0_SPI_CLK_FREQ_HZ 0x9ef21b0
+
 #define XPAR_XUARTPS_NUM_INSTANCES 1
 
 /* Definitions for peripheral UART1 */

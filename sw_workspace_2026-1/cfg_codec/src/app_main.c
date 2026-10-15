@@ -344,7 +344,7 @@ void distortion_control_loop() {
 }
 
 
-int main()
+int old_main()
 {
 
 	print("\n\r----entering main-------\n\r");

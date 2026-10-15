@@ -214,6 +214,10 @@ drv_info:
     ip_name: ps7_sdio
     path: C:\AMDDesignTools\2026.1\Vitis\data\embeddedsw\XilinxProcessorIPLib\drivers\sdps_v4_6
   ps7_slcr_0: None
+  ps7_spi_1:
+    driver: spips
+    ip_name: ps7_spi
+    path: C:\AMDDesignTools\2026.1\Vitis\data\embeddedsw\XilinxProcessorIPLib\drivers\spips_v3_14
   ps7_uart_1:
     driver: uartps
     ip_name: ps7_uart

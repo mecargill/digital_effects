@@ -78,6 +78,8 @@ C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/sw_workspace_2026-1/pla
 C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/sw_workspace_2026-1/platform/zynq_fsbl/zynq_fsbl_bsp/include/xsdps.h
 C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/sw_workspace_2026-1/platform/zynq_fsbl/zynq_fsbl_bsp/include/xsdps_core.h
 C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/sw_workspace_2026-1/platform/zynq_fsbl/zynq_fsbl_bsp/include/xsdps_hw.h
+C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/sw_workspace_2026-1/platform/zynq_fsbl/zynq_fsbl_bsp/include/xspips.h
+C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/sw_workspace_2026-1/platform/zynq_fsbl/zynq_fsbl_bsp/include/xspips_hw.h
 C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/sw_workspace_2026-1/platform/zynq_fsbl/zynq_fsbl_bsp/include/xstatus.h
 C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/sw_workspace_2026-1/platform/zynq_fsbl/zynq_fsbl_bsp/include/xtimer_config.h
 C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/sw_workspace_2026-1/platform/zynq_fsbl/zynq_fsbl_bsp/include/xuartps.h
@@ -164,6 +166,8 @@ C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/sw_workspace_2026-1/pla
 C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/sw_workspace_2026-1/platform/zynq_fsbl/zynq_fsbl_bsp/include/xsdps.h
 C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/sw_workspace_2026-1/platform/zynq_fsbl/zynq_fsbl_bsp/include/xsdps_core.h
 C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/sw_workspace_2026-1/platform/zynq_fsbl/zynq_fsbl_bsp/include/xsdps_hw.h
+C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/sw_workspace_2026-1/platform/zynq_fsbl/zynq_fsbl_bsp/include/xspips.h
+C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/sw_workspace_2026-1/platform/zynq_fsbl/zynq_fsbl_bsp/include/xspips_hw.h
 C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/sw_workspace_2026-1/platform/zynq_fsbl/zynq_fsbl_bsp/include/xstatus.h
 C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/sw_workspace_2026-1/platform/zynq_fsbl/zynq_fsbl_bsp/include/xtimer_config.h
 C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/sw_workspace_2026-1/platform/zynq_fsbl/zynq_fsbl_bsp/include/xuartps.h
@@ -251,6 +255,8 @@ C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/sw_workspace_2026-1/pla
 C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/sw_workspace_2026-1/platform/zynq_fsbl/zynq_fsbl_bsp/include/xsdps.h
 C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/sw_workspace_2026-1/platform/zynq_fsbl/zynq_fsbl_bsp/include/xsdps_core.h
 C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/sw_workspace_2026-1/platform/zynq_fsbl/zynq_fsbl_bsp/include/xsdps_hw.h
+C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/sw_workspace_2026-1/platform/zynq_fsbl/zynq_fsbl_bsp/include/xspips.h
+C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/sw_workspace_2026-1/platform/zynq_fsbl/zynq_fsbl_bsp/include/xspips_hw.h
 C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/sw_workspace_2026-1/platform/zynq_fsbl/zynq_fsbl_bsp/include/xstatus.h
 C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/sw_workspace_2026-1/platform/zynq_fsbl/zynq_fsbl_bsp/include/xtimer_config.h
 C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/sw_workspace_2026-1/platform/zynq_fsbl/zynq_fsbl_bsp/include/xuartps.h
@@ -338,6 +344,8 @@ C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/sw_workspace_2026-1/pla
 C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/sw_workspace_2026-1/platform/zynq_fsbl/zynq_fsbl_bsp/include/xsdps.h
 C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/sw_workspace_2026-1/platform/zynq_fsbl/zynq_fsbl_bsp/include/xsdps_core.h
 C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/sw_workspace_2026-1/platform/zynq_fsbl/zynq_fsbl_bsp/include/xsdps_hw.h
+C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/sw_workspace_2026-1/platform/zynq_fsbl/zynq_fsbl_bsp/include/xspips.h
+C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/sw_workspace_2026-1/platform/zynq_fsbl/zynq_fsbl_bsp/include/xspips_hw.h
 C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/sw_workspace_2026-1/platform/zynq_fsbl/zynq_fsbl_bsp/include/xstatus.h
 C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/sw_workspace_2026-1/platform/zynq_fsbl/zynq_fsbl_bsp/include/xtimer_config.h
 C:/Users/cargi/Documents/1Fa26/SD/digital_effects_2026-1/sw_workspace_2026-1/platform/zynq_fsbl/zynq_fsbl_bsp/include/xuartps.h

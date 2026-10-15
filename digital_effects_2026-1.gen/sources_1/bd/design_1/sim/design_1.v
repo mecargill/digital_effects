@@ -2,7 +2,7 @@
 //Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2026.1 (win64) Build 6511674 Tue Jun 16 11:02:23 MDT 2026
-//Date        : Fri Oct  9 11:10:12 2026
+//Date        : Wed Oct 14 14:53:27 2026
 //Host        : MostlyEtc running 64-bit major release  (build 9200)
 //Command     : generate_target design_1.bd
 //Design      : design_1
@@ -33,6 +33,9 @@ module design_1
     FIXED_IO_ps_clk,
     FIXED_IO_ps_porb,
     FIXED_IO_ps_srstb,
+    GPIO_0_0_tri_i,
+    GPIO_0_0_tri_o,
+    GPIO_0_0_tri_t,
     IIC_0_0_scl_i,
     IIC_0_0_scl_o,
     IIC_0_0_scl_t,
@@ -68,6 +71,9 @@ module design_1
   (* X_INTERFACE_INFO = "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_CLK" *) inout FIXED_IO_ps_clk;
   (* X_INTERFACE_INFO = "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_PORB" *) inout FIXED_IO_ps_porb;
   (* X_INTERFACE_INFO = "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_SRSTB" *) inout FIXED_IO_ps_srstb;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 GPIO_0_0 TRI_I" *) (* X_INTERFACE_MODE = "Master" *) input [14:0]GPIO_0_0_tri_i;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 GPIO_0_0 TRI_O" *) output [14:0]GPIO_0_0_tri_o;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 GPIO_0_0 TRI_T" *) output [14:0]GPIO_0_0_tri_t;
   (* X_INTERFACE_INFO = "xilinx.com:interface:iic:1.0 IIC_0_0 SCL_I" *) (* X_INTERFACE_MODE = "Master" *) input IIC_0_0_scl_i;
   (* X_INTERFACE_INFO = "xilinx.com:interface:iic:1.0 IIC_0_0 SCL_O" *) output IIC_0_0_scl_o;
   (* X_INTERFACE_INFO = "xilinx.com:interface:iic:1.0 IIC_0_0 SCL_T" *) output IIC_0_0_scl_t;
@@ -104,6 +110,9 @@ module design_1
   wire FIXED_IO_ps_clk;
   wire FIXED_IO_ps_porb;
   wire FIXED_IO_ps_srstb;
+  wire [14:0]GPIO_0_0_tri_i;
+  wire [14:0]GPIO_0_0_tri_o;
+  wire [14:0]GPIO_0_0_tri_t;
   wire IIC_0_0_scl_i;
   wire IIC_0_0_scl_o;
   wire IIC_0_0_scl_t;
@@ -547,6 +556,9 @@ module design_1
         .DDR_WEB(DDR_we_n),
         .FCLK_CLK0(processing_system7_0_FCLK_CLK0),
         .FCLK_RESET0_N(processing_system7_0_FCLK_RESET0_N),
+        .GPIO_I(GPIO_0_0_tri_i),
+        .GPIO_O(GPIO_0_0_tri_o),
+        .GPIO_T(GPIO_0_0_tri_t),
         .I2C0_SCL_I(IIC_0_0_scl_i),
         .I2C0_SCL_O(IIC_0_0_scl_o),
         .I2C0_SCL_T(IIC_0_0_scl_t),

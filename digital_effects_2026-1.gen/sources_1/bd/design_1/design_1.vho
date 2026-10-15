@@ -87,7 +87,10 @@ COMPONENT design_1
     ac_recdat : IN STD_LOGIC;
     ac_reclrc : OUT STD_LOGIC;
     ac_mclk : OUT STD_LOGIC;
-    ac_muten : OUT STD_LOGIC_VECTOR(0 DOWNTO 0)
+    ac_muten : OUT STD_LOGIC_VECTOR(0 DOWNTO 0);
+    GPIO_0_0_tri_i : IN STD_LOGIC_VECTOR(14 DOWNTO 0);
+    GPIO_0_0_tri_o : OUT STD_LOGIC_VECTOR(14 DOWNTO 0);
+    GPIO_0_0_tri_t : OUT STD_LOGIC_VECTOR(14 DOWNTO 0)
   );
 END COMPONENT;
 -- COMP_TAG_END ------  End cut for COMPONENT Declaration  ------
@@ -132,7 +135,10 @@ your_instance_name : design_1
     ac_recdat => ac_recdat,
     ac_reclrc => ac_reclrc,
     ac_mclk => ac_mclk,
-    ac_muten => ac_muten
+    ac_muten => ac_muten,
+    GPIO_0_0_tri_i => GPIO_0_0_tri_i,
+    GPIO_0_0_tri_o => GPIO_0_0_tri_o,
+    GPIO_0_0_tri_t => GPIO_0_0_tri_t
   );
 -- INST_TAG_END ------  End cut for INSTANTIATION Template  ------
 
